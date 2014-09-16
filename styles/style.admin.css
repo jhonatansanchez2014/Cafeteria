@@ -1,0 +1,206 @@
+/*fuentes importadas*/
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500);
+*{
+	margin: 0;
+	padding: 0;
+	top: 0;
+}
+html, body{
+	font-family: 'Lato', sans-serif, Arial;
+	font-weight: 300;
+	position: absolute;
+	height: 100%;
+	min-width: 100%;
+	font-size: 15px;
+	color: #404040;
+	direction: ltr;/*Direccion de escritura, por defecto de derecha a izquierda*/
+}
+header{
+	background-color: #444;
+    height: 50px;
+    padding: 10px;
+}
+header .user{
+    color: #fff;
+    font-family: 'Lato', Roboto;
+    font-size: 17px;
+}
+header nav{
+    float: right;
+    
+}
+nav a{
+    text-decoration: none;
+    color: #fff;
+}
+.navbar-brand{
+    font-family: 'Roboto', Lato;
+}
+.container{
+    margin-top: 100px;
+}
+.post{
+    width: 373px;
+    float: left;
+}
+.post-pages{
+    width: 100%;
+}
+.post-user{
+    width: 24%;
+    float: left;
+}
+.margin-post{
+    margin-left: 10px;
+}
+.title-post{
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Roboto', Lato;
+}
+.title-post:hover{
+    text-decoration: none;
+}
+.panel-body{
+    text-align: justify;    
+}
+.panel-body img{
+    display: block;
+    margin: 0 auto;
+}
+.nav-pills{
+    margin-top: 5px;
+}
+.credit{
+    text-align: center;
+}
+.password{
+    display: block;
+    font-size: 17px;
+    font-family: 'Roboto', Lato;
+    font-weight: 400;
+}
+.n-label{
+    color: #444;
+    font-family: 'Lato', Roboto;
+    font-weight: 300;
+    margin-top: 5px;
+}
+.addbtn{
+    margin-top: 5px;
+}
+.msg-error{
+    display: block;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    font-family: 'Roboto', Lato, Verdana;
+    color: red;
+}
+
+/*Preloader*/
+.loader-wrapper{
+    position: relative;
+    left: 0;
+    width: auto;
+    height: auto;
+    z-index: 1000;
+    margin: 0 auto;
+}
+.loader{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #3498db;
+    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+.loader:before{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #e74c3c;
+    -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+.loader:after{
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #f9c922;
+    -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+@-webkit-keyframes spin{
+    0%{
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100%{
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spin{
+    0%{
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100%{
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .post{
+        width: 100%;
+        float: none;
+    }
+    .margin-post{
+        margin-left: 10;
+    }
+    .container{
+        margin-top: 10px;
+    }
+    .post-user{
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 580px){
+    .post{
+        width: 100%;
+        float: none;
+    }
+    .margin-post{
+        margin-left: 0;
+    }
+    .container{
+        margin-top: 10px;
+    }
+    .post-user{
+        width: 100%;
+        float: none;
+    }
+}
