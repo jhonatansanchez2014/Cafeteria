@@ -16,7 +16,7 @@
 		<link type="text/css" href="styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 		<script type="text/javascript" src="./js/jquery/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="./styles/bootstrap/js/bootstrap.js"></script>
-		<script type="text/javascript" src="./js/jquery.ajax.js"></script>
+		<script type="text/javascript" src="./js/jquery.ajax.login.js"></script>
 		<title>Cafetería Control de Acceso</title>
 	</head>
 	<body>
