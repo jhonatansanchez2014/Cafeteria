@@ -99,7 +99,9 @@ nav a{
     font-family: 'Roboto', Lato, Verdana;
     color: red;
 }
-
+.documento-delete{
+    font-weight: bold;
+}
 /*Preloader*/
 .loader-wrapper{
     position: relative;

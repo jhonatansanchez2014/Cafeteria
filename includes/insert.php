@@ -23,6 +23,7 @@
 
     //Se hace la consulta SQL
     $sql="INSERT INTO users VALUES('$documento', '$nombres', '$apellidos', '$edad', '$celular', '$estado');";
+    //echo $sql;
     //$result = $sqli->query($sql);
     $result=$sqli->query($sql);
 

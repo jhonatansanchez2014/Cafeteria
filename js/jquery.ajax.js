@@ -1,4 +1,5 @@
 $(document).on('ready', function(){
+	//Para el login
 	var pet=$('.body-page form').attr('action');
 	var met=$('.body-page form').attr('method');
 
@@ -47,7 +48,7 @@ $(document).on('ready', function(){
 					$('.msg-error').html(respuesta).show();
 				}
 				else{
-					$('.add-date').append(respuesta);
+					$('.add-new').append(respuesta);
 					$('.msg-error').html('Usuario registrado con exito.').show();
 				}
 			},
@@ -64,7 +65,7 @@ $(document).on('ready', function(){
 
 	//Cargar datos de los usuarios al recargar la pagina con Ajax
 	$.post('../includes/u.redy.user.php',function(data){
-		$('.add-date').append(data);
+		$('.add-new').html(data);
 		//console.log(data);
 	});
 
@@ -84,7 +85,7 @@ $(document).on('ready', function(){
 			data: $('.modal-footer form').serialize(),
 			success: function(respuesta){
 				$('.loader-wrapper').addClass("hide");
-				$('.msg-error').html(respuesta);
+				$('.add-new').html(respuesta);
 			},
 			error: function(jqXHR, estado, error){
 				console.log(estado);

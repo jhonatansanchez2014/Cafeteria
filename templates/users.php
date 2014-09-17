@@ -91,6 +91,9 @@
 								</div>
 							</article>
 						</section>
+						<section class="add-new">
+							<!--Acá se hace toda la brujeria con el metodo Ajax de JQuery xD Buujajaja, no se ve en el código fuente xD-->
+						</section>
 						<!--End cuerpo donde se muestran los usuarios-->
 					</div>
 				</div>
