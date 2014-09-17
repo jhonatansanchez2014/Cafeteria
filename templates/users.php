@@ -113,7 +113,7 @@
 						Vas a eliminar el usuario con número de identificación <span class="documento-delete" ></span>, esto se hará de forma permanente en la based e datos.
 					</div>
 	     			<div class="modal-footer">
-	     				<form action="../includes/delete.user.php" method="POST">
+	     				<form action="../includes/delete.user.php" method="POST" name="formDelete">
 	     					<input name="documento" id="dc" type="hidden" value="">
 	     					<input type="submit" name="save" value="Eliminar" class="btn btn-danger addbtn"/>
 	     					<button type="button" data-dismiss="modal" class="btn btn-success">Cancelar</button>
@@ -136,7 +136,6 @@
 				var documento=$(this).data('id');
 				$(".modal-footer #dc").val(documento);
 				$(".documento-delete").html(documento);
-				
 			});
 		</script>
 	</body>

@@ -70,11 +70,12 @@ $(document).on('ready', function(){
 	});
 //end
 });
-function uploadUser(){
+
+/*function uploadUser(){
 	
 		$.post('../includes/u.redy.user.php',function(data){
 			$('.add-date').removeClass(data);
 			console.log(data);
 		});
 	
-}
+}*/
