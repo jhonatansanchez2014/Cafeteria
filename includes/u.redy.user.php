@@ -5,23 +5,26 @@
     include_once'connect.php';//Incluimos el archivo connect.php, el cual es el encargado de realizar la conexión con la bd
 
     //cadena sql consulta de los datos de usuario
-    $sql="SELECT * FROM users";
+    $sql="SELECT * FROM users ORDER BY documento ASC";
     //se ejecuta la consulta
     $result=$sqli->query($sql);
     //se optienen el numero de filas extraidos de la base de datos
     $numfile=$result->num_rows;
 
     //cadena sql consulta de nombre de usuario y contraseña
-    $sql="SELECT user, password FROM login";
+    $sql="SELECT user, password FROM login ORDER BY documento ASC";
     //se ejecuta la consulta
     $resultLogin=$sqli->query($sql);
     //se optienen el numero de filas extraidos de la base de datos
     $numfileLogin=$resultLogin->num_rows;
+    //$i=0;
 
     //con el ciclo enviamos todos los datos extraidos de la base de datos $fila->ISBN
     for($x=0; $x<$numfile; $x++){
+        $i=0;
         $fila=$result->fetch_object();
-        while($stop==1){
+        for($i; $i<1; $i++){
+            $filaL=$resultLogin->fetch_object();
             if($fila->estado=='Activo'){
                 $seleccion='<option value="Activo">Activo</option>
                             <option value="Suspendido">Suspendido</option>';
@@ -50,9 +53,10 @@
                                 <label class="n-label">Número de celular</label>
                                 <input value='.$fila->celular.' type="text" class="form-control" placeholder="Número de celular" disabled>
                                 <label class="n-label">User name</label>
-                                <span class="password">phvillegas</span>
+                                <span class="password">'.$filaL->user.'</span>
                                 <label class="n-label">Password</label>
-                                <span class="password">*******</span>
+                                <span class="password">**********</span>
+                                <span class="password">'.$filaL->password.'</span>
                                 <a class="btn btn-default" href="">Update <span class="glyphicon glyphicon-refresh"></span></a>
                                 <a data-toggle="modal" data-id='.$fila->documento.' class="delete-user btn btn-default" href="#delete-modal">Delete <span class="glyphicon glyphicon-ban-circle"></span></a>
                             </form>
