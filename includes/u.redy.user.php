@@ -55,9 +55,8 @@
                                 <label class="n-label">User name</label>
                                 <span class="password">'.$filaL->user.'</span>
                                 <label class="n-label">Password</label>
-                                <span class="password">**********</span>
                                 <span class="password">'.$filaL->password.'</span>
-                                <a class="btn btn-default" href="">Update <span class="glyphicon glyphicon-refresh"></span></a>
+                                <a data-toggle="modal" class="btn btn-default" href="#Ups">Edit <span class="glyphicon glyphicon-pencil"></span></a>
                                 <a data-toggle="modal" data-id='.$fila->documento.' class="delete-user btn btn-default" href="#delete-modal">Delete <span class="glyphicon glyphicon-ban-circle"></span></a>
                             </form>
                         </div>

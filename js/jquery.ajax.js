@@ -70,7 +70,16 @@ $(document).on('ready', function(){
 	});
 //end
 });
-
+//Función que valida solo Números.
+function validatenum(){
+	if((event.keyCode < 48) || (event.keyCode > 57)) 
+ 		event.returnValue = false;
+}
+//Funcioón que valida solo letras.
+function validatetext(){
+	if ((event.keyCode != 32)&&(event.keyCode < 65)||(event.keyCode > 90)&&(event.keyCode < 97)||(event.keyCode > 122))
+		event.returnValue = false;
+}
 /*function uploadUser(){
 	
 		$.post('../includes/u.redy.user.php',function(data){

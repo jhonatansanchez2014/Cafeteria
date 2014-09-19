@@ -66,22 +66,22 @@
 		  							</div>
 		  							<div class="panel-body">
 		  								<form action="../includes/insert.php" method="POST">
-		  									<input name="nombres" type="text" class="form-control" placeholder="Nombres" required />
+		  									<input name="nombres" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control" placeholder="Nombres" required />
 		  									<br />
-		  									<input name="apellidos" type="text" class="form-control" placeholder="Apellidos" required />
+		  									<input name="apellidos" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control" placeholder="Apellidos" required />
 		  									<br />
-		  									<input name="documento" type="text" class="form-control" placeholder="Documento" required />
+		  									<input name="documento" type="text" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Documento" required />
 		  									<br />
-		  									<input name="edad" type="number" class="form-control" placeholder="Edad" min="18" max="100" required />
+		  									<input name="edad" type="number" autocomplete="off" class="form-control" placeholder="Edad" min="18" max="100" required />
 		  									<br />
 		  									<select name="estado" class="form-control">
 		  										<option value="Activo">Activo</option>
 												<option value="Suspendido">Suspendido</option>
 		  									</select>
 		  									<br />
-		  									<input name="celular" type="tel" class="form-control" placeholder="Número de celular" required />
+		  									<input name="celular" type="tel" onkeypress="validatenum();" maxlength="11" autocomplete="off" class="form-control" placeholder="Número de celular" required />
 		  									<br />
-		  									<input name="user" type="text" class="form-control" placeholder="Nombre de usuario" required />
+		  									<input name="user" type="text" maxlength="10" autocomplete="off" class="form-control" placeholder="Nombre de usuario" required />
 
 		  									<input type="submit" name="save" value="Save" class="btn btn-default addbtn"/>
 		  									<input type="reset" name="save" value="New" class="btn btn-default addbtn"/>
@@ -137,5 +137,27 @@
 				$(".documento-delete").html(documento);
 			});
 		</script>
+
+
+
+
+		<!--modal delete-->
+		<div id="Ups" class="modal fade">
+			<div class="modal-dialog">   
+				<div class="modal-content"> 
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3>Error</h3>
+					</div>
+					<div class="modal-body">
+						Ups, esta perte del modulo aún no está funcionando. :p xD
+					</div>
+	     			<div class="modal-footer">
+	     				<button type="button" data-dismiss="modal" class="btn btn-success">Cerrar</button>
+	    			</div>
+				</div>
+			</div>
+		</div>
+		<!--modal delete-->	
 	</body>
 </html>
