@@ -17,7 +17,6 @@
 		<link href="../styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
 		<title>Admin Cafetería</title>
-
 	</head>
 	<body>
 		<nav class="navbar navbar-default" role="navigation">
@@ -67,22 +66,22 @@
 		  							</div>
 		  							<div class="panel-body">
 		  								<form action="../includes/insert.php" method="POST">
-		  									<input name="nombres" type="text" class="form-control" placeholder="Nombres" required>
-		  									<br>
-		  									<input name="apellidos" type="text" class="form-control" placeholder="Apellidos" required>
-		  									<br>
-		  									<input name="documento" type="text" class="form-control" placeholder="Documento" required>
-		  									<br>
-		  									<input name="edad" type="number" class="form-control" placeholder="Edad" min="18" max="100" required>
-		  									<br>
+		  									<input name="nombres" type="text" class="form-control" placeholder="Nombres" required />
+		  									<br />
+		  									<input name="apellidos" type="text" class="form-control" placeholder="Apellidos" required />
+		  									<br />
+		  									<input name="documento" type="text" class="form-control" placeholder="Documento" required />
+		  									<br />
+		  									<input name="edad" type="number" class="form-control" placeholder="Edad" min="18" max="100" required />
+		  									<br />
 		  									<select name="estado" class="form-control">
 		  										<option value="Activo">Activo</option>
 												<option value="Suspendido">Suspendido</option>
 		  									</select>
-		  									<br>
-		  									<input name="celular" type="tel" class="form-control" placeholder="Número de celular" required>
-		  									<br>
-		  									<input name="user" type="text" class="form-control" placeholder="Nombre de usuario" required>
+		  									<br />
+		  									<input name="celular" type="tel" class="form-control" placeholder="Número de celular" required />
+		  									<br />
+		  									<input name="user" type="text" class="form-control" placeholder="Nombre de usuario" required />
 
 		  									<input type="submit" name="save" value="Save" class="btn btn-default addbtn"/>
 		  									<input type="reset" name="save" value="New" class="btn btn-default addbtn"/>

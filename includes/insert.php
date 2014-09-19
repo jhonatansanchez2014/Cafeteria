@@ -1,7 +1,11 @@
 <?php
     //sleep(5);
     session_start();
+    include_once'password.php';
     include_once'connect.php';//Incluimos el archivo connect.php, el cual es el encargado de realizar la conexión con la bd
+    //Se genera un password aleatorio
+    $password=passwordRandom();
+
     //Asignación de variables
     $nombres=mysqli_real_escape_string($sqli, $_POST['nombres']);//Resivo por POST el nombre
     $apellidos=mysqli_real_escape_string($sqli, $_POST['apellidos']);//Recibo por POST el apellido
@@ -20,13 +24,16 @@
                     <option value="Activo">Activo</option>';
     }
 
-    //Insertar en la tabla de login
-    $sqlLogin="INSERT INTO login VALUES('$documento', '$nombres', '$apellidos', '$edad', '$celular', '$estado');";
-
     //Se hace la consulta SQL
     $sql="INSERT INTO users VALUES('$documento', '$nombres', '$apellidos', '$edad', '$celular', '$estado');";
     //Se ejecuta el Query
     $result=$sqli->query($sql);
+
+    //Insertar en la tabla de login
+    $sqlLogin="INSERT INTO login VALUES('$user', '$password', 'Trabajador', '$documento');";
+    //Se ejecuta el Query
+    $insertData=$sqli->query($sqlLogin);
+    
     //Si hay cambios o se afecto alguna taba de la base de datos
     if($result){
         //echo "Usuario registrado con exito";
