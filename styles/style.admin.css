@@ -82,6 +82,28 @@ nav a{
     font-family: 'Roboto', Lato;
     font-weight: 400;
 }
+.password-hidde{
+    background-color: #333;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+
+    padding: 2px;
+    font-size: 15;
+    text-align: center;
+    width: 120px;
+    color: #333;
+}
+.password-hidde:hover{
+    color: #fff;
+    -webkit-transition-duration: 1s;
+}
 .n-label{
     color: #444;
     font-family: 'Lato', Roboto;
