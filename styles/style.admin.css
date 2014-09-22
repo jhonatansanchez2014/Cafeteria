@@ -104,6 +104,11 @@ nav a{
     color: #fff;
     -webkit-transition-duration: 1s;
 }
+.center{
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+}
 .n-label{
     color: #444;
     font-family: 'Lato', Roboto;

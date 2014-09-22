@@ -47,14 +47,14 @@
 			<article class="post">
 				<div class="panel panel-default">
 	  				<div class="panel-heading">
-	    				<a class="title-post" href=""><h3 class="panel-title">Gestionar Productos</h3></a>
+	    				<a class="title-post" href="./products.php"><h3 class="panel-title">Gestionar Productos</h3></a>
 	  				</div>
 	  				<div class="panel-body">
 	    				Gestionar productos. Puedes ingresar, actualizar y eliminar productos, 
 	    				ten en cuenta que si eliminas un producto, este se borrara de forma permanente de la base de datos.
 	    				<ul class="nav nav-pills nav-stacked">
   							<li class="active">
-    							<a href="#">
+    							<a href="./products.php">
       								<span class="badge pull-right"><?php echo $nprod; ?></span>Productos registrados
     							</a>
   							</li>
