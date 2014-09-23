@@ -54,7 +54,7 @@
 			<article class="post-pages margin-post">
 				<div class="panel panel-default">
 	  				<div class="panel-heading">
-	    				<h3 class="panel-title title-post">Gestionar Usuarios</h3>
+	    				<h3 class="panel-title title-post">Gestionar Productos</h3>
 	  				</div>
 	  				<div class="panel-body add-date">
 	  					<!--Cuerpo donde se muestran los usuarios-->
