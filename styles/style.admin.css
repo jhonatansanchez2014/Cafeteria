@@ -108,7 +108,12 @@ nav a{
     width: auto;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 10px;
 }
+.salto{
+    margin-bottom: 10px;
+}
+
 .n-label{
     color: #444;
     font-family: 'Lato', Roboto;

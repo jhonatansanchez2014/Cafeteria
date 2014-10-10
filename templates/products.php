@@ -59,69 +59,52 @@
 	  				<div class="panel-body add-date">
 	  					<!--Cuerpo donde se muestran los usuarios-->
 	  					<div class="center">
-	  					<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Products</button></div>
-	  					<section class="adduser">
-		  					<article class="post-user margin-post">
-								<div class="panel panel-default">
-		  							<div class="panel-heading">
-		    							<a class="title-post" href=""><h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Add User</h3></a>
-		  							</div>
-		  							<div class="panel-body">
-		  								<form action="../includes/insert.php" method="POST">
-		  									<input name="nombres" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control" placeholder="Nombres" required />
-		  									<br />
-		  									<input name="apellidos" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control" placeholder="Apellidos" required />
-		  									<br />
-		  									<input name="documento" type="text" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Documento" required />
-		  									<br />
-		  									<input name="edad" type="number" autocomplete="off" class="form-control" placeholder="Edad" min="18" max="100" required />
-		  									<br />
-		  									<select name="estado" class="form-control">
-		  										<option value="Activo">Activo</option>
-												<option value="Suspendido">Suspendido</option>
-		  									</select>
-		  									<br />
-		  									<input name="celular" type="tel" onkeypress="validatenum();" maxlength="11" autocomplete="off" class="form-control" placeholder="Número de celular" required />
-		  									<br />
-		  									<input name="user" type="text" maxlength="10" autocomplete="off" class="form-control" placeholder="Nombre de usuario" required />
-
-		  									<input type="submit" name="save" value="Save" class="btn btn-default addbtn"/>
-		  									<input type="reset" name="save" value="New" class="btn btn-default addbtn"/>
-		  								</form>
-		  							</div>
-								</div>
-							</article>
-						</section>
-						
-						<!--End cuerpo donde se muestran los usuarios-->
+	  					<button type="button" data-toggle="modal" href="#Ups" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Products</button></div>
+	  					<!--Responsive table-->
+	  					<div class="responsive">
+		  					<table class="table table-bordered table-hover">
+								<thead>
+								    <tr>
+								        <th>#</th>
+								        <th>Nombre</th>
+								        <th>Apellido</th>
+								        <th>Email</th>
+								        <th>Email</th>
+								    </tr>
+								</thead>
+								<tbody>
+								    <tr>
+								        <td>1</td>
+								        <td>Rocky</td>
+								        <td>Balboa</td>
+								        <td>rockybalboa@mail.com</td>
+								        <td>rockybalboa@mail.com</td>
+								    </tr>
+								    <tr>
+								        <td>2</td>
+								        <td>Peter</td>
+								        <td>Parker</td>
+								        <td>peterparker@mail.com</td>
+								        <td>peterparker@mail.com</td>
+								    </tr>
+								    <tr>
+								        <td>3</td>
+								        <td>John</td>
+								        <td>Rambo</td>
+								        <td>peterparker@mail.com</td>
+								        <td>johnrambo@mail.com</td>
+								    </tr>
+								</tbody>
+							</table>
+						</div>
+						<!--Responsive-->
 					</div>
 				</div>
 			</article>
+
 			<!--contenedor principal-->
 		</section>
 		<!--end container-->
-		<!--modal delete-->
-		<div id="delete-modal" class="modal fade">
-			<div class="modal-dialog">   
-				<div class="modal-content"> 
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h3>Eliminar usuario</h3>
-					</div>
-					<div class="modal-body">
-						Vas a eliminar el usuario con número de identificación <span class="documento-delete" ></span>, esto se hará de forma permanente en la based e datos.
-					</div>
-	     			<div class="modal-footer">
-	     				<form action="../includes/delete.user.php" method="POST" name="formDelete">
-	     					<input name="documento" id="dc" type="hidden" value="">
-	     					<input type="submit" name="save" value="Eliminar" class="btn btn-danger addbtn"/>
-	     					<button type="button" data-dismiss="modal" class="btn btn-success">Cancelar</button>
-	     				</form>
-	    			</div>
-				</div>
-			</div>
-		</div>
-		<!--modal delete-->	
 		<?php include_once'../includes/about.php'; ?>
 		<footer id="footer">
         	<div class="container">
@@ -141,19 +124,54 @@
 
 
 
-		<!--modal delete-->
+		<!--modal productos-->
 		<div id="Ups" class="modal fade">
 			<div class="modal-dialog">   
 				<div class="modal-content"> 
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h3>Error</h3>
+						<h3>Add New Products</h3>
 					</div>
 					<div class="modal-body">
-						Ups, esta perte del modulo aún no está funcionando. :p xD
+						
+						<form action="../includes/insert.php" method="POST">
+							<input name="nombres" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Producto" required />
+							
+							<input name="apellidos" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Referencia del producto" required />
+							
+							<select style=" display: inline-block; width: 250px;" name="estado" class="form-control">
+								<option value="Mecato">Mecato</option>
+								<option value="Gaseosa">Gaseosa</option>
+								<option value="Gaseosa">Gaseosa</option>
+							</select>
+
+							<input style=" display: inline-block; width: 156px;" name="documento" type="number" min="1" max="1000" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Cantidad" required />
+							<select  style="display: inline-block; width: 152px;" name="estado" class="form-control salto">
+								<option value="Unidad">Unidad</option>
+								<option value="Kg">Kilogramos</option>
+								<option value="Lb">Libras</option>
+							</select>
+							
+							<label>Fecha de caducidad</label>
+							<input name="fVence" type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" min="18" max="100" required />
+							
+							<select name="estado" class="form-control salto">
+								<option value="Activo">Activo</option>
+							<option value="Suspendido">Suspendido</option>
+							</select>
+							
+							<input name="celular" type="tel" onkeypress="validatenum();" maxlength="11" autocomplete="off" class="form-control salto" placeholder="Número de celular" required />
+							
+							<input name="user" type="text" maxlength="10" autocomplete="off" class="form-control salto" placeholder="Nombre de usuario" required />
+
+							<!--<input type="submit" name="save" value="Save" class="btn btn-default addbtn"/>
+							<input type="reset" name="save" value="New" class="btn btn-default addbtn"/>-->
+						</form>
+		  							
 					</div>
 	     			<div class="modal-footer">
-	     				<button type="button" data-dismiss="modal" class="btn btn-success">Cerrar</button>
+	     				<input type="submit" name="save" value="Save product" class="btn btn-success"/>
+	     				<button type="button" data-dismiss="modal" class="btn btn-danger">Close</button>
 	    			</div>
 				</div>
 			</div>
