@@ -137,7 +137,7 @@
 						<form action="../includes/insert.php" method="POST">
 							<input name="codigo" type="text" onkeypress="validatenum();" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Codigo del producto" required />
 
-							<input name="producto" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Producto" required />
+							<input name="producto" type="text" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Producto" required />
 							
 							<!--<input name="referencia" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Referencia del producto" required />-->
 							
@@ -147,7 +147,7 @@
 								<option value="Gaseosa">Gaseosa</option>
 							</select>
 
-							<input style=" display: inline-block; width: 102px;" name="cantidad" type="number" min="1" max="1000" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Cantidad" required />
+							<input style=" display: inline-block; width: 102px;" name="cantidad" type="number" min="1" max="1000" onkeypress="validatenum();" autocomplete="off" maxlength="10" class="form-control" placeholder="Cantidad" required />
 
 							<select  style="display: inline-block; width: 152px;" name="medida" class="form-control salto">
 								<option value="Unidad">Unidad</option>
@@ -158,7 +158,7 @@
 							<input style=" display: inline-block; width: 150px;" name="precio" type="number" min="1" max="1000" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Precio" required />
 
 							<label>Fecha de caducidad</label>
-							<input name="fVence" type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" min="18" max="100" required />
+							<input name="fVence" type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" required />
 
 							<select name="proveedor" class="form-control salto">
 								<option value="Yupi">Yupi</option>
@@ -166,8 +166,6 @@
 							</select>
 
 							<input name="reparte" type="text" onkeypress="validatetext();" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Repartidor" required />
-							
- 
 
 							<!--<input type="submit" name="save" value="Save" class="btn btn-default addbtn"/>
 							<input type="reset" name="save" value="New" class="btn btn-default addbtn"/>-->
