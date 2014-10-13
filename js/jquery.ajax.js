@@ -52,6 +52,7 @@ $(document).on('ready', function(){
 				$('.msg-error').hide();
 			},
 			url: pet,
+			//dataType: "json",
 			type: met,
 			data: $('.modal-footer form').serialize(),
 			success: function(respuesta){
