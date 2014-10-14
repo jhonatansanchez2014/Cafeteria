@@ -147,7 +147,7 @@
 								<option value="Gaseosa">Gaseosa</option>
 							</select>
 
-							<input style=" display: inline-block; width: 102px;" name="cantidad" type="number" min="1" max="1000" onkeypress="validatenum();" autocomplete="off" maxlength="10" class="form-control" placeholder="Cantidad" required />
+							<input style=" display: inline-block; width: 102px;" name="cantidad" type="number" min="1" max="255" onkeypress="validatenum();" autocomplete="off" maxlength="10" class="form-control" placeholder="Cantidad" required />
 
 							<select  style="display: inline-block; width: 152px;" name="medida" class="form-control salto">
 								<option value="Unidad">Unidad</option>
@@ -155,7 +155,7 @@
 								<option value="Lb">Libras</option>
 							</select>
 							
-							<input style=" display: inline-block; width: 150px;" name="precio" type="number" min="1" max="1000" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Precio" required />
+							<input style=" display: inline-block; width: 150px;" name="precio" type="number" min="1" max="255" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Precio" required />
 
 							<label>Fecha de caducidad</label>
 							<input name="fVence" type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" required />
@@ -169,11 +169,12 @@
 
 							<!--<input type="submit" name="save" value="Save" class="btn btn-default addbtn"/>
 							<input type="reset" name="save" value="New" class="btn btn-default addbtn"/>-->
+							<input type="submit" name="save" value="Save product" class="btn btn-success"/>
+							<input type="reset" name="new" value="New" class="btn btn-warning"/>
 						</form>
 		  							
 					</div>
 	     			<div class="modal-footer">
-	     				<input type="submit" name="save" value="Save product" class="btn btn-success"/>
 	     				<button type="button" data-dismiss="modal" class="btn btn-danger">Close</button>
 	    			</div>
 				</div>
