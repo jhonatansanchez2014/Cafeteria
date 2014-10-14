@@ -134,6 +134,9 @@ nav a{
 .documento-delete{
     font-weight: bold;
 }
+.responsive{
+    overflow: hidden;
+}
 /*Preloader*/
 .loader-wrapper{
     position: relative;
