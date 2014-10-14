@@ -45,9 +45,6 @@
   			</div><!-- /.container-fluid -->
 		</nav>
 		<!--end nav menu bar-->
-		<!--Preloader and error-->
-		<span class="msg-error hidde"></span>
-		<span class="contt loader-wrapper loader hide"></span>
 		<!--Container-->
 		<section class="container">
 			<!--contenedor principal-->
@@ -155,9 +152,9 @@
 								<option value="Lb">Libras</option>
 							</select>
 							
-							<input style=" display: inline-block; width: 150px;" name="precio" type="number" min="1" max="255" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Precio" required />
+							<input style=" display: inline-block; width: 150px;" name="precio" type="text" maxlength="255" onkeypress="validatenum();" autocomplete="off" class="form-control salto" placeholder="Precio" required />
 
-							<label>Fecha de caducidad</label>
+							<label class="salto">Fecha de caducidad</label>
 							<input name="fVence" type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" required />
 
 							<select name="proveedor" class="form-control salto">
