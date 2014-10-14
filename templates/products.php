@@ -59,37 +59,61 @@
 	  					<button type="button" data-toggle="modal" href="#Ups" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Products</button></div>
 	  					<!--Responsive table-->
 	  					<div class="responsive">
-		  					<table class="table table-bordered table-hover">
+		  					<table class="table table-bordered table-hover table-striped">
 								<thead>
 								    <tr>
 								        <th>#</th>
+								        <th>Codigo</th>
 								        <th>Nombre</th>
-								        <th>Apellido</th>
-								        <th>Email</th>
-								        <th>Email</th>
+								        <th>Referencia</th>
+								        <th>Cantidad</th>
+								        <th>Unidad</th>
+								        <th>Precio</th>
+								        <th>F caducidad</th>
+								        <th>F ingreso</th>
+								        <th>Proveedor</th>
+								        <th>Repartidor</th>
 								    </tr>
 								</thead>
 								<tbody>
 								    <tr>
 								        <td>1</td>
-								        <td>Rocky</td>
-								        <td>Balboa</td>
-								        <td>rockybalboa@mail.com</td>
-								        <td>rockybalboa@mail.com</td>
+								        <td>11111</td>
+								        <td>dsdsds</td>
+								        <td>sdsdsd</td>
+								        <td>22</td>
+								        <td>1.000</td>
+								        <td>2014/10/14</td>
+								        <td>2014/10/14</td>
+								        <td>dsdsd</td>
+								        <td>sdsdsd</td>
+								        <td>sdsdsd</td>
 								    </tr>
 								    <tr>
-								        <td>2</td>
-								        <td>Peter</td>
-								        <td>Parker</td>
-								        <td>peterparker@mail.com</td>
-								        <td>peterparker@mail.com</td>
+								        <td>1</td>
+								        <td>11111</td>
+								        <td>dsdsds</td>
+								        <td>sdsdsd</td>
+								        <td>22</td>
+								        <td>1.000</td>
+								        <td>2014/10/14</td>
+								        <td>2014/10/14</td>
+								        <td>dsdsd</td>
+								        <td>sdsdsd</td>
+								        <td>sdsdsd</td>
 								    </tr>
 								    <tr>
-								        <td>3</td>
-								        <td>John</td>
-								        <td>Rambo</td>
-								        <td>peterparker@mail.com</td>
-								        <td>johnrambo@mail.com</td>
+								        <td>1</td>
+								        <td>11111</td>
+								        <td>dsdsds</td>
+								        <td>sdsdsd</td>
+								        <td>22</td>
+								        <td>1.000</td>
+								        <td>2014/10/14</td>
+								        <td>2014/10/14</td>
+								        <td>dsdsd</td>
+								        <td>sdsdsd</td>
+								        <td>sdsdsd</td>
 								    </tr>
 								</tbody>
 							</table>
