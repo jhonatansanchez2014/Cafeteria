@@ -172,7 +172,9 @@
 							<input type="submit" name="save" value="Save product" class="btn btn-success"/>
 							<input type="reset" name="new" value="New" class="btn btn-warning"/>
 						</form>
-		  							
+						<!--Preloader and error-->
+						<span class="msg-error hidde"></span>
+						<span class="contt loader-wrapper loader hide"></span>
 					</div>
 	     			<div class="modal-footer">
 	     				<button type="button" data-dismiss="modal" class="btn btn-danger">Close</button>

@@ -69,6 +69,36 @@ $(document).on('ready', function(){
 			timeout: 10000
 		});
 	});
+
+	//Para insertar nuevos productos
+	var pet=$('.modal-body form').attr('action');
+	var met=$('.modal-body form').attr('method');
+
+	$('.modal-body form').on('submit', function(e){
+		e.preventDefault();
+		$.ajax({
+			beforeSend: function(){
+				$('.loader-wrapper').removeClass("hide");
+				$('.msg-error').hide();
+			},
+			url: pet,
+			//dataType: "json",
+			type: met,
+			data: $('.modal-body form').serialize(),
+			success: function(respuesta){
+				$('.loader-wrapper').addClass("hide");
+				$('.msg-error').html(respuesta).show();
+			},
+			error: function(jqXHR, estado, error){
+				console.log(estado);
+				console.log(error);
+			},
+			complete: function(jqXHR, estado){
+				console.log(estado);
+			},
+			timeout: 10000
+		});
+	});
 //end
 });
 //Función que valida solo Números.
