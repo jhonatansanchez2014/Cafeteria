@@ -14,6 +14,10 @@
     $proveedor_pro=mysqli_real_escape_string($sqli, $_POST['proveedor']);//Recibo por POST la el proveedor
     $repartidor_pro=mysqli_real_escape_string($sqli, $_POST['reparte']);//Recibo por POST el repartidor
 
+    //fecha actual
+    date_default_timezone_set('UTC');
+    $fecha_ingreso_pro=date("d-m-Y");
+
     //Se hace la consulta SQL
     $sql="INSERT INTO productos VALUES('$documento', '$nombres', '$apellidos', '$edad', '$celular', '$estado');";
     //Se ejecuta el Query
