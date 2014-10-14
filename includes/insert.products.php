@@ -13,5 +13,8 @@
     $fecha_vence_pro=mysqli_real_escape_string($sqli, $_POST['fVence']);//Recibo por POST la fecha vencimiento.
     $proveedor_pro=mysqli_real_escape_string($sqli, $_POST['proveedor']);//Recibo por POST la el proveedor
     $repartidor_pro=mysqli_real_escape_string($sqli, $_POST['reparte']);//Recibo por POST el repartidor
-    
-    
+
+    //Se hace la consulta SQL
+    $sql="INSERT INTO productos VALUES('$documento', '$nombres', '$apellidos', '$edad', '$celular', '$estado');";
+    //Se ejecuta el Query
+    $result=$sqli->query($sql);
