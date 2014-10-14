@@ -53,12 +53,12 @@
 	  				<div class="panel-heading">
 	    				<h3 class="panel-title title-post">Gestionar Productos</h3>
 	  				</div>
-	  				<div class="panel-body add-date">
+	  				<div class="panel-body">
 	  					<!--Cuerpo donde se muestran los usuarios-->
 	  					<div class="center">
 	  					<button type="button" data-toggle="modal" href="#Ups" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Products</button></div>
 	  					<!--Responsive table-->
-	  					<div class="responsive">
+	  					<div class="table-responsive">
 		  					<table class="table table-bordered table-hover table-striped">
 								<thead>
 								    <tr>
