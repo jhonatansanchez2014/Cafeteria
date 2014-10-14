@@ -144,7 +144,7 @@
 								<option value="Gaseosa">Gaseosa</option>
 							</select>-->
 
-							<input style=" display: inline-block; width: 102px;" name="cantidad" type="number" min="1" max="255" onkeypress="validatenum();" autocomplete="off" maxlength="10" class="form-control" placeholder="Cantidad" required />
+							<input style=" display: inline-block; width: 150px;" name="cantidad" type="number" min="1" max="255" onkeypress="validatenum();" autocomplete="off" maxlength="10" class="form-control" placeholder="Cantidad" required />
 
 							<select  style="display: inline-block; width: 152px;" name="medida" class="form-control salto">
 								<option value="Unidad">Unidad</option>
