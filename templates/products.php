@@ -134,18 +134,18 @@
 					</div>
 					<div class="modal-body">
 						
-						<form action="../includes/insert.php" method="POST">
+						<form action="../includes/insert.products.php" method="POST">
 							<input name="codigo" type="text" onkeypress="validatenum();" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Codigo del producto" required />
 
 							<input name="producto" type="text" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Producto" required />
 							
-							<!--<input name="referencia" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Referencia del producto" required />-->
+							<input name="categoria" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Referencia del producto" required />
 							
-							<select style=" display: inline-block; width: 150px;" name="tipoP" class="form-control">
+							<!--<select style=" display: inline-block; width: 150px;" name="tipoP" class="form-control">
 								<option value="Mecato">Mecato</option>
 								<option value="Gaseosa">Gaseosa</option>
 								<option value="Gaseosa">Gaseosa</option>
-							</select>
+							</select>-->
 
 							<input style=" display: inline-block; width: 102px;" name="cantidad" type="number" min="1" max="255" onkeypress="validatenum();" autocomplete="off" maxlength="10" class="form-control" placeholder="Cantidad" required />
 
