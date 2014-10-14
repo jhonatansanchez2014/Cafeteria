@@ -19,6 +19,15 @@
     $fecha_ingreso_pro=date("d-m-Y");
 
     //Se hace la consulta SQL
-    $sql="INSERT INTO productos VALUES('$documento', '$nombres', '$apellidos', '$edad', '$celular', '$estado');";
+    $sql="INSERT INTO productos(cod_pro, nombre_pro, categoria_pro, cantidad_pro, cantidad_pro_uni, precio_pro, fecha_vence_pro, fecha_ingreso_pro, proveedor_pro, repartidor_pro) VALUES('$cod_pro', '$nombre_pro', '$categoria_pro', '$cantidad_pro', '$cantidad_pro_uni', '$precio_pro', '$fecha_vence_pro', '$fecha_ingreso_pro', '$proveedor_pro', '$repartidor_pro');";
     //Se ejecuta el Query
     $result=$sqli->query($sql);
+
+    //Si hay cambios o se afecto alguna taba de la base de datos
+    if($result){
+        echo "Datos ingresados!!! :)";
+    }
+    else{
+        echo "Ups al parecer sucedió un problema al intentar guardar el producto en la base de datos, verifica los datos. :(";
+    }
+?>
