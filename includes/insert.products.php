@@ -3,6 +3,8 @@
     session_start();
     include_once'connect.php';//Incluimos el archivo connect.php, el cual es el encargado de realizar la conexión con la bd
 
+    $error=false;
+
     //Asignación de variables
     $cod_pro=mysqli_real_escape_string($sqli, $_POST['codigo']);//Resivo por POST el codigo
     $nombre_pro=mysqli_real_escape_string($sqli, $_POST['producto']);//Recibo por POST el nombre
@@ -14,8 +16,8 @@
     $proveedor_pro=mysqli_real_escape_string($sqli, $_POST['proveedor']);//Recibo por POST la el proveedor
     $repartidor_pro=mysqli_real_escape_string($sqli, $_POST['reparte']);//Recibo por POST el repartidor
 
-    //fecha actual
-    date_default_timezone_set('UTC');
+    //Fecha actual
+    date_default_timezone_set('America/Bogota');
     $fecha_ingreso_pro = date("Y-m-d");
 
     //Se hace la consulta SQL
@@ -24,10 +26,33 @@
     $result=$sqli->query($sql);
 
     //Si hay cambios o se afecto alguna taba de la base de datos
-    if($result){
-        echo "¡Hurra datos ingresados! :)";
+    if($result==true){
+        $mensaje="¡Hurra datos ingresados! :)";
+        $error=false;
+        $contenido='
+                    <tr>
+                        <td>'.$cod_pro.'</td>
+                        <td>'.$nombre_pro.'</td>
+                        <td>'.$categoria_pro.'</td>
+                        <td>'.$cantidad_pro.'</td>
+                        <td>'.$cantidad_pro_uni.'</td>
+                        <td>'.$precio_pro.'</td>
+                        <td>'.$fecha_vence_pro.'</td>
+                        <td>'.$fecha_ingreso_pro.'</td>
+                        <td>'.$proveedor_pro.'</td>
+                        <td>'.$repartidor_pro.'</td>
+                    <tr>
+        ';
     }
     else{
-        echo "Ups al parecer sucedió un problema al intentar guardar el producto en la base de datos, verifica los datos. :(";
+        $mensaje="Ups al parecer sucedió un problema al intentar guardar el producto en la base de datos, verifica los datos. :(";
+        $error=true;
     }
+
+    // Armamos array para convertir a JSON
+    $Json=array("mensaje"=>$mensaje,
+                "error_date"=>$error,
+                "contenido"=>$contenido);
+    //Envio resultados en formato JSON
+    echo json_encode($Json);
 ?>

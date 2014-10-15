@@ -82,12 +82,17 @@ $(document).on('ready', function(){
 				$('.msg-error').hide();
 			},
 			url: pet,
-			//dataType: "json",
 			type: met,
+			dataType: "json",
 			data: $('.modal-body form').serialize(),
-			success: function(respuesta){
+			success: function(response){
 				$('.loader-wrapper').addClass("hide");
-				$('.msg-error').html(respuesta).show();
+				if(response.error_date==false){
+					$('.modal-body form')[0].reset();
+				}
+				$('.msg-error').html(response.mensaje).show();
+				$('.content-table').append(response.contenido);
+				alert(response.contenido);
 			},
 			error: function(jqXHR, estado, error){
 				console.log(estado);

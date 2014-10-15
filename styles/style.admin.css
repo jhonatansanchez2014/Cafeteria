@@ -134,6 +134,15 @@ nav a{
 .documento-delete{
     font-weight: bold;
 }
+.data-not{
+    text-align: center;
+    font-size: 16px;
+    color: red;
+}
+.data-not img{
+    display: inline-block;
+}
+
 /*Preloader*/
 .loader-wrapper{
     position: relative;

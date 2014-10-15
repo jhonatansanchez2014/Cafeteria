@@ -138,9 +138,6 @@
 			});
 		</script>
 
-
-
-
 		<!--modal delete-->
 		<div id="Ups" class="modal fade">
 			<div class="modal-dialog">   
