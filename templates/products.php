@@ -70,7 +70,21 @@
 	  				<div class="panel-body">
 	  					<!--Cuerpo donde se muestran los usuarios-->
 	  					<div class="center">
-	  					<button type="button" data-toggle="modal" href="#Ups" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Products</button></div>
+	  						<button type="button" data-toggle="modal" href="#Ups" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Products</button>
+	  						
+	  					</div>
+	  					<div class="filtre">
+	  						<form action="" method="POST">
+	  							<div class="input-group date">
+  									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+  									<input type="date" class="form-control" placeholder="Username">
+								</div>
+								<div class="input-group salto date">
+  									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+  									<input type="date" class="form-control" placeholder="Username">
+								</div>
+	  						</form>
+	  					</div>
 	  					<!--Responsive table-->
 	  					<div class="table-responsive">
 		  					<table class="table table-bordered table-hover table-striped">

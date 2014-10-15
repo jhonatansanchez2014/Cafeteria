@@ -14,7 +14,7 @@
                     <td>'.$list['categoria_pro'].'</td>
                     <td>'.$list['cantidad_pro'].'</td>
                     <td>'.$list['cantidad_pro_uni'].'</td>
-                    <td>'.$list['precio_pro'].'</td>
+                    <td>'.'$ '.$list['precio_pro'].'</td>
                     <td>'.$list['fecha_vence_pro'].'</td>
                     <td>'.$list['fecha_ingreso_pro'].'</td>
                     <td>'.$list['proveedor_pro'].'</td>

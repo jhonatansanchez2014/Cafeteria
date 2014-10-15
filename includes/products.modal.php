@@ -29,7 +29,7 @@
 								<option value="Lb">Libras</option>
 							</select>
 							
-							<input style=" display: inline-block; width: 200px;" name="precio" type="text" maxlength="255" onkeypress="validatenum();" autocomplete="off" class="form-control salto" placeholder="Precio" required />
+							<input style=" display: inline-block; width: 200px;" name="precio" type="text" onkeyup="decimales(this,this.value.charAt(this.value.length-1))" autocomplete="off" class="form-control salto" placeholder="Precio por unidad" required />
 
 							<label class="salto">Fecha de caducidad</label>
 							<input name="fVence" type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" required />
