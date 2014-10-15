@@ -75,13 +75,13 @@
 	  					</div>
 	  					<div class="filtre">
 	  						<form action="" method="POST">
-	  							<div class="input-group date">
-  									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-  									<input type="date" class="form-control" placeholder="Username">
+	  							<div class="date input-group">
+  									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span> Fecha final</span>
+  									<input type="date" class="form-control">
 								</div>
-								<div class="input-group salto date">
-  									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-  									<input type="date" class="form-control" placeholder="Username">
+								<div class="date input-group salto">
+  									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span> Fecha inicio</span>
+  									<input type="date" class="form-control">
 								</div>
 	  						</form>
 	  					</div>
