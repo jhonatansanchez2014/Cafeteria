@@ -87,7 +87,7 @@
 	  					</div>
 	  					<!--Responsive table-->
 	  					<div class="table-responsive">
-		  					<table class="table table-bordered table-hover table-striped">
+		  					<table class="table table-bordered table-striped table-hover table-condensed">
 								<thead>
 								    <tr>
 								        <th>Codigo</th>
@@ -107,6 +107,10 @@
 								    <?php echo $consulta ?>
 								</tbody>
 							</table>
+							<ol class="breadcrumb">
+  								<li class="active">Valor total ingresado</li>
+  								<li class="active">$ 1.535.250</li>
+							</ol>
 						</div>
 						<!--Responsive-->
 					</div>
