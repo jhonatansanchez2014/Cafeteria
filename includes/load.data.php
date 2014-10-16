@@ -60,7 +60,7 @@
     //$result=$sqli->query($sql);
     if($sql->num_rows!=0){
         while($list=$sql->fetch_assoc()){
-                $contenido .= '
+            $contenido.='
                 <tr>
                     <td>'.$list['cod_pro'].'</td>
                     <td>'.$list['nombre_pro'].'</td>
@@ -73,8 +73,15 @@
                     <td>'.$list['proveedor_pro'].'</td>
                     <td>'.$list['repartidor_pro'].'</td>
                 <tr>
-                ';
-            }
+            ';
+        }
+    }
+    else{
+        $contenido='
+                <tr class="data-not">
+                    <td colspan="10">¡Ups! aún no existen registros con el nombre de  <strong>'.$search.'</strong> <img src="../images/triste.gif"></td>
+                </tr>
+        ';
     }
 
     // Armamos array para convertir a JSON

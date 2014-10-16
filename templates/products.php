@@ -75,7 +75,7 @@
 	  						
 	  					</div>
 	  					<div class="filtre">
-	  						<form action="" method="POST">
+	  						<form action="return false" onsubmit="return false" method="POST">
 	  							<div class="date input-group">
   									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span> Fecha final</span>
   									<input type="date" class="form-control">
@@ -88,7 +88,7 @@
   									<span class="input-group-btn">
         								<button onclick="busca(document.getElementById('busqueda').value);" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span> Search</button>
       								</span>
-  									<input type="text" id="busqueda" name="search" class="form-control" placeholder="Search of product">
+  									<input type="text" id="busqueda" name="search" class="form-control" placeholder="Search product">
 								</div>
 	  						</form>
 	  					</div>

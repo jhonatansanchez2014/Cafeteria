@@ -109,7 +109,7 @@ $(document).on('ready', function(){
 });
 //search data
 function busca(value){
-	alert(value);
+	//alert(value);
 	$.ajax({
 		url: "../includes/load.data.php",
 		type: "POST",
