@@ -36,19 +36,21 @@
 
     function valorTotal($linkbd){
         $total=0;
+        $aux=0;
         $sql=$linkbd->query("SELECT precio_pro FROM productos");
         if($sql->num_rows!=0){
             // convertimos el objeto
             while($list=$sql->fetch_assoc()){
-                $aux=floatval($list['precio_pro']);
-                $total=$aux+$total;
+                
+                $total=(float)$aux+$list['precio_pro'];
+                $aux=(float)$total;
             }
         }
         else{
             $total = 0;
         }
         $cad='$ '.$total;
-        return $cad;
+        return $aux;
     }
 
     if(isset($_POST['dd'])){
