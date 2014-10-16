@@ -41,16 +41,15 @@
         if($sql->num_rows!=0){
             // convertimos el objeto
             while($list=$sql->fetch_assoc()){
-                
-                $total=(float)$aux+$list['precio_pro'];
-                $aux=(float)$total;
+                $aux=str_replace('.','',$list['precio_pro']);
+                $total=$aux+$total;
             }
         }
         else{
             $total = 0;
         }
-        $cad='$ '.$total;
-        return $aux;
+        $cad='$ '.number_format($total);
+        return $cad;
     }
 
     if(isset($_POST['dd'])){
