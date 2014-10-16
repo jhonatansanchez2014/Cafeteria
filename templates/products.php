@@ -85,19 +85,11 @@
   									<input type="date" class="form-control">
 								</div>
 								<div class="date-search input-group salto">
-  									<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-  									<input type="text" name="search" class="form-control" onkeyup="busca(value);" placeholder="Search by product, supplier and dealer">
+  									<span class="input-group-btn">
+        								<button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span> Search</button>
+      								</span>
+  									<input type="text" name="search" class="form-control" onkeyup="busca(value);" placeholder="Search of product">
 								</div>
-								<div class="row date-search salto">
-  									<div class="col-lg-6">
-    									<div class="input-group">
-      										<span class="input-group-btn">
-        										<button class="btn btn-default" type="button">Go!</button>
-      										</span>
-      										<input type="text" class="form-control">
-    									</div><!-- /input-group -->
-  									</div><!-- /.col-lg-6 -->
-								</div><!-- /.row -->
 	  						</form>
 	  					</div>
 	  					<!--Responsive table-->
