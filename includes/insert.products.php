@@ -27,7 +27,7 @@
 
     //Si hay cambios o se afecto alguna taba de la base de datos
     if($result==true){
-        $mensaje="¡Hurra datos ingresados! :)";
+        $mensaje="¡Hurra datos ingresados de forma correcta! <img src='../images/sonrisa.jpg'>";
         $error=false;
         $contenido='
                     <tr>
@@ -36,7 +36,7 @@
                         <td>'.$categoria_pro.'</td>
                         <td>'.$cantidad_pro.'</td>
                         <td>'.$cantidad_pro_uni.'</td>
-                        <td>'.$precio_pro.'</td>
+                        <td>'.'$ '.$precio_pro.'</td>
                         <td>'.$fecha_vence_pro.'</td>
                         <td>'.$fecha_ingreso_pro.'</td>
                         <td>'.$proveedor_pro.'</td>
@@ -48,11 +48,13 @@
         $mensaje="Ups al parecer sucedió un problema al intentar guardar el producto en la base de datos, verifica los datos. :(";
         $error=true;
     }
-
+    include_once('load.data.php');
+    $valor_total=valorTotal($sqli);
     // Armamos array para convertir a JSON
     $Json=array("mensaje"=>$mensaje,
                 "error_date"=>$error,
-                "contenido"=>$contenido);
+                "contenido"=>$contenido,
+                "total"=>$valor_total);
     //Envio resultados en formato JSON
     echo json_encode($Json);
 ?>

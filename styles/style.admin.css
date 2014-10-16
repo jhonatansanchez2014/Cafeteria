@@ -120,6 +120,11 @@ nav a{
     margin-left: 5px;
     width: 150px;
 }
+.date-search{
+    float: right;
+    margin-left: 5px;
+    width: 320px;
+}
 .n-label{
     color: #444;
     font-family: 'Lato', Roboto;

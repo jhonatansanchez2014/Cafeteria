@@ -91,8 +91,9 @@ $(document).on('ready', function(){
 					$('.modal-body form')[0].reset();
 				}
 				$('.msg-error').html(response.mensaje).show();
+				$('.valor').html(response.total);
 				$('.content-table').append(response.contenido);
-				alert(response.contenido);
+				//alert(response.contenido);
 			},
 			error: function(jqXHR, estado, error){
 				console.log(estado);
@@ -106,6 +107,29 @@ $(document).on('ready', function(){
 	});
 //end
 });
+//search data
+function busca(value){
+	//alert(value);
+	$.ajax({
+		url: "../includes/load.data.php",
+		type: "POST",
+		dataType: "json",
+		data: "dd="+value,
+		success: function(response){
+			alert(response.contenido);
+			$('.content-table').html(response.contenido);
+		},
+		error: function(jqXHR, estado, error){
+				console.log(estado);
+				console.log(error);
+			},
+			complete: function(jqXHR, estado){
+				console.log(estado);
+			},
+			timeout: 10000
+	});
+}
+
 //Función que valida solo Números.
 function validatenum(){
 	if((event.keyCode < 48) || (event.keyCode > 57)) 

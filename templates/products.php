@@ -7,6 +7,7 @@
 
 	include_once('../includes/load.data.php');
 	$consulta=consulProducts($sqli);
+	$valor_total=valorTotal($sqli);
 
 	if($sqli->connect_errno){//Si la conexión con la bd falla
 	    //echo "Fallo al conectar a MySQL: (".$sqli->connect_errno.") ".$sqli->connect_error;
@@ -79,9 +80,13 @@
   									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span> Fecha final</span>
   									<input type="date" class="form-control">
 								</div>
-								<div class="date input-group salto">
+								<div class="date input-group">
   									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span> Fecha inicio</span>
   									<input type="date" class="form-control">
+								</div>
+								<div class="date-search input-group salto">
+  									<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+  									<input type="text" name="search" class="form-control" onkeyup="busca(value);" placeholder="Search by product, supplier and dealer">
 								</div>
 	  						</form>
 	  					</div>
@@ -109,7 +114,7 @@
 							</table>
 							<ol class="breadcrumb">
   								<li class="active">Valor total ingresado</li>
-  								<li class="active">$ 1.535.250</li>
+  								<li class="valor active"><?php echo $valor_total ?></li>
 							</ol>
 						</div>
 						<!--Responsive-->
