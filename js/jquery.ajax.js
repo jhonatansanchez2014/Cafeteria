@@ -109,14 +109,14 @@ $(document).on('ready', function(){
 });
 //search data
 function busca(value){
-	//alert(value);
+	alert(value);
 	$.ajax({
 		url: "../includes/load.data.php",
 		type: "POST",
 		dataType: "json",
 		data: "dd="+value,
 		success: function(response){
-			alert(response.contenido);
+			//alert(response.contenido);
 			$('.content-table').html(response.contenido);
 		},
 		error: function(jqXHR, estado, error){

@@ -55,7 +55,7 @@
         $contenido="";
         $search=mysqli_real_escape_string($sqli, $_POST['dd']);//Resivo por POST la busqueda a realizar
     //--select * from profesor where nombres like '%ria%'
-    $sql=$sqli->query("SELECT * FROM productos WHERE nombre_pro LIKE '%.$search.%'");
+    $sql=$sqli->query("SELECT * FROM productos WHERE nombre_pro LIKE '%".$search."%'");
     //Se ejecuta el Query
     //$result=$sqli->query($sql);
     if($sql->num_rows!=0){
@@ -81,6 +81,6 @@
     $Json=array("contenido"=>$contenido);
     //Envio resultados en formato JSON
     echo json_encode($Json);
-    echo $search;
+    //echo $search;
     }
 ?>

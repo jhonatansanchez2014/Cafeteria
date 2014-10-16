@@ -86,9 +86,9 @@
 								</div>
 								<div class="date-search input-group salto">
   									<span class="input-group-btn">
-        								<button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span> Search</button>
+        								<button onclick="busca(document.getElementById('busqueda').value);" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span> Search</button>
       								</span>
-  									<input type="text" name="search" class="form-control" onkeyup="busca(value);" placeholder="Search of product">
+  									<input type="text" id="busqueda" name="search" class="form-control" placeholder="Search of product">
 								</div>
 	  						</form>
 	  					</div>
