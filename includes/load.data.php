@@ -40,8 +40,8 @@
         if($sql->num_rows!=0){
             // convertimos el objeto
             while($list=$sql->fetch_assoc()){
-                $aux=$list['precio_pro'];
-                $total = $aux+$total;
+                $aux=floatval($list['precio_pro']);
+                $total=$aux+$total;
             }
         }
         else{

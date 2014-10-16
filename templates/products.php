@@ -90,6 +90,7 @@
       								</span>
   									<input type="text" id="busqueda" name="search" class="form-control" placeholder="Search product">
 								</div>
+								<button onclick=";" class="btn btn-warning" type="button"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
 	  						</form>
 	  					</div>
 	  					<!--Responsive table-->
