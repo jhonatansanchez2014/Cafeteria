@@ -75,23 +75,27 @@
 	  						
 	  					</div>
 	  					<div class="filtre">
-	  						<form action="return false" onsubmit="return false" method="POST">
+	  						<form action="../includes/load.data.php" method="POST">
 	  							<div class="date input-group">
   									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span> Fecha final</span>
-  									<input type="date" class="form-control">
+  									<input type="date" name="ffin" class="form-control" required>
+  									<span class="input-group-btn">
+        								<input class="btn btn-primary" value="Go!" type="submit"/>
+      								</span>
 								</div>
 								<div class="date input-group">
   									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span> Fecha inicio</span>
-  									<input type="date" class="form-control">
+  									<input type="date" name="fini" class="form-control" required>
 								</div>
-								<div class="date-search input-group salto">
+								
+	  						</form>
+	  						<div class="date-search input-group salto">
   									<span class="input-group-btn">
         								<button onclick="busca(document.getElementById('busqueda').value);" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span> Search</button>
       								</span>
   									<input type="text" id="busqueda" name="search" class="form-control" placeholder="Search product">
 								</div>
-								<button onclick=";" class="btn btn-warning" type="button"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-	  						</form>
+								<button onclick="busca('');" class="btn btn-warning" type="button"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
 	  					</div>
 	  					<!--Responsive table-->
 	  					<div class="table-responsive">
@@ -143,6 +147,33 @@
 				var documento=$(this).data('id');
 				$(".modal-footer #dc").val(documento);
 				$(".documento-delete").html(documento);
+			});
+			$(document).on('ready', function(){
+				//search date
+				var pet=$('.filtre form').attr('action');
+				var met=$('.filtre form').attr('method');
+
+				$('.filtre form').on('submit', function(e){
+					e.preventDefault();
+					$.ajax({
+						url: pet,
+						type: met,
+						dataType: "json",
+						data: $('.filtre form').serialize(),
+						success: function(res){
+							//alert(response.contenido);
+							$('.content-table').html(res.cont);
+						},
+						error: function(jqXHR, estado, error){
+							console.log(estado);
+							console.log(error);
+						},
+						complete: function(jqXHR, estado){
+							console.log(estado);
+						},
+						timeout: 10000
+					});
+				});
 			});
 		</script>
 	</body>

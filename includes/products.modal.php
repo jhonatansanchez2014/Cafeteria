@@ -34,10 +34,11 @@
 							<label class="salto">Fecha de caducidad</label>
 							<input name="fVence" type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" required />
 
-							<select name="proveedor" class="form-control salto">
+							<!--<select name="proveedor" class="form-control salto">
 								<option value="Yupi">Yupi</option>
 								<option value="Colanta">Suspendido</option>
-							</select>
+							</select>-->
+							<input name="proveedor" type="text" onkeypress="validatetext();" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Proveedor" required />
 
 							<input name="reparte" type="text" onkeypress="validatetext();" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Repartidor" required />
 

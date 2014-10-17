@@ -105,6 +105,8 @@ $(document).on('ready', function(){
 			timeout: 10000
 		});
 	});
+
+	
 //end
 });
 //search data
@@ -129,7 +131,6 @@ function busca(value){
 			timeout: 10000
 	});
 }
-
 //Función que valida solo Números.
 function validatenum(){
 	if((event.keyCode < 48) || (event.keyCode > 57)) 
