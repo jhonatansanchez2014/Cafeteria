@@ -61,6 +61,29 @@
 	  					<div class="center">
 	  						<button type="button" data-toggle="modal" href="#Ups" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Agregar proveedor</button>
 	  					</div>
+	  					<!--Responsive table-->
+	  					<div class="table-responsive">
+		  					<table class="table table-bordered table-striped table-hover table-condensed">
+								<thead>
+								    <tr>
+								        <th>Nit</th>
+								        <th>Empresa</th>
+								        <th>Telefono</th>
+								        <th>Dirección</th>
+								        <th>Representante</th>
+								    </tr>
+								</thead>
+								<tbody class="content-table">
+								    <!--content of table
+								    <?php //echo $consulta ?>-->
+								</tbody>
+							</table>
+							<ol class="breadcrumb">
+  								<li class="active">Valor total ingresado</li>
+  								<li class="valor active"><!--<?php //echo $valor_total ?>--></li>
+							</ol>
+						</div>
+						<!--Responsive-->
 					</div>
 				</div>
 			</article>
