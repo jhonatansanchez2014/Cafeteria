@@ -9,29 +9,16 @@
 			<div class="modal-body">
 				
 				<form action="../includes/insert.products.php" method="POST">
-					<input name="codigo" type="text" onkeypress="validatenum();" autocomplete="off" maxlength="15" class="form-control salto" placeholder="Codigo del producto" required />
+					<input name="nit" type="text" onkeypress="validatenum();" autocomplete="off" maxlength="15" class="form-control salto" placeholder="Nit de la empresa" required />
+					<input name="empresa" type="text" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Nombre de la empresa" required />
+					<input name="telefono" type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Telefono" required />
+					<input name="direccion" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Dirección" required />
+					<input name="email" type="email" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Email" required />
 
-					<input name="producto" type="text" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Producto" required />
+					<input name="repn" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Nombres del representante" required />
+					<input name="repa" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Apellidos del representante" required />
+					<input name="telefonor" type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Telefono del representante" required />
 					
-					<input name="categoria" type="text" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Referencia del producto" required />
-					
-					<input style=" display: inline-block; width: 158px;" name="cantidad" type="number" min="1" max="255" onkeypress="validatenum();" autocomplete="off" maxlength="10" class="form-control" placeholder="Cantidad" required />
-
-					<select  style="display: inline-block; width: 200px;" name="medida" class="form-control salto">
-						<option value="Unidad">Unidad</option>
-						<option value="Kg">Kilogramos</option>
-						<option value="Lb">Libras</option>
-					</select>
-					
-					<input style=" display: inline-block; width: 200px;" name="precio" type="text" onkeyup="decimales(this,this.value.charAt(this.value.length-1))" autocomplete="off" class="form-control salto" placeholder="Precio total" required />
-
-					<label class="salto">Fecha de caducidad</label>
-					<input name="fVence" type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" required />
-
-					<input name="proveedor" type="text" onkeypress="validatetext();" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Proveedor" required />
-
-					<input name="reparte" type="text" onkeypress="validatetext();" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Repartidor" required />
-
 					<!--<input type="submit" name="save" value="Save" class="btn btn-default addbtn"/>
 					<input type="reset" name="save" value="New" class="btn btn-default addbtn"/>-->
 					<input type="submit" name="save" value="Guardar" class="btn btn-success"/>

@@ -59,7 +59,7 @@
 	  				<div class="panel-body">
 	  					<!--contenido del cuerpo de la web-->
 	  					<div class="center">
-	  						<button type="button" data-toggle="modal" href="#ps" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Agregar proveedor</button>
+	  						<button type="button" data-toggle="modal" href="#pr" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Agregar proveedor</button>
 	  					</div>
 	  					<!--Responsive table-->
 	  					<div class="table-responsive">
@@ -92,7 +92,7 @@
 		<!--end container-->
 		<?php
 			include_once'../includes/about.php';
-			include_once'../incudes/pr.modal.php';
+			include_once'../includes/pr.modal.php';
 		?>
 		<footer id="footer">
         	<div class="container">
