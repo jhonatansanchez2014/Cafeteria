@@ -59,7 +59,7 @@
 	  				<div class="panel-body">
 	  					<!--contenido del cuerpo de la web-->
 	  					<div class="center">
-	  						<button type="button" data-toggle="modal" href="#Ups" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Agregar proveedor</button>
+	  						<button type="button" data-toggle="modal" href="#ps" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Agregar proveedor</button>
 	  					</div>
 	  					<!--Responsive table-->
 	  					<div class="table-responsive">
@@ -90,8 +90,10 @@
 			<!--contenedor principal-->
 		</section>
 		<!--end container-->
-
-		<?php include_once'../includes/about.php'; ?>
+		<?php
+			include_once'../includes/about.php';
+			include_once'../incudes/pr.modal.php';
+		?>
 		<footer id="footer">
         	<div class="container">
             	<p class="text-muted credit">Cafetería &copy; 2014 | <a href="#">Ayuda</a> | <a data-toggle="modal" href="#example">Acerca de</a></p>
