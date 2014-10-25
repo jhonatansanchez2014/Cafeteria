@@ -37,7 +37,7 @@
       				<ul class="nav navbar-nav">
         				<li><a href="./">Home</a></li>
         				<li><a href="./products.php">Gestionar Productos</a></li>
-        				<li><a href="#">Gestionar Proveedores</a></li>
+        				<li><a href="./users.php">Gestionar Usuarios</a></li>
         				<li><a href="#">Cambiar contraseña</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
@@ -54,74 +54,17 @@
 			<article class="post-pages margin-post">
 				<div class="panel panel-default">
 	  				<div class="panel-heading">
-	    				<h3 class="panel-title title-post">Gestionar Usuarios</h3>
+	    				<h3 class="panel-title title-post">Gestionar Proveedores</h3>
 	  				</div>
-	  				<div class="panel-body add-date">
-	  					<!--Cuerpo donde se muestran los usuarios-->
-	  					<section class="adduser">
-		  					<article class="post-user margin-post">
-								<div class="panel panel-default">
-		  							<div class="panel-heading">
-		    							<a class="title-post"><h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Agregar usuario</h3></a>
-		  							</div>
-		  							<div class="panel-body">
-		  								<form action="../includes/insert.php" method="POST">
-		  									<input name="nombres" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control" placeholder="Nombres" required />
-		  									<br />
-		  									<input name="apellidos" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control" placeholder="Apellidos" required />
-		  									<br />
-		  									<input name="documento" type="text" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Documento" required />
-		  									<br />
-		  									<input name="edad" type="number" autocomplete="off" class="form-control" placeholder="Edad" min="18" max="100" required />
-		  									<br />
-		  									<select name="estado" class="form-control">
-		  										<option value="Activo">Activo</option>
-												<option value="Suspendido">Suspendido</option>
-		  									</select>
-		  									<br />
-		  									<input name="celular" type="tel" onkeypress="validatenum();" maxlength="11" autocomplete="off" class="form-control" placeholder="Número de celular" required />
-		  									<br />
-		  									<input name="user" type="text" maxlength="10" autocomplete="off" class="form-control" placeholder="Nombre de usuario" required />
-
-		  									<input type="submit" name="save" value="Guardar" class="btn btn-default addbtn"/>
-		  									<input type="reset" name="save" value="Nuevo" class="btn btn-default addbtn"/>
-		  								</form>
-		  							</div>
-								</div>
-							</article>
-						</section>
-						<section class="add-new">
-							<!--Acá se hace toda la brujeria con el metodo Ajax de JQuery xD Buujajaja, no se ve en el código fuente xD-->
-						</section>
-						<!--End cuerpo donde se muestran los usuarios-->
+	  				<div class="panel-body">
+	  					
 					</div>
 				</div>
 			</article>
 			<!--contenedor principal-->
 		</section>
 		<!--end container-->
-		<!--modal delete-->
-		<div id="delete-modal" class="modal fade">
-			<div class="modal-dialog">   
-				<div class="modal-content"> 
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h3>Eliminar usuario</h3>
-					</div>
-					<div class="modal-body">
-						Vas a eliminar el usuario con número de identificación <span class="documento-delete" ></span>, esto se hará de forma permanente en la based e datos.
-					</div>
-	     			<div class="modal-footer">
-	     				<form action="../includes/delete.user.php" method="POST" name="formDelete">
-	     					<input name="documento" id="dc" type="hidden" value="">
-	     					<input type="submit" name="save" value="Eliminar" class="btn btn-danger addbtn"/>
-	     					<button type="button" data-dismiss="modal" class="btn btn-success">Cancelar</button>
-	     				</form>
-	    			</div>
-				</div>
-			</div>
-		</div>
-		<!--modal delete-->	
+
 		<?php include_once'../includes/about.php'; ?>
 		<footer id="footer">
         	<div class="container">
@@ -136,57 +79,6 @@
 				$(".modal-footer #dc").val(documento);
 				$(".documento-delete").html(documento);
 			});
-
-			$(document).on('ready', function(){
-				//Eliminar un usuario
-				var pet=$('.modal-footer form').attr('action');
-				var met=$('.modal-footer form').attr('method');
-
-				$('.modal-footer form').on('submit', function(e){
-					e.preventDefault();
-					$.ajax({
-						beforeSend: function(){
-							$('.loader-wrapper').removeClass("hide");
-							$('.msg-error').hide();
-						},
-						url: pet,
-						//dataType: "json",
-						type: met,
-						data: $('.modal-footer form').serialize(),
-						success: function(respuesta){
-							$('.loader-wrapper').addClass("hide");
-							$('.add-new').html(respuesta);
-						},
-						error: function(jqXHR, estado, error){
-							console.log(estado);
-							console.log(error);
-						},
-						complete: function(jqXHR, estado){
-							console.log(estado);
-						},
-						timeout: 10000
-					});
-				});
-			});
 		</script>
-
-		<!--modal delete-->
-		<div id="Ups" class="modal fade">
-			<div class="modal-dialog">   
-				<div class="modal-content"> 
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h3>Error</h3>
-					</div>
-					<div class="modal-body">
-						Ups, esta perte del modulo aún no está funcionando. :p xD
-					</div>
-	     			<div class="modal-footer">
-	     				<button type="button" data-dismiss="modal" class="btn btn-success">Cerrar</button>
-	    			</div>
-				</div>
-			</div>
-		</div>
-		<!--modal delete-->	
 	</body>
 </html>
