@@ -41,7 +41,7 @@ $(document).on('ready', function(){
 	});
 
 	//Eliminar un usuario
-	var pet=$('.modal-footer form').attr('action');
+	/*var pet=$('.modal-footer form').attr('action');
 	var met=$('.modal-footer form').attr('method');
 
 	$('.modal-footer form').on('submit', function(e){
@@ -68,7 +68,7 @@ $(document).on('ready', function(){
 			},
 			timeout: 10000
 		});
-	});
+	});*/
 
 	//Para insertar nuevos productos
 	var pet=$('.modal-body form').attr('action');

@@ -85,14 +85,14 @@
 			<article class="post margin-post">
 				<div class="panel panel-default">
 	  				<div class="panel-heading">
-	    				<a class="title-post" href=""><h3 class="panel-title">Gestionar Proveedores</h3></a>
+	    				<a class="title-post" href="./pr.php"><h3 class="panel-title">Gestionar Proveedores</h3></a>
 	  				</div>
 	  				<div class="panel-body">
 	    				Gestionar Proveedores. Puedes ingresar, actualizar y eliminar proveedores, 
 	    				ten en cuenta que si eliminas un proveedor, este se borrara de forma permanente de la base de datos.
 	    				<ul class="nav nav-pills nav-stacked">
   							<li class="active">
-    							<a href="#">
+    							<a href="./pr.php">
       								<span class="badge pull-right">20</span>Proveedores registrados
     							</a>
   							</li>

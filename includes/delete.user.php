@@ -35,7 +35,7 @@
                 <article class="post-user margin-post">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a class="title-post" href=""><h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> '.$fila->nombres.' '.$fila->apellidos.'</h3></a>
+                            <a class="title-post"><h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> '.$fila->nombres.' '.$fila->apellidos.'</h3></a>
                         </div>
                         <div class="panel-body">
                             <form>
@@ -53,8 +53,8 @@
                                 <span class="password">phvillegas</span>
                                 <label class="n-label">Password</label>
                                 <span class="password">*******</span>
-                                <a class="btn btn-default" href="">Update <span class="glyphicon glyphicon-refresh"></span></a>
-                                <a data-toggle="modal" data-id='.$fila->documento.' class="delete-user btn btn-default" href="#delete-modal">Delete <span class="glyphicon glyphicon-ban-circle"></span></a>
+                                <a class="btn btn-default" href="">Actualizar <span class="glyphicon glyphicon-refresh"></span></a>
+                                <a data-toggle="modal" data-id='.$fila->documento.' class="delete-user btn btn-default" href="#delete-modal">Elimina <span class="glyphicon glyphicon-ban-circle"></span></a>
                             </form>
                         </div>
                     </div>

@@ -51,8 +51,8 @@
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
         				<li><a href="./">Home</a></li>
-        				<li><a href="./products.php">Gestionar Productos</a></li>
-        				<li><a href="#">Gestionar Proveedores</a></li>
+        				<li><a href="./users.php">Gestionar usuarios</a></li>
+        				<li><a href="./pr.php">Gestionar Proveedores</a></li>
         				<li><a href="#">Cambiar contraseña</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
@@ -71,7 +71,7 @@
 	  				<div class="panel-body">
 	  					<!--Cuerpo donde se muestran los usuarios-->
 	  					<div class="center">
-	  						<button type="button" data-toggle="modal" href="#Ups" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Products</button>
+	  						<button type="button" data-toggle="modal" href="#Ups" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Agregar producto</button>
 	  						
 	  					</div>
 	  					<div class="filtre">
@@ -80,7 +80,7 @@
   									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span> Fecha final</span>
   									<input type="date" name="ffin" class="form-control" required>
   									<span class="input-group-btn">
-        								<input class="btn btn-primary" value="Go!" type="submit"/>
+        								<input class="btn btn-primary" value="Ir" type="submit"/>
       								</span>
 								</div>
 								<div class="date input-group">
@@ -91,11 +91,11 @@
 	  						</form>
 	  						<div class="date-search input-group salto">
   									<span class="input-group-btn">
-        								<button onclick="busca(document.getElementById('busqueda').value);" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span> Search</button>
+        								<button onclick="busca(document.getElementById('busqueda').value);" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span> Buscar</button>
       								</span>
-  									<input type="text" id="busqueda" name="search" class="form-control" placeholder="Search product">
+  									<input type="text" id="busqueda" name="search" class="form-control" placeholder="Buscar producto">
 								</div>
-								<button onclick="busca('');" class="btn btn-warning" type="button"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+								<button onclick="busca('');" class="btn btn-warning" type="button"><span class="glyphicon glyphicon-refresh"></span> Actualizar</button>
 	  					</div>
 	  					<!--Responsive table-->
 	  					<div class="table-responsive">
