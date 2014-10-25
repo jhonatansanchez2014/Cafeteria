@@ -57,7 +57,10 @@
 	    				<h3 class="panel-title title-post">Gestionar Proveedores</h3>
 	  				</div>
 	  				<div class="panel-body">
-	  					
+	  					<!--contenido del cuerpo de la web-->
+	  					<div class="center">
+	  						<button type="button" data-toggle="modal" href="#Ups" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Agregar proveedor</button>
+	  					</div>
 					</div>
 				</div>
 			</article>
