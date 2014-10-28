@@ -70,7 +70,9 @@
 								        <th>Empresa</th>
 								        <th>Telefono</th>
 								        <th>Dirección</th>
-								        <th>Representante</th>
+								        <th>Delatalle</th>
+								        <th>Editar</th>
+								        <th>Eliminar</th>
 								    </tr>
 								</thead>
 								<tbody class="content-table">

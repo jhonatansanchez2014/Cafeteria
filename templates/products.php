@@ -112,6 +112,7 @@
 								        <th>F ingreso</th>
 								        <th>Proveedor</th>
 								        <th>Repartidor</th>
+								        <th></th>
 								    </tr>
 								</thead>
 								<tbody class="content-table">

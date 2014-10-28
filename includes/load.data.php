@@ -4,7 +4,7 @@
     // Función para extraer el listado de usurios
     function consulProducts($linkbd){
         $consult='';
-        $sql=$linkbd->query("SELECT * FROM productos ORDER BY fecha_ingreso_pro ASC");
+        $sql=$linkbd->query("SELECT * FROM productos ORDER BY cod DESC");
         if($sql->num_rows!=0){
             // convertimos el objeto
             while($list=$sql->fetch_assoc()){
@@ -20,6 +20,7 @@
                     <td>'.$list['fecha_ingreso_pro'].'</td>
                     <td>'.$list['proveedor_pro'].'</td>
                     <td>'.$list['repartidor_pro'].'</td>
+                    <td><a data-toggle="modal" data-id='.$list['cod'].' class="btn btn-default" href="#" style="font-size: 13px; padding: 2px 5px 2px 5px">Editar</a></td>
                 <tr>
                 ';
             }
@@ -56,7 +57,7 @@
         $contenido="";
         $search=mysqli_real_escape_string($sqli, $_POST['dd']);//Resivo por POST la busqueda a realizar
     //--select * from profesor where nombres like '%ria%'
-    $sql=$sqli->query("SELECT * FROM productos WHERE nombre_pro LIKE '%".$search."%' ORDER BY fecha_ingreso_pro ASC");
+    $sql=$sqli->query("SELECT * FROM productos WHERE nombre_pro LIKE '%$search%' ORDER BY cod DESC");
     //Se ejecuta el Query
     //$result=$sqli->query($sql);
     if($sql->num_rows!=0){
@@ -98,7 +99,7 @@
         $fini=mysqli_real_escape_string($sqli, $_POST['fini']);//Resivo por POST la busqueda a realizar
         $ffin=mysqli_real_escape_string($sqli, $_POST['ffin']);//Resivo por POST la busqueda a realizar
     //--select * from profesor where nombres like '%ria%'
-    $sql=$sqli->query("SELECT * FROM productos WHERE fecha_ingreso_pro >= '$fini' AND fecha_ingreso_pro <= '$ffin'");
+    $sql=$sqli->query("SELECT * FROM productos WHERE fecha_ingreso_pro >= '$fini' AND fecha_ingreso_pro <= '$ffin' ORDER BY cod DESC");
     //Se ejecuta el Query
     //$result=$sqli->query($sql);
     if($sql->num_rows!=0){
