@@ -41,6 +41,7 @@
                         <td>'.$fecha_ingreso_pro.'</td>
                         <td>'.$proveedor_pro.'</td>
                         <td>'.$repartidor_pro.'</td>
+                        <td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor."><span class="glyphicon glyphicon-edit"></span></a></td>
                     <tr>
         ';
     }

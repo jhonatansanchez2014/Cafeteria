@@ -2,7 +2,7 @@
 	session_start();//Inicia sesión
 	if(isset($_SESSION['usuario'])){}
 	else{
-		echo "<script>location.href = '../';</script>";
+		header('Location: ../');
 	}
 ?>
 <!DOCTYPE html>

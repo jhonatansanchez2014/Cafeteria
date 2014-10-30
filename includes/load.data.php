@@ -20,7 +20,7 @@
                     <td>'.$list['fecha_ingreso_pro'].'</td>
                     <td>'.$list['proveedor_pro'].'</td>
                     <td>'.$list['repartidor_pro'].'</td>
-                    <td><a data-toggle="modal" data-id='.$list['cod'].' class="btn btn-default" href="#" style="font-size: 13px; padding: 2px 5px 2px 5px">Editar</a></td>
+                    <td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Editar producto."><span class="glyphicon glyphicon-edit"></span></a></td>
                 <tr>
                 ';
             }
@@ -116,6 +116,7 @@
                     <td>'.$list['fecha_ingreso_pro'].'</td>
                     <td>'.$list['proveedor_pro'].'</td>
                     <td>'.$list['repartidor_pro'].'</td>
+                    <td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor."><span class="glyphicon glyphicon-edit"></span></a></td>
                 <tr>
             ';
         }

@@ -2,7 +2,7 @@
 	session_start();//Inicia sesión
 	if(isset($_SESSION['usuario'])){}
 	else{
-		echo "<script>location.href = '../';</script>";
+		header('Location: ../');
 	}
 
 	include_once('../includes/load.data.php');
@@ -99,7 +99,7 @@
 	  					</div>
 	  					<!--Responsive table-->
 	  					<div class="table-responsive">
-		  					<table class="table table-bordered table-striped table-hover table-condensed">
+		  					<table class="table table-bordered table-hover table-condensed">
 								<thead>
 								    <tr>
 								        <th>Codigo</th>
@@ -174,6 +174,9 @@
 						},
 						timeout: 10000
 					});
+				});
+				$(function(){
+					$("[data-toggle='tooltip']").tooltip();
 				});
 			});
 		</script>

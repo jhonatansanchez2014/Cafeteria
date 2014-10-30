@@ -2,7 +2,7 @@
 	session_start();//Inicia sesión
 	if(isset($_SESSION['usuario'])){}
 	else{
-		echo "<script>location.href = '../';</script>";
+		header('Location: ../');
 	}
 ?>
 <!DOCTYPE html>
@@ -70,14 +70,21 @@
 								        <th>Empresa</th>
 								        <th>Telefono</th>
 								        <th>Dirección</th>
-								        <th>Delatalle</th>
-								        <th>Editar</th>
-								        <th>Eliminar</th>
+								        <th></th>
+								        <th></th>
+								        <th></th>
 								    </tr>
 								</thead>
 								<tbody class="content-table">
-								    <!--content of table
-								    <?php //echo $consulta ?>-->
+								    <tr>
+								    	<td>Hola, como estas ?</td>
+								    	<td>Hola, como estas ?</td>
+								    	<td>Hola, como estas ?</td>
+								    	<td>Hola, como estas ?</td>
+								    	<td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Ver mas información sobre la empresa."><span class="glyphicon glyphicon-plus"></span></a></td>
+								    	<td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor."><span class="glyphicon glyphicon-edit"></span></a></td>
+								    	<td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Eliminar este proveedor."><span class="glyphicon glyphicon-trash"></span></a></td>
+								    </tr>
 								</tbody>
 							</table>
 							<ol class="breadcrumb">
@@ -108,6 +115,9 @@
 				var documento=$(this).data('id');
 				$(".modal-footer #dc").val(documento);
 				$(".documento-delete").html(documento);
+			});
+			$(function(){
+				$("[data-toggle='tooltip']").tooltip();
 			});
 		</script>
 	</body>

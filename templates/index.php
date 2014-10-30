@@ -3,7 +3,7 @@
 	include_once'../includes/n.count.php';
 	if(isset($_SESSION['usuario'])){}
 	else{
-		echo "<script>location.href = '../';</script>";
+		header('Location: ../');
 	}
 ?>
 <!DOCTYPE html>
