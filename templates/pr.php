@@ -4,6 +4,17 @@
 	else{
 		header('Location: ../');
 	}
+	include_once('../includes/load.data.php');
+	$pro=consulProveedor($sqli);
+
+	if($sqli->connect_errno){//Si la conexión con la bd falla
+	    $pro='
+			<tr>
+				<td colspan="7">Ha ocurrido un error al intentar conectar con la base de datos, por favor intente mas tarde</td>
+			</tr>
+		';
+	    exit();
+	}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +22,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
 		<script type="text/javascript" src="../js/jquery/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.ajax.js"></script>
 		<script type="text/javascript" src="../styles/bootstrap/js/bootstrap.js"></script>
 		<link rel="stylesheet" href="../styles/style.admin.css" />
 		<link href="../styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -76,15 +86,7 @@
 								    </tr>
 								</thead>
 								<tbody class="content-table">
-								    <tr>
-								    	<td>Hola, como estas ?</td>
-								    	<td>Hola, como estas ?</td>
-								    	<td>Hola, como estas ?</td>
-								    	<td>Hola, como estas ?</td>
-								    	<td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Ver mas información sobre la empresa."><span class="glyphicon glyphicon-plus"></span></a></td>
-								    	<td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor."><span class="glyphicon glyphicon-edit"></span></a></td>
-								    	<td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Eliminar este proveedor."><span class="glyphicon glyphicon-trash"></span></a></td>
-								    </tr>
+									<?php echo $pro ?>
 								</tbody>
 							</table>
 							<ol class="breadcrumb">
@@ -102,6 +104,8 @@
 		<?php
 			include_once'../includes/about.php';
 			include_once'../includes/pr.modal.php';
+			include_once'../includes/pr.modal.plus.php';
+			include_once'../includes/pr.modal.delete.php';
 		?>
 		<footer id="footer">
         	<div class="container">
@@ -111,13 +115,79 @@
     	<!--end footer-->
     	<!--script for delete user-->
     	<script type="text/javascript">
-			$(document).on("click", ".delete-user", function(){
-				var documento=$(this).data('id');
-				$(".modal-footer #dc").val(documento);
-				$(".documento-delete").html(documento);
+    		//Para tomar valor que del nit de un enlace
+			$(document).on("click", ".nit-em", function(){
+				var dl = $(this).data('id');
+				$(".delete-nit #nit_pr").val(dl);
+				$(".nit-delete").html(dl);
 			});
+    		//Para tomar valor que del nit de un enlace
+			$(document).on("click", ".nit-em", function(){
+				var nit=$(this).data('id');
+				//$(".modal-footer #dc").val(documento);
+				//$(".pr-rem-data").html(nit);
+				$.ajax({
+					beforeSend: function(){
+						//preloader
+					},
+					url: '../includes/load.data.php',
+					type: 'post',
+					dataType: "json",
+					data: "nit="+nit,
+					success: function(response){
+						$('.pr-rep').html(response.tableCon);
+						$('.pr-pro').html(response.producto);
+						$('.title-pr').html(response.nombre);
+					},
+					error: function(jqXHR, estado, error){
+						console.log(estado);
+						console.log(error);
+					},
+					complete: function(jqXHR, estado){
+						console.log(estado);
+					},
+					timeout: 10000
+				});
+			});
+			//Para tooltip, titulos hover
 			$(function(){
 				$("[data-toggle='tooltip']").tooltip();
+			});
+			//Ajax para isertar
+			$(document).on('ready', function(){
+				//Para insertar nuevos productos
+				var pet=$('.modal-body form').attr('action');
+				var met=$('.modal-body form').attr('method');
+
+				$('.modal-body form').on('submit', function(e){
+					e.preventDefault();
+					$.ajax({
+						beforeSend: function(){
+							//preloader
+						},
+						url: pet,
+						type: met,
+						dataType: "json",
+						data: $('.modal-body form').serialize(),
+						success: function(response){
+							if(response.estado == true){
+								$('.content-table').append(response.table);
+							}
+							else{
+								$('.content-table').html(response.table);
+							}
+							$('.msg-error').html(response.mensaje).show();
+						},
+						error: function(jqXHR, estado, error){
+							console.log(estado);
+							console.log(error);
+						},
+						complete: function(jqXHR, estado){
+							console.log(estado);
+						},
+						timeout: 10000
+					});
+				});
 			});
 		</script>
 	</body>

@@ -1,6 +1,4 @@
 <?php
-    //sleep(5);
-    //error_reporting(0);
     session_start();
     include_once'connect.php';//Incluimos el archivo connect.php, el cual es el encargado de realizar la conexión con la bd
     $respuestaHtml="";

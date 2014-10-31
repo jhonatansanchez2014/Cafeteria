@@ -10,10 +10,9 @@
 	$valor_total=valorTotal($sqli);
 
 	if($sqli->connect_errno){//Si la conexión con la bd falla
-	    //echo "Fallo al conectar a MySQL: (".$sqli->connect_errno.") ".$sqli->connect_error;
 	    $consulta='
-			<tr id="sinDatos">
-				<td>Ha ocurrido un error al intentar conectar con la base de datos, por favor intente mas tarde</td>
+			<tr>
+				<td colspan="7">Ha ocurrido un error al intentar conectar con la base de datos, por favor intente mas tarde</td>
 			</tr>
 		';
 	    exit();
