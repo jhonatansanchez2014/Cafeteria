@@ -6,6 +6,8 @@
     include_once('./load.data.php');
     //variable que se manda por Json
     $res = "";
+    $mensaje = "";
+    $aux = false;
     //Se elimina el proveedor
     $dl = mysqli_real_escape_string($sqli, $_POST['nit']);//Resivo por POST
     //delete
@@ -15,9 +17,15 @@
 
     if($result){
         $res = consulProveedor($sqli);
+        $mensaje = 'El proveedor con nit '.$nit.', se ha eliminado con éxito.';
+        $aux = true;
     }
     //En caso de que pase algún error
     else{
-        echo "Ups al parecer no se pudo eliminar el usuario";
+        $mensaje = 'Ha ocurrido un error al intentar eliminar el proveedor con nit '.$dl.', por favor intenta más tarde. ';
+        $aux = false;
     }
+
+    $Json = array('res' => $res, 'msg' => $mensaje, 'aux' => $aux);
+    echo json_encode($Json);
 ?>
