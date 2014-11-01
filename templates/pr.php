@@ -54,14 +54,14 @@
     			</div><!-- /.navbar-collapse -->
   			</div><!-- /.container-fluid -->
 		</nav>
-		<!--end nav menu bar-->
-		<!--Preloader and error-->
-		<span class="msg-error hidde"></span>
-		<span class="contt loader-wrapper loader hide"></span>
+		<!--end nav menu bar-->		
 		<!--Container-->
 		<section class="container">
 			<!--contenedor principal-->
 			<article class="post-pages margin-post">
+				<!--para mostrar mensajes de error-->
+				<div class="mensaje"></div>
+
 				<div class="panel panel-default">
 	  				<div class="panel-heading">
 	    				<h3 class="panel-title title-post">Gestionar Proveedores</h3>
@@ -118,14 +118,14 @@
     		//Para tomar valor que del nit de un enlace
 			$(document).on("click", ".nit-em", function(){
 				var dl = $(this).data('id');
-				$(".delete-nit #nit_pr").val(dl);
+				$("#nit_pr").val(dl);
 				$(".nit-delete").html(dl);
 			});
+
     		//Para tomar valor que del nit de un enlace
 			$(document).on("click", ".nit-em", function(){
 				var nit=$(this).data('id');
-				//$(".modal-footer #dc").val(documento);
-				//$(".pr-rem-data").html(nit);
+				
 				$.ajax({
 					beforeSend: function(){
 						//preloader
@@ -149,13 +149,43 @@
 					timeout: 10000
 				});
 			});
+
 			//Para tooltip, titulos hover
 			$(function(){
 				$("[data-toggle='tooltip']").tooltip();
 			});
-			//Ajax para isertar
+
+			//Ajax para eliminar
+			function delete_pr(valor){
+				$.ajax({
+					beforeSend: function(){
+						//preloader
+					},
+					url: '../includes/delete.pr.php',
+					type: 'post',
+					dataType: "json",
+					data: "n="+valor,
+					success: function(response){
+						if(response.aux == true){
+							$('.content-table').html(response.res);
+						}
+						$('.mensaje').html(response.msg);
+
+					},
+					error: function(jqXHR, estado, error){
+						console.log(estado);
+						console.log(error);
+					},
+					complete: function(jqXHR, estado){
+						console.log(estado);
+					},
+					timeout: 10000
+				});
+			}
+
+			//Ajax
 			$(document).on('ready', function(){
-				//Para insertar nuevos productos
+				//Ajax para isertar
 				var pet=$('.modal-body form').attr('action');
 				var met=$('.modal-body form').attr('method');
 
@@ -170,13 +200,16 @@
 						dataType: "json",
 						data: $('.modal-body form').serialize(),
 						success: function(response){
+							if(response.esta2 == true){
+								$('.modal-body form')[0].reset();
+							}
 							if(response.estado == true){
 								$('.content-table').append(response.table);
 							}
 							else{
 								$('.content-table').html(response.table);
 							}
-							$('.msg-error').html(response.mensaje).show();
+							$('.mensaje').html(response.mensaje);
 						},
 						error: function(jqXHR, estado, error){
 							console.log(estado);
@@ -188,6 +221,8 @@
 						timeout: 10000
 					});
 				});
+
+				
 			});
 		</script>
 	</body>

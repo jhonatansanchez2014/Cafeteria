@@ -7,7 +7,6 @@
 				<h3>Agregar nuevo proveedor</h3>
 			</div>
 			<div class="modal-body">
-				
 				<form action="../includes/pr.insert.php" method="POST">
 					<input name="nit" type="text" autocomplete="off" maxlength="12" class="form-control salto" placeholder="Nit de la empresa" required />
 					<input name="empresa" type="text" autocomplete="off" maxlength="60" class="form-control salto" placeholder="Nombre de la empresa" required />
@@ -24,14 +23,11 @@
   						<input name="repmail" type="email" maxlength="50" autocomplete="off" class="form-control" placeholder="E-mail" required>
 					</div>
 
-					<!--<input type="submit" name="save" value="Save" class="btn btn-default addbtn"/>
-					<input type="reset" name="save" value="New" class="btn btn-default addbtn"/>-->
 					<input type="submit" name="save" value="Guardar" class="btn btn-success"/>
 					<input type="reset" name="new" value="Nuevo" class="btn btn-warning"/>
 				</form>
-				<!--Preloader and error-->
-				<span class="msg-error hidde"></span>
-				<span class="contt loader-wrapper loader hide"></span>
+				<!--para mostrar mensajes de error-->
+				<div class="mensaje"></div>
 			</div>
  			<div class="modal-footer">
  				<button type="button" data-dismiss="modal" class="btn btn-danger">Cerrar</button>
