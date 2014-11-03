@@ -10,44 +10,44 @@
 				<form action="../includes/pr.insert.php" method="POST">
 					<div class="input-group salto">
   						<span class="input-group-addon">Nit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-						<input name="nit" type="text" autocomplete="off" maxlength="12" class="form-control" placeholder="Nit de la empresa" required />
+						<input name="nit_up" id="nit_up" type="text" autocomplete="off" maxlength="12" class="form-control" placeholder="Nit de la empresa" required />
 					</div>
 
 					<div class="input-group salto">
   						<span class="input-group-addon">Empresa&nbsp;</span>
-						<input name="empresa" type="text" autocomplete="off" maxlength="60" class="form-control salto" placeholder="Nombre de la empresa" required />
+						<input name="empresa_up" id="empresa_up" type="text" autocomplete="off" maxlength="60" class="form-control salto" placeholder="Nombre de la empresa" required />
 					</div>
 
 					<div class="input-group salto">
   						<span class="input-group-addon">Telefono&nbsp;</span>
-						<input name="telefono" type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Telefono" required />
+						<input name="telefono_up" id="telefono_up" type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Telefono" required />
 					</div>
 
 					<div class="input-group salto">
   						<span class="input-group-addon">Dirección</span>
-						<input name="direccion" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Dirección" required />
+						<input name="direccion_up" id="direccion_up" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Dirección" required />
 					</div>
 
 					<label>Datos del representante</label>
 					
 					<div class="input-group salto">
   						<span class="input-group-addon">Nombres</span>
-						<input name="repn" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Nombres" required />
+						<input name="repn_up" id="repa_up" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Nombres" required />
 					</div>
 
 					<div class="input-group salto">
   						<span class="input-group-addon">Apellidos</span>
-						<input name="repa" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Apellidos" required />
+						<input name="repa_up" id="repa_up" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Apellidos" required />
 					</div>
 
 					<div class="input-group salto">
   						<span class="input-group-addon">Telefono</span>
-						<input name="reptel" type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Telefono" required />
+						<input name="reptel_up" id="reptel_up" type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Telefono" required />
 					</div>
 
 					<div class="input-group salto">
   						<span class="input-group-addon">E-mail&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  						<input name="repmail" type="email" maxlength="50" autocomplete="off" class="form-control" placeholder="E-mail" required>
+  						<input name="repmail_up" id="repmail_up" type="email" maxlength="50" autocomplete="off" class="form-control" placeholder="E-mail" required>
 					</div>
 
 					<input type="submit" name="save" value="Guardar" class="btn btn-success"/>
