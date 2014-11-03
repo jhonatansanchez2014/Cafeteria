@@ -49,7 +49,7 @@
                         <td>'.$list['tel_em'].'</td>
                         <td>'.$list['dir_em'].'</td>
                         <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-plus"><span data-toggle="tooltip" data-placement="left" title="Ver más información sobre la empresa." class="glyphicon glyphicon-plus"></span></a></td>
-                        <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#"><span data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor." class="glyphicon glyphicon-edit"></span></a></td>
+                        <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-edit"><span data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor." class="glyphicon glyphicon-edit"></span></a></td>
                         <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-delete"><span data-toggle="tooltip" data-placement="left" title="Eliminar este proveedor." class="glyphicon glyphicon-trash"></span></a></td>
                     </tr>
                 ';

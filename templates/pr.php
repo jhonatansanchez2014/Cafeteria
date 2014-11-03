@@ -106,6 +106,7 @@
 			include_once'../includes/pr.modal.php';
 			include_once'../includes/pr.modal.plus.php';
 			include_once'../includes/pr.modal.delete.php';
+			include_once'../includes/pr.modal.edit.php';
 		?>
 		<footer id="footer">
         	<div class="container">
@@ -113,22 +114,23 @@
         	</div>
     	</footer>
     	<!--end footer-->
-    	<!--script for delete user-->
     	<script type="text/javascript">
-    		//Para tomar valor que del nit de un enlace
+    		/*Para tomar valor que del nit de un enlace*/
 			$(document).on("click", ".nit-em", function(){
 				var dl = $(this).data('id');
 				$("#nit_pr").val(dl);
 				$(".nit-delete").html(dl);
 			});
+			/*end*/
 
-    		//Para tomar valor que del nit de un enlace
+    		/*Para tomar valor que del nit de un enlace
+    		Para mostrar datos sobre los proveedores*/
 			$(document).on("click", ".nit-em", function(){
 				var nit=$(this).data('id');
 				
 				$.ajax({
 					beforeSend: function(){
-						//preloader
+						/*preloader*/
 					},
 					url: '../includes/load.data.php',
 					type: 'post',
@@ -149,17 +151,19 @@
 					timeout: 10000
 				});
 			});
+			/*end*/
 
-			//Para tooltip, titulos hover
+			/*Para tooltip, titulos hover*/
 			$(function(){
 				$("[data-toggle='tooltip']").tooltip();
 			});
+			/*end function*/
 
-			//Ajax para eliminar
+			/*Ajax para eliminar*/
 			function delete_pr(valor){
 				$.ajax({
 					beforeSend: function(){
-						//preloader
+						/*preloader*/
 					},
 					url: '../includes/delete.pr.php',
 					type: 'post',
@@ -182,10 +186,10 @@
 					timeout: 10000
 				});
 			}
+			/*end function*/
 
-			//Ajax
 			$(document).on('ready', function(){
-				//Ajax para isertar
+				/*Ajax para guardar datos del proveedor*/
 				var pet=$('.modal-body form').attr('action');
 				var met=$('.modal-body form').attr('method');
 
@@ -193,7 +197,7 @@
 					e.preventDefault();
 					$.ajax({
 						beforeSend: function(){
-							//preloader
+							/*preloader*/
 						},
 						url: pet,
 						type: met,
@@ -221,8 +225,7 @@
 						timeout: 10000
 					});
 				});
-
-				
+				/*end*/
 			});
 		</script>
 	</body>
