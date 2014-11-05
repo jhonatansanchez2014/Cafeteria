@@ -49,7 +49,7 @@
                         <td>'.$list['tel_em'].'</td>
                         <td>'.$list['dir_em'].'</td>
                         <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-plus"><span data-toggle="tooltip" data-placement="left" title="Ver más información sobre la empresa." class="glyphicon glyphicon-plus"></span></a></td>
-                        <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-edit"><span data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor." class="glyphicon glyphicon-edit"></span></a></td>
+                        <td class="center-plus"><a onclick="_datos_pr();" class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-edit"><span data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor." class="glyphicon glyphicon-edit"></span></a></td>
                         <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-delete"><span data-toggle="tooltip" data-placement="left" title="Eliminar este proveedor." class="glyphicon glyphicon-trash"></span></a></td>
                     </tr>
                 ';
@@ -209,5 +209,35 @@
         $nit_Json=array("tableCon" => $nit_con, "nombre" => $nombre, "producto" => $produc);
         //Envio resultados en formato JSON
         echo json_encode($nit_Json);
+    }
+
+    //consulta de los datos de los proveedores para así editar estos
+    if(isset($_POST['nit_edi'])){
+        $n_em ="";
+        $nom_em ="";
+        $tele_em ="";
+        $dire_em ="";
+        $n_rep ="";
+        $ape_rep ="";
+        $tele_rep ="";
+        $mail_rep ="";
+
+        $nit_edit=mysqli_real_escape_string($sqli, $_POST['nit_edi']);//Resivo por POST la busqueda a realizar
+
+        $sql=$sqli->query("SELECT * FROM proveedor WHERE nit_em = '$nit_edit'");
+        //Se ejecuta el Query
+        if($sql->num_rows!=0){
+            $fila=$sql->fetch_assoc();
+            $n_em = $fila['nit_em'];
+            $nom_em = $fila['nombre_em'];
+            $tele_em = $fila['tel_em'];
+            $dire_em = $fila['dir_em'];
+            $n_rep = $fila['nombre_rep'];
+            $ape_rep = $fila['apellido_rem'];
+            $tele_rep = $fila['tel_rep'];
+            $mail_rep = $fila['mail_rem'];
+        }
+        $json = array('nit' => $n_em, 'empresa' => $nom_em, 'telefono' => $tele_em, 'direccion' => $dire_em, 'nombre' => $n_rep, 'apellido' => $ape_rep, 'tel' => $tele_rep, 'mail' => $mail_rep);
+        echo json_encode($json);
     }
 ?>

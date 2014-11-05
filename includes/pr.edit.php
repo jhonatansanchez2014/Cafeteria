@@ -13,17 +13,20 @@
     $aux = false;
     
     //Asignación de variables
-    $nit = mysqli_real_escape_string($sqli, $_POST['nit_up']);//Resivo por POST
+    $nit_n = mysqli_real_escape_string($sqli, $_POST['nit_up']);//Resivo por POST
+    $nit = mysqli_real_escape_string($sqli, $_POST['nit_up_oc']);//Resivo por POST
     $empresa = mysqli_real_escape_string($sqli, $_POST['empresa_up']);//Recibo por POST
     $telefono = mysqli_real_escape_string($sqli, $_POST['telefono_up']);//Recibo por POST
     $direccion = mysqli_real_escape_string($sqli, $_POST['direccion_up']);//Recibo por POST
-    $nombre = mysqli_real_escape_string($sqli, $_POST['repn_up']);//Recibo por POST
-    $apellido = mysqli_real_escape_string($sqli, $_POST['repa_up']);//Recibo por POST
+    $nombre = mysqli_real_escape_string($sqli, $_POST['repa_up']);//Recibo por POST
+    $apellido = mysqli_real_escape_string($sqli, $_POST['repap_up']);//Recibo por POST
     $tel_rep = mysqli_real_escape_string($sqli, $_POST['reptel_up']);//Recibo por POST
     $mail = mysqli_real_escape_string($sqli, $_POST['repmail_up']);//Recibo por POST
 
     //update
-    $sql = "UPDATE proveedor SET ... WHERE nit_em = ''";
+    $sql = "UPDATE proveedor SET nit_em ='nit_n', nombre_em = '$empresa', tel_em = '$telefono',
+                                dir_em = '$direccion', nombre_rep = '$nombre', apellido_rem = '$apellido',
+                                tel_rep = 'tel_rep', mail_rem = '$mail' WHERE nit_em = '$nit'";
 
     //me retorna un nimero de columnas o filas afectadas en la base de datos, así se que se realiza algun cambio
     $result = $sqli->query($sql);
@@ -34,7 +37,7 @@
         $mensaje = '
             <div class="alert alert-warning alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <strong>Warning!</strong> El proveedor con <strong>nit '.$dl.'</strong>, se ha eliminado con éxito.
+                <strong>Warning!</strong> Proveedor actualizado con éxito.
             </div>
         ';
     }
@@ -45,7 +48,7 @@
         $mensaje = '
              <div class="alert alert-warning alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <strong>Warning!</strong> Ha ocurrido un error al intentar eliminar el proveedor <strong>nit '.$dl.'</strong>, por favor intenta más tarde.
+                <strong>Warning!</strong> Ha ocurrido un error al actualizar el proveedor, por favor intenta más tarde.
             </div>
         ';
     }

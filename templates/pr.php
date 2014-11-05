@@ -123,6 +123,45 @@
 			});
 			/*end*/
 
+			/*edit
+			Para tomar valor que del nit de un enlace.
+    		Para mostrar datos sobre los proveedores y editar estos*/
+    		function _datos_pr(){
+				$(document).on("click", ".nit-em", function(){
+					var nit=$(this).data('id');
+					/*Metodo Ajax*/
+					$.ajax({
+						beforeSend: function(){
+							/*preloader*/
+						},
+						url: '../includes/load.data.php',
+						type: 'post',
+						dataType: "json",
+						data: "nit_edi="+nit,
+						success: function(response){
+							$("#nit_up").val(response.nit);
+							$("#nit_up_oc").val(response.nit);
+							$("#empresa_up").val(response.empresa);
+							$("#telefono_up").val(response.telefono);
+							$("#direccion_up").val(response.direccion);
+							$("#repa_up").val(response.nombre);
+							$("#repap_up").val(response.apellido);
+							$("#reptel_up").val(response.tel);
+							$("#repmail_up").val(response.mail);
+						},
+						error: function(jqXHR, estado, error){
+							console.log(estado);
+							console.log(error);
+						},
+						complete: function(jqXHR, estado){
+							console.log(estado);
+						},
+						timeout: 10000
+					});
+				});
+			}
+			/*end*/
+			/*--------------------------------------------*/
     		/*Para tomar valor que del nit de un enlace
     		Para mostrar datos sobre los proveedores*/
 			$(document).on("click", ".nit-em", function(){
