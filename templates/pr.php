@@ -89,10 +89,6 @@
 									<?php echo $pro ?>
 								</tbody>
 							</table>
-							<ol class="breadcrumb">
-  								<li class="active">Valor total ingresado</li>
-  								<li class="valor active"><!--<?php //echo $valor_total ?>--></li>
-							</ol>
 						</div>
 						<!--Responsive-->
 					</div>
@@ -110,7 +106,7 @@
 		?>
 		<footer id="footer">
         	<div class="container">
-            	<p class="text-muted credit">Cafetería &copy; 2014 | <a href="#">Ayuda</a> | <a data-toggle="modal" href="#example">Acerca de</a></p>
+            	<p class="text-muted credit">Cafetería &copy; 2014 | <a href="./help.php?code=2554568910" target="_blank">Ayuda</a> | <a data-toggle="modal" href="#example">Acerca de</a></p>
         	</div>
     	</footer>
     	<!--end footer-->

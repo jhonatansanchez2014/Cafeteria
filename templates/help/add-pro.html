@@ -1,0 +1,68 @@
+<div class="atras">
+	<a href="./help.php">Inicio</a>
+	<a href="./help.php?code=2554568910">Volver</a>
+</div>
+
+<h2 class="title-help">Agregar proveedor</h2>
+<p class="text">
+	Para agregar un proveedor, es necesario hacer clic sobre el siguiente botón <em><strong>Agregar proveedor</strong></em> (ver figura 1).
+	<img class="images" src="./help/images/figura1.png" alt="">
+	<span class="foter-img">Figura 1: agregar nuevo proveedor.</span>
+
+	Luego de haber hecho clic sobre el botón <em><strong>Agregar proveedor</strong></em>, aparecerá la siguiente ventana modal, en la cual se debe digitar los datos que se solicitan del proveedor, <em>“todos los datos que se solicitan son obligatorios”</em>.
+</p>
+
+<!--modal proveedor-->
+<div id="pr" >
+	<div class="modal-dialog">   
+		<div class="modal-content"> 
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3>Agregar nuevo proveedor</h3>
+			</div>
+			<div class="modal-body">
+				<form action="" method="">
+					<input type="text" class="form-control salto" placeholder="Nit de la empresa" />
+					<input type="text" class="form-control salto" placeholder="Nombre de la empresa" />
+					<input type="tel" class="form-control salto" placeholder="Telefono" />
+					<input type="text" class="form-control salto" placeholder="Dirección" />
+					
+					<label>Datos del representante</label>
+
+					<input type="text" class="form-control salto" placeholder="Nombres" />
+					<input type="text" class="form-control salto" placeholder="Apellidos" />
+					<input type="tel" class="form-control salto" placeholder="Telefono" />
+					<div class="input-group salto">
+  						<span class="input-group-addon">@</span>
+  						<input type="email" class="form-control" placeholder="E-mail" />
+					</div>
+
+					<input type="reset" name="save" value="Guardar" class="btn btn-success"/>
+					<input type="reset" name="new" value="Nuevo" class="btn btn-warning"/>
+				</form>
+			</div>
+ 			<div class="modal-footer">
+ 				<button type="button" data-dismiss="modal" class="btn btn-danger">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p class="text">
+	Luego de haber ingresado todos los datos, se debe hacer clic sobre el botón de <em><strong>guardar</strong></em>, situado en la parte inferior del formulario. Si el proceso es exitoso se mostrara el siguiente mensaje de satisfacción, y los campos del formulario se limpian de forma automática.
+</p>
+	<div class="alert alert-warning alert-dismissible mensaje ejemplos" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <strong>Warning!</strong> Proveedor registrado con éxito.
+    </div>
+<p class="text">
+	Si ocurre algún error al momento de ingresar un nuevo proveedor, se mostrara el siguiente mensaje, y los campos del formulario continuaran como los dejas para que así puedas revisar los datos nuevamente.
+</p>
+	<div class="alert alert-warning alert-dismissible ejemplos mensaje" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <strong>Warning!</strong> Ha ocurrido un error al intentar guardar el proveedor, por favor intenta más tarde.
+    </div>
+<p class="text">
+	Al ingresar un proveedor de forma exitosa, este se mostrara automáticamente en la tabla de proveedores. Si en el momento que se encuentre registrando algún proveedor, desea ingresar otro con datos diferentes, puede dar clic sobre el botón de <em><strong>nuevo</strong></em>, este botón limpiara de forma automática las cajas de texto, para que así pueda seguir con el ingreso de un nuevo proveedor.
+	O bien puede dar clic sobre el botón de <em><strong>cerrar</strong></em> para ocultar esta ventana.
+</p>

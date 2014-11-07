@@ -58,6 +58,6 @@
     }
     // Armamos array para convertir a JSON
     $msgJson = array('mensaje' => $msg, 'table' => $table, 'estado' => $estado, 'esta2' => $estado2);
-    //Envio resultados en formato JSON
     echo json_encode($msgJson);
 ?>
+    //Envio resultados en formato JSON
