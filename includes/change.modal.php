@@ -9,19 +9,18 @@
 			<div class="edit-pr modal-body">
 				<form action="../includes/pr.edit.php" method="POST">
 					<div class="input-group salto">
-  						<span class="input-group-addon">Contraseña acual</span>
-						<input name="nit_up" id="nit_up" type="text" autocomplete="off" maxlength="12" class="form-control" placeholder="Nit de la empresa" required />
-						<input name="nit_up_oc" id="nit_up_oc" type="hidden" value="" />
+  						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span><span class="glyphicon glyphicon-asterisk"></span></span>
+						<input name="passold" type="password" autocomplete="off" maxlength="10" class="form-control" placeholder="Contraseña actual" required />
 					</div>
 
 					<div class="input-group salto">
-  						<span class="input-group-addon">Nueva contraseña</span>
-						<input name="empresa_up" id="empresa_up" type="text" autocomplete="off" maxlength="60" class="form-control salto" placeholder="Nombre de la empresa" required />
+  						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span><span class="glyphicon glyphicon-asterisk"></span></span>
+						<input name="pass" type="password" autocomplete="off" maxlength="10" class="form-control salto" placeholder="Nueva contraseña" required />
 					</div>
 
 					<div class="input-group salto">
-  						<span class="input-group-addon">Repita la contraseña&nbsp;</span>
-						<input name="telefono_up" id="telefono_up" type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Telefono" required />
+  						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span><span class="glyphicon glyphicon-asterisk"></span></span>
+						<input name="rpass" type="password" autocomplete="off" maxlength="10" class="form-control salto" placeholder="Repita la contraseña" required />
 					</div>
 
 					<input type="submit" name="passwordch" value="Cambiar" class="btn btn-success"/>
