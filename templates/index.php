@@ -37,7 +37,7 @@
       				<ul class="nav navbar-nav">
         				<li class="active"><a href="#">Home</a></li>
         				<li><a href="#">Administrador</a></li>
-        				<li><a href="#">Cambiar contraseña</a></li>
+        				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
     			</div><!-- /.navbar-collapse -->
@@ -104,6 +104,7 @@
 			</article>
 			<!--end post-->
 		</section>
+			<?php include_once'../includes/change.modal.php';?>
 		<!--end container-->
 		<!--modal dialog-->
 		<div id="example" class="modal fade">
