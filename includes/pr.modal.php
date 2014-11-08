@@ -28,6 +28,7 @@
 				</form>
 				<!--para mostrar mensajes de error-->
 				<div class="mensaje"></div>
+				<span class="contt loader-wrapper loader hide"></span>
 			</div>
  			<div class="modal-footer">
  				<button type="button" data-dismiss="modal" class="btn btn-danger">Cerrar</button>

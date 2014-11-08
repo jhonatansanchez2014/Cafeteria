@@ -129,6 +129,7 @@
 					$.ajax({
 						beforeSend: function(){
 							/*preloader*/
+							$('.loader-wrapper').removeClass("hide");
 						},
 						url: '../includes/load.data.php',
 						type: 'post',
@@ -144,6 +145,7 @@
 							$("#repap_up").val(response.apellido);
 							$("#reptel_up").val(response.tel);
 							$("#repmail_up").val(response.mail);
+							$('.loader-wrapper').addClass("hide");
 						},
 						error: function(jqXHR, estado, error){
 							console.log(estado);
@@ -166,6 +168,7 @@
 				$.ajax({
 					beforeSend: function(){
 						/*preloader*/
+						$('.loader-wrapper').removeClass("hide");
 					},
 					url: '../includes/load.data.php',
 					type: 'post',
@@ -175,6 +178,7 @@
 						$('.pr-rep').html(response.tableCon);
 						$('.pr-pro').html(response.producto);
 						$('.title-pr').html(response.nombre);
+						$('.loader-wrapper').addClass("hide");
 					},
 					error: function(jqXHR, estado, error){
 						console.log(estado);
@@ -233,6 +237,7 @@
 					$.ajax({
 						beforeSend: function(){
 							/*preloader*/
+							$('.loader-wrapper').removeClass("hide");
 						},
 						url: pet,
 						type: met,
@@ -242,6 +247,7 @@
 							if(response.estado == true){
 								$('.insert-pr form')[0].reset();
 								$('.content-table').html(response.table);
+								$('.loader-wrapper').addClass("hide");
 							}
 							$('.mensaje').html(response.mensaje);
 						},

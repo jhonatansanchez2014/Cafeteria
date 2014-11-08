@@ -79,7 +79,6 @@ $(document).on('ready', function(){
 		$.ajax({
 			beforeSend: function(){
 				$('.loader-wrapper').removeClass("hide");
-				$('.msg-error').hide();
 			},
 			url: pet,
 			type: met,
@@ -90,7 +89,7 @@ $(document).on('ready', function(){
 				if(response.error_date==false){
 					$('.modal-body form')[0].reset();
 				}
-				$('.msg-error').html(response.mensaje).show();
+				$('.mensaje').html(response.mensaje);
 				$('.valor').html(response.total);
 				$('.content-table').append(response.contenido);
 				//alert(response.contenido);

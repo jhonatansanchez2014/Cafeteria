@@ -11,7 +11,7 @@
 					<div class="input-group salto">
   						<span class="input-group-addon">Nit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<input name="nit_up" id="nit_up" type="text" autocomplete="off" maxlength="12" class="form-control" placeholder="Nit de la empresa" required />
-						<input name="nit_up_oc" id="nit_up_oc" type="text" value="" />
+						<input name="nit_up_oc" id="nit_up_oc" type="hidden" value="" />
 					</div>
 
 					<div class="input-group salto">
@@ -55,6 +55,7 @@
 				</form>
 				<!--para mostrar mensajes de error-->
 				<div class="mensaje"></div>
+				<span class="contt loader-wrapper loader hide">Carcando datos.</span>
 			</div>
  			<div class="modal-footer">
  				<button type="button" data-dismiss="modal" class="btn btn-danger">Cerrar</button>

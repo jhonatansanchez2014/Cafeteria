@@ -111,7 +111,6 @@
 								        <th>F ingreso</th>
 								        <th>Proveedor</th>
 								        <th>Repartidor</th>
-								        <th></th>
 								    </tr>
 								</thead>
 								<tbody class="content-table">
@@ -119,11 +118,11 @@
 								    <?php echo $consulta ?>
 								</tbody>
 							</table>
-							<ol class="breadcrumb">
-  								<li class="active">Valor total ingresado</li>
-  								<li class="valor active"><?php echo $valor_total ?></li>
-							</ol>
 						</div>
+						<ol class="breadcrumb">
+  							<li class="active">Valor total ingresado</li>
+  							<li class="valor active"><?php echo $valor_total ?></li>
+						</ol>
 						<!--Responsive-->
 					</div>
 				</div>

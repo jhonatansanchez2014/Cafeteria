@@ -27,7 +27,12 @@
 
     //Si hay cambios o se afecto alguna taba de la base de datos
     if($result==true){
-        $mensaje="¡Hurra datos ingresados de forma correcta! <img src='../images/sonrisa.jpg'>";
+        $mensaje='
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    Producto registrado con éxito.
+                </div>
+        ';
         $error=false;
         $contenido='
                     <tr>
@@ -41,12 +46,16 @@
                         <td>'.$fecha_ingreso_pro.'</td>
                         <td>'.$proveedor_pro.'</td>
                         <td>'.$repartidor_pro.'</td>
-                        <td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor."><span class="glyphicon glyphicon-edit"></span></a></td>
                     <tr>
         ';
     }
     else{
-        $mensaje="Ups al parecer sucedió un problema al intentar guardar el producto en la base de datos, verifica los datos. :(";
+        $mensaje= '
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                Ha ocurrido un error al intentar guardar el proveedor, verifica los datos ingresados.
+            </div>
+        ';
         $error=true;
     }
     include_once('load.data.php');

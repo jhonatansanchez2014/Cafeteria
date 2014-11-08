@@ -1,5 +1,6 @@
 <?php
     include_once'connect.php';
+    //sleep(5);
 
     // Función para extraer el listado de usurios
     function consulProducts($linkbd){
@@ -20,7 +21,6 @@
                     <td>'.$list['fecha_ingreso_pro'].'</td>
                     <td>'.$list['proveedor_pro'].'</td>
                     <td>'.$list['repartidor_pro'].'</td>
-                    <td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Editar producto."><span class="glyphicon glyphicon-edit"></span></a></td>
                 <tr>
                 ';
             }
@@ -147,7 +147,6 @@
                     <td>'.$list['fecha_ingreso_pro'].'</td>
                     <td>'.$list['proveedor_pro'].'</td>
                     <td>'.$list['repartidor_pro'].'</td>
-                    <td class="center-plus"><a href="" data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor."><span class="glyphicon glyphicon-edit"></span></a></td>
                 <tr>
             ';
         }

@@ -48,7 +48,7 @@
 							<input type="reset" name="new" value="Nuevo" class="btn btn-warning"/>
 						</form>
 						<!--Preloader and error-->
-						<span class="msg-error hidde"></span>
+						<div class="mensaje"></div>
 						<span class="contt loader-wrapper loader hide"></span>
 					</div>
 	     			<div class="modal-footer">

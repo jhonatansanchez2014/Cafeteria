@@ -36,6 +36,7 @@
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
         				<li class="active"><a href="#">Home</a></li>
+        				<li><a href="#">Administrador</a></li>
         				<li><a href="#">Cambiar contraseña</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
@@ -50,8 +51,7 @@
 	    				<a class="title-post" href="./products.php"><h3 class="panel-title">Gestionar Productos</h3></a>
 	  				</div>
 	  				<div class="panel-body">
-	    				Gestionar productos. Puedes ingresar, actualizar y eliminar productos, 
-	    				ten en cuenta que si eliminas un producto, este se borrara de forma permanente de la base de datos.
+	    				Gestionar productos. Puedes ingresar productos, ver el historial de todos los productos ingresados, realizar búsquedas de estos, ya sea por fecha o algún nombre en específico, no podrás hacer modificaciones es estos una vez sea ingresado, y ningún producto podrá ser eliminado.
 	    				<ul class="nav nav-pills nav-stacked">
   							<li class="active">
     							<a href="./products.php">
@@ -69,8 +69,9 @@
 	    				<a class="title-post" href="./users.php"><h3 class="panel-title">Gestionar Usuarios</h3></a>
 	  				</div>
 	  				<div class="panel-body">
-	    				Gestionar Usuarios. Puedes ingresar, actualizar y eliminar usuarios, 
+	    				Puedes ingresar, actualizar y eliminar usuarios, 
 	    				ten en cuenta que si eliminas un usuario, este se borrara de forma permanente de la base de datos.
+	    				El usuario administrador no se mostrara en esta parte de la aplicación, se podrá visualizar los datos en la opción de administrador, localizada en el menú superior.
 	    				<ul class="nav nav-pills nav-stacked">
   							<li class="active">
     							<a href="./users.php">
@@ -88,12 +89,13 @@
 	    				<a class="title-post" href="./pr.php"><h3 class="panel-title">Gestionar Proveedores</h3></a>
 	  				</div>
 	  				<div class="panel-body">
-	    				Gestionar Proveedores. Puedes ingresar, actualizar y eliminar proveedores, 
+	    				Puedes ingresar, actualizar y eliminar proveedores, 
 	    				ten en cuenta que si eliminas un proveedor, este se borrara de forma permanente de la base de datos.
+	    				A demás en esta opción podrás visualizar los últimos 10 productos que se han ingresado de cada proveedor, y los datos del representante.
 	    				<ul class="nav nav-pills nav-stacked">
   							<li class="active">
     							<a href="./pr.php">
-      								<span class="badge pull-right">20</span>Proveedores registrados
+      								<span class="badge pull-right"><?php echo $nprov; ?></span>Proveedores registrados
     							</a>
   							</li>
 						</ul>

@@ -42,6 +42,7 @@
 					</table>
 				</div>
 			<!--Responsive-->
+				<span class="contt loader-wrapper loader hide">Carcando datos.</span>
 				<div class="alert alert-danger" role="alert">Solo de muestran los <strong>últimos 10 productos</strong> ingresados de este proveedor.</div>
 			</div>
  			<div class="modal-footer">
