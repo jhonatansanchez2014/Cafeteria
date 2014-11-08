@@ -6,12 +6,12 @@
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				<h3>Actualizar datos del proveedor</h3>
 			</div>
-			<div class="modal-body">
+			<div class="edit-pr modal-body">
 				<form action="../includes/pr.edit.php" method="POST">
 					<div class="input-group salto">
   						<span class="input-group-addon">Nit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<input name="nit_up" id="nit_up" type="text" autocomplete="off" maxlength="12" class="form-control" placeholder="Nit de la empresa" required />
-						<input name="nit_up_oc" id="nit_up_oc" type="hidden" />
+						<input name="nit_up_oc" id="nit_up_oc" type="text" value="" />
 					</div>
 
 					<div class="input-group salto">
@@ -51,7 +51,7 @@
   						<input name="repmail_up" id="repmail_up" type="email" maxlength="50" autocomplete="off" class="form-control" placeholder="E-mail" required>
 					</div>
 
-					<input type="submit" name="actualizar" value="Actualizar" class="btn btn-success"/>
+					<input type="submit" name="actualizar" value="Guardar cambios" class="btn btn-success"/>
 				</form>
 				<!--para mostrar mensajes de error-->
 				<div class="mensaje"></div>

@@ -225,10 +225,10 @@
 
 			$(document).on('ready', function(){
 				/*Ajax para guardar datos del proveedor*/
-				var pet=$('.modal-body form').attr('action');
-				var met=$('.modal-body form').attr('method');
+				var pet=$('.insert-pr form').attr('action');
+				var met=$('.insert-pr form').attr('method');
 
-				$('.modal-body form').on('submit', function(e){
+				$('.insert-pr form').on('submit', function(e){
 					e.preventDefault();
 					$.ajax({
 						beforeSend: function(){
@@ -237,18 +237,45 @@
 						url: pet,
 						type: met,
 						dataType: "json",
-						data: $('.modal-body form').serialize(),
+						data: $('.insert-pr form').serialize(),
 						success: function(response){
-							if(response.esta2 == true){
-								$('.modal-body form')[0].reset();
-							}
 							if(response.estado == true){
-								$('.content-table').append(response.table);
-							}
-							else{
+								$('.insert-pr form')[0].reset();
 								$('.content-table').html(response.table);
 							}
 							$('.mensaje').html(response.mensaje);
+						},
+						error: function(jqXHR, estado, error){
+							console.log(estado);
+							console.log(error);
+						},
+						complete: function(jqXHR, estado){
+							console.log(estado);
+						},
+						timeout: 10000
+					});
+				});
+				/*end*/
+
+				/*Ajax para actualizar datos del proveedor*/
+				var peti=$('.edit-pr form').attr('action');
+				var meto=$('.edit-pr form').attr('method');
+
+				$('.edit-pr form').on('submit', function(e){
+					e.preventDefault();
+					$.ajax({
+						beforeSend: function(){
+							/*preloader*/
+						},
+						url: peti,
+						type: meto,
+						dataType: "json",
+						data: $('.edit-pr form').serialize(),
+						success: function(response){
+							if(response.aux == true){
+								$('.content-table').html(response.res);
+							}
+							$('.mensaje').html(response.msg);
 						},
 						error: function(jqXHR, estado, error){
 							console.log(estado);

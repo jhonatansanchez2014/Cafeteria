@@ -6,9 +6,9 @@
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				<h3>Agregar nuevo proveedor</h3>
 			</div>
-			<div class="modal-body">
+			<div class="insert-pr modal-body">
 				<form action="../includes/pr.insert.php" method="POST">
-					<input name="nit" type="text" autocomplete="off" maxlength="12" class="form-control salto" placeholder="Nit de la empresa" required />
+					<input name="_nit" type="text" autocomplete="off" maxlength="12" class="form-control salto" placeholder="Nit de la empresa" required />
 					<input name="empresa" type="text" autocomplete="off" maxlength="60" class="form-control salto" placeholder="Nombre de la empresa" required />
 					<input name="telefono" type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Telefono" required />
 					<input name="direccion" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Dirección" required />

@@ -21,7 +21,7 @@
         $mensaje = '
             <div class="alert alert-warning alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <strong>Warning!</strong> El proveedor con <strong>nit '.$dl.'</strong>, se ha eliminado con éxito.
+                El proveedor con <strong>nit '.$dl.'</strong>, se ha eliminado con éxito.
             </div>
         ';
     }
@@ -31,7 +31,7 @@
         $mensaje = '
              <div class="alert alert-warning alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <strong>Warning!</strong> Ha ocurrido un error al intentar eliminar el proveedor <strong>nit '.$dl.'</strong>, por favor intenta más tarde.
+                Ha ocurrido un error al intentar eliminar el proveedor <strong>nit '.$dl.'</strong>.
             </div>
         ';
     }
