@@ -24,8 +24,12 @@
 
     	$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
                 		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                		Contraseña cambiada con éxito, tu sesión será finalizda para que inicies nuevamente.
-                		<script>location.href = "../includes/logout.php"</script>
+                		Contraseña cambiada con éxito, tu sesión será finalizda en <strong>10 segundos</strong> para que inicies nuevamente.
+                		<script>
+                			function(){
+                				location.href = "../includes/logout.php"
+                			} timeout: 5000
+                		</script>
             		</div>
             	';
     	$cambio = true;
