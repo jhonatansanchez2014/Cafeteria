@@ -164,8 +164,23 @@
 						dataType: "json",
 						data: $('.change-passw form').serialize(),
 						success: function(response){
+							if(response.cambio == true){
+								$('.change-passw form')[0].reset();
+								$("#pwn").removeClass("error-ps");
+								$("#pwr").removeClass("error-ps");
+								$("#old").removeClass("error-ps");
+							}
+							else if(response.pwold == true){
+								$("#old").addClass("error-ps").focus();
+								$("#pwn").removeClass("error-ps");
+								$("#pwr").removeClass("error-ps");
+							}
+							else if(response.pwnew == true){
+								$("#pwn").addClass("error-ps");
+								$("#pwr").addClass("error-ps").focus();
+								$("#old").removeClass("error-ps");
+							}
 							$('.mensaje').html(response.mensaje);
-							$("#pw").addClass("error-ps").focus();
 							$('.loader-wrapper').addClass("hide");
 						},
 						error: function(jqXHR, estado, error){

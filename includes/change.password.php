@@ -7,7 +7,9 @@
 	include_once'connect.php';
 
 	//Declaración de variables
-	$error = false;
+	$pw1 = false;
+	$pw2 = false;
+	$cambio = false;
 	$mensaje = "";
 
 	//Asignación de variables
@@ -22,10 +24,11 @@
 
     	$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
                 		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                		Contraseña cambiado con éxito, tu sesión será finalizda para que inicies nuevamente.
+                		Contraseña cambiada con éxito, tu sesión será finalizda para que inicies nuevamente.
+                		<?php include_once"../includes/logout.php";?>
             		</div>
             	';
-    	$error = true;
+    	$cambio = true;
     }
     else if($passwordold != $password){
     	$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
@@ -33,7 +36,7 @@
                 		La contraseña actual no es valida.
             		</div>
             	';
-    	$error = false;
+    	$pw1 = true;
     }
     else if($passwordnew != $rpasswordnew){
     	$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
@@ -41,10 +44,10 @@
                 		Las contraseñas ingresadoas no coinciden, por favor verificalas e intenta de nuevo.
             		</div>
             	';
-    	$error = false;
+    	$pw2 = true;
     }
 
-    $passJson = array('mensaje' => $mensaje);
+    $passJson = array('mensaje' => $mensaje, 'pwold' => $pw1, 'pwnew' => $pw2, 'cambio' => $cambio);
     echo json_encode($passJson);
 
    /* */
