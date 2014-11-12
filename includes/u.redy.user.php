@@ -3,16 +3,22 @@
     //error_reporting(0);
     session_start();
     include_once'connect.php';//Incluimos el archivo connect.php, el cual es el encargado de realizar la conexión con la bd
+    $doc = "";
+    $sql=$sqli->query("SELECT documento FROM login WHERE rol = 'Administrador'");
+    if($sql->num_rows!=0){
+        $list=$sql->fetch_assoc();
+        $doc = $list['documento'];
+    }
 
     //cadena sql consulta de los datos de usuario
-    $sql="SELECT * FROM users ORDER BY documento ASC";
+    $sql="SELECT * FROM users WHERE documento <>'$doc' ORDER BY documento ASC";
     //se ejecuta la consulta
     $result=$sqli->query($sql);
     //se optienen el numero de filas extraidos de la base de datos
     $numfile=$result->num_rows;
 
     //cadena sql consulta de nombre de usuario y contraseña
-    $sql="SELECT user, password FROM login ORDER BY documento ASC";
+    $sql="SELECT user, password FROM login WHERE documento <>'$doc' ORDER BY documento ASC";
     //se ejecuta la consulta
     $resultLogin=$sqli->query($sql);
     //se optienen el numero de filas extraidos de la base de datos

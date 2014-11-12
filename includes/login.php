@@ -1,5 +1,5 @@
 <?php
-    sleep(3);
+    //sleep(3);
     //error_reporting(0);
     session_start();
     include_once'connect.php';//Incluimos el archivo connect.php, el cual es el encargado de realizar la conexión con la bd
@@ -15,6 +15,7 @@
         $sql=mysqli_query($sqli, "SELECT user, password FROM login WHERE user = '$user' AND password = '$password'");
         if(mysqli_num_rows($sql)>0){//Si existe algún dato en la base de datos con respecto a la consulta realizada
             $_SESSION["usuario"]=$user;//Se le asigna ala variable se sesión el nombre de usuario si la consulta es exitosa
+            $_SESSION["password"]=$password;//Se le asigna ala variable se sesión el nombre de usuario si la consulta es exitosa
             echo '<script>location.href = "./templates/"</script>';//Se redirecciona a la página correspondiente
             //echo $_SESSION["usuario"]." Está conectado";
         }

@@ -10,15 +10,34 @@
     $result=$sqli->query($sql);//me retorna un nimero de columnas o filas afectadas en la base de datos, así se que se realiza algun cambio
 
     if($result){
-        $sql="SELECT * FROM users";
-        //se ejecuta la consulta
-        $result=$sqli->query($sql);
-        //se optienen el numero de filas extraidos de la base de datos
-        $numfile=$result->num_rows;
+        $doc = "";
+    $sql=$sqli->query("SELECT documento FROM login WHERE rol = 'Administrador'");
+    if($sql->num_rows!=0){
+        $list=$sql->fetch_assoc();
+        $doc = $list['documento'];
+    }
 
-        //con el ciclo enviamos todos los datos extraidos de la base de datos $fila->ISBN
-        for($x=0; $x<$numfile; $x++){
-            $fila=$result->fetch_object();
+    //cadena sql consulta de los datos de usuario
+    $sql="SELECT * FROM users WHERE documento <>'$doc' ORDER BY documento ASC";
+    //se ejecuta la consulta
+    $result=$sqli->query($sql);
+    //se optienen el numero de filas extraidos de la base de datos
+    $numfile=$result->num_rows;
+
+    //cadena sql consulta de nombre de usuario y contraseña
+    $sql="SELECT user, password FROM login WHERE documento <>'$doc' ORDER BY documento ASC";
+    //se ejecuta la consulta
+    $resultLogin=$sqli->query($sql);
+    //se optienen el numero de filas extraidos de la base de datos
+    $numfileLogin=$resultLogin->num_rows;
+    //$i=0;
+
+    //con el ciclo enviamos todos los datos extraidos de la base de datos $fila->ISBN
+    for($x=0; $x<$numfile; $x++){
+        $i=0;
+        $fila=$result->fetch_object();
+        for($i; $i<1; $i++){
+            $filaL=$resultLogin->fetch_object();
             if($fila->estado=='Activo'){
                 $seleccion='<option value="Activo">Activo</option>
                             <option value="Suspendido">Suspendido</option>';
@@ -27,7 +46,6 @@
                 $seleccion='<option value="Suspendido">Suspendido</option>
                             <option value="Activo">Activo</option>';
             }
-            //Los datos que retorno al metodo Ajax, para que sean impresos en el documento .php respectivo
             echo '
                 <!--Cuerpo donde se muestran los usuarios-->
                 <article class="post-user margin-post">
@@ -48,11 +66,11 @@
                                 <label class="n-label">Número de celular</label>
                                 <input value='.$fila->celular.' type="text" class="form-control" placeholder="Número de celular" disabled>
                                 <label class="n-label">User name</label>
-                                <span class="password">phvillegas</span>
+                                <span class="password">'.$filaL->user.'</span>
                                 <label class="n-label">Password</label>
-                                <span class="password">*******</span>
-                                <a class="btn btn-default" href="">Actualizar <span class="glyphicon glyphicon-refresh"></span></a>
-                                <a data-toggle="modal" data-id='.$fila->documento.' class="delete-user btn btn-default" href="#delete-modal">Elimina <span class="glyphicon glyphicon-ban-circle"></span></a>
+                                <span class="password password-hidde">'.$filaL->password.'</span>
+                                <a data-toggle="modal" class="btn btn-default" href="#Ups">Editar <span class="glyphicon glyphicon-pencil"></span></a>
+                                <a data-toggle="modal" data-id='.$fila->documento.' class="delete-user btn btn-default" href="#delete-modal">Eliminar <span class="glyphicon glyphicon-ban-circle"></span></a>
                             </form>
                         </div>
                     </div>
@@ -60,6 +78,7 @@
                 <!--End cuerpo donde se muestran los usuarios-->
             ';
         }
+    }
     }
     //En caso de que pase algún error
     else{

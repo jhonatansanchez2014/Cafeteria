@@ -61,7 +61,7 @@
                             <label class="n-label">User name</label>
                             <span class="password">'.$user.'</span>
                             <label class="n-label">Password</label>
-                            <span class="password">*******</span>
+                            <span class="password password-hidde">'.$password.'</span>
                             <a data-toggle="modal" class="btn btn-default" href="#Ups">Editar <span class="glyphicon glyphicon-pencil"></span></a>
                             <a data-toggle="modal" data-id='.$documento.' class="delete-user btn btn-default" href="#delete-modal">Eliminar <span class="glyphicon glyphicon-ban-circle"></span></a>
                         </form>

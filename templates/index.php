@@ -12,11 +12,21 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
 		<script type="text/javascript" src="../js/jquery/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.ajax.js"></script>
 		<script type="text/javascript" src="../styles/bootstrap/js/bootstrap.js"></script>
 		<link rel="stylesheet" href="../styles/style.admin.css" />
 		<link href="../styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 		<title>Admin Cafetería</title>
+		<style>
+			.error-ps:focus{
+				border-color: #e12741;
+  				outline: 0;
+  				-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(213, 13, 41, .6);
+          				box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(213, 13, 41, .6);
+	  		}
+	  		.error-ps{
+				border: 1px solid #e67a89;
+			}
+		</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-default" role="navigation">
@@ -104,7 +114,6 @@
 			</article>
 			<!--end post-->
 		</section>
-			<?php include_once'../includes/change.modal.php';?>
 		<!--end container-->
 		<!--modal dialog-->
 		<div id="example" class="modal fade">
@@ -127,12 +136,50 @@
 				</div>
 			</div>
 		</div>
-		<?php include_once'../includes/about.php'; ?>
+		<?php
+			include_once'../includes/about.php';
+			include_once'../includes/change.modal.php';
+		?>
 		<!--end modal dialog-->
 		<footer id="footer">
         	<div class="container">
             	<p class="text-muted credit">Cafetería &copy; 2014 | <a href="#">Ayuda</a> | <a data-toggle="modal" href="#example">Acerca de</a></p>
         	</div>
     	</footer>
+    	<script>
+    		$(document).on('ready', function(){
+				/*Ajax para guardar datos del proveedor*/
+				var pet=$('.change-passw form').attr('action');
+				var met=$('.change-passw form').attr('method');
+
+				$('.change-passw form').on('submit', function(e){
+					e.preventDefault();
+					$.ajax({
+						beforeSend: function(){
+							/*preloader*/
+							$('.loader-wrapper').removeClass("hide");
+						},
+						url: pet,
+						type: met,
+						dataType: "json",
+						data: $('.change-passw form').serialize(),
+						success: function(response){
+							$('.mensaje').html(response.mensaje);
+							$("#pw").addClass("error-ps").focus();
+							$('.loader-wrapper').addClass("hide");
+						},
+						error: function(jqXHR, estado, error){
+							console.log(estado);
+							console.log(error);
+						},
+						complete: function(jqXHR, estado){
+							console.log(estado);
+						},
+						timeout: 10000
+					});
+				});
+				/*end*/
+			});
+    	</script>
 	</body>
 </html>
