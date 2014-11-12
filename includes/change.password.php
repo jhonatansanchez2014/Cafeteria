@@ -17,7 +17,8 @@
 
     //Se comparan los password para verificar que sean iguales
     if($passwordnew == $rpasswordnew && $passwordold == $password){
-    	//$sql = "UPDATE login SET password ='$passwordnew' WHERE password = '$user'";
+    	$sql = "UPDATE login SET password ='$passwordnew' WHERE user = '$user'";
+    	$result = $sqli->query($sql);
 
     	$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
                 		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -26,7 +27,15 @@
             	';
     	$error = true;
     }
-    else{
+    else if($passwordold != $password){
+    	$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
+                		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                		La contraseña actual no es valida.
+            		</div>
+            	';
+    	$error = false;
+    }
+    else if($passwordnew != $rpasswordnew){
     	$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
                 		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 		Las contraseñas ingresadoas no coinciden, por favor verificalas e intenta de nuevo.
