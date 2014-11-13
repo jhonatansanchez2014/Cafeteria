@@ -2,6 +2,33 @@
     include_once'connect.php';
     //sleep(5);
 
+    // Función para extraer datos del proveedor
+    function consulAdmin($linkbd){
+        $user = $_SESSION['usuario'];
+        $admin = "";
+        //$v="SELECT * FROM turno INNER JOIN persona ON  turno.Documento=persona.Documento WHERE turno.Fecha_atencion='$Fecha_atencion'";
+        $sql = $linkbd->query("SELECT * FROM users INNER JOIN login ON users.documento=login.documento WHERE login.user = '$user' AND login.rol = 'Administrador'");
+        if($sql->num_rows!=0){
+            // convertimos el objeto
+            while($list=$sql->fetch_assoc()){
+                $nombre = $list['nombres'];
+                $apellido = $list['apellidos'];
+                $documento = $list['documento'];
+                $edad = $list['edad'];
+                $celular = $list['celular'];
+                $usuario = $list['user'];
+            }
+            $admin = array('nombre' => $nombre,
+                            'apellido' => $apellido,
+                            'documento' => $documento, 
+                            'edad' => $edad, 
+                            'celular' => $celular, 
+                            'user' => $usuario
+                        );
+        }
+        return $admin;
+    }
+
     // Función para extraer el listado de usurios
     function consulProducts($linkbd){
         $consult='';

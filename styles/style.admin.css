@@ -28,7 +28,6 @@ header .user{
 }
 header nav{
     float: right;
-    
 }
 nav a{
     text-decoration: none;
@@ -245,6 +244,16 @@ nav a{
 .atras a{
     padding: 5px;
 }
+.error-ps:focus{
+    border-color: #e12741;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(213, 13, 41, .6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(213, 13, 41, .6);
+}
+.error-ps{
+    border: 1px solid #e67a89;
+}
+
 /*Preloader*/
 .loader-wrapper{
     position: relative;

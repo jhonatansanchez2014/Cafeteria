@@ -36,9 +36,9 @@
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
         				<li><a href="./">Home</a></li>
-        				<li><a href="./products.php">Gestionar Productos</a></li>
-        				<li><a href="./pr.php">Gestionar Proveedores</a></li>
-        				<li><a href="#">Cambiar contraseña</a></li>
+        				<li><a href="./products.php">Productos</a></li>
+        				<li><a href="./pr.php">Proveedores</a></li>
+        				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
     			</div><!-- /.navbar-collapse -->
@@ -122,7 +122,10 @@
 			</div>
 		</div>
 		<!--modal delete-->	
-		<?php include_once'../includes/about.php'; ?>
+		<?php
+			include_once'../includes/about.php';
+			include_once'../includes/change.modal.php';
+		?>
 		<footer id="footer">
         	<div class="container">
             	<p class="text-muted credit">Cafetería &copy; 2014 | <a href="#">Ayuda</a> | <a data-toggle="modal" href="#example">Acerca de</a></p>

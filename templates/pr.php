@@ -46,9 +46,9 @@
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
         				<li><a href="./">Home</a></li>
-        				<li><a href="./products.php">Gestionar Productos</a></li>
-        				<li><a href="./users.php">Gestionar Usuarios</a></li>
-        				<li><a href="#">Cambiar contraseña</a></li>
+        				<li><a href="./products.php">Productos</a></li>
+        				<li><a href="./users.php">Usuarios</a></li>
+        				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
     			</div><!-- /.navbar-collapse -->
@@ -103,6 +103,7 @@
 			include_once'../includes/pr.modal.plus.php';
 			include_once'../includes/pr.modal.delete.php';
 			include_once'../includes/pr.modal.edit.php';
+			include_once'../includes/change.modal.php';
 		?>
 		<footer id="footer">
         	<div class="container">

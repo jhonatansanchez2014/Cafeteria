@@ -5,6 +5,8 @@
 	else{
 		header('Location: ../');
 	}
+	include_once('../includes/load.data.php');
+	$admin=consulAdmin($sqli);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,17 +18,6 @@
 		<link rel="stylesheet" href="../styles/style.admin.css" />
 		<link href="../styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 		<title>Admin Cafetería</title>
-		<style>
-			.error-ps:focus{
-				border-color: #e12741;
-  				outline: 0;
-  				-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(213, 13, 41, .6);
-          				box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(213, 13, 41, .6);
-	  		}
-	  		.error-ps{
-				border: 1px solid #e67a89;
-			}
-		</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-default" role="navigation">
@@ -45,8 +36,8 @@
     			<!-- Collect the nav links, forms, and other content for toggling -->
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
-        				<li class="active"><a href="#">Home</a></li>
-        				<li><a href="#">Administrador</a></li>
+        				<li class="active"><a href="#home">Home</a></li>
+        				<li><a data-toggle="modal" href="#data-admin">Administrador</a></li>
         				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
@@ -139,6 +130,7 @@
 		<?php
 			include_once'../includes/about.php';
 			include_once'../includes/change.modal.php';
+			include_once'../includes/admin.modal.php';
 		?>
 		<!--end modal dialog-->
 		<footer id="footer">

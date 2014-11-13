@@ -19,20 +19,26 @@
 
     //Se comparan los password para verificar que sean iguales
     if($passwordnew == $rpasswordnew && $passwordold == $password){
-    	$sql = "UPDATE login SET password ='$passwordnew' WHERE user = '$user'";
-    	$result = $sqli->query($sql);
+    	$aux = strlen($passwordnew);
+    	if($aux >= 6 || $aux == 10){
+    		$sql = "UPDATE login SET password ='$passwordnew' WHERE user = '$user'";
+    		$result = $sqli->query($sql);
 
-    	$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
+    		$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
                 		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                		Contraseña cambiada con éxito, tu sesión será finalizda en <strong>10 segundos</strong> para que inicies nuevamente.
-                		<script>
-                			function(){
-                				location.href = "../includes/logout.php"
-                			} timeout: 5000
-                		</script>
+                		Contraseña cambiada con éxito.
             		</div>
-            	';
-    	$cambio = true;
+            ';
+    		$cambio = true;
+    		$_SESSION["password"] = $passwordnew;
+    	}
+    	else{
+    		$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
+                		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                		La nueva contraseña ingresada debe tener como máximo 10 caracteres y como mínimo 6.
+            		</div>
+            ';
+    	}
     }
     else if($passwordold != $password){
     	$mensaje = '<div class="alert alert-warning alert-dismissible" role="alert">
