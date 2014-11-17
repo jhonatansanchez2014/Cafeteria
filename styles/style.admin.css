@@ -8,7 +8,7 @@
 }
 html, body{
 	font-family: 'Lato', sans-serif, Arial;
-	font-weight: 300;
+	font-weight: 400;
 	position: absolute;
 	height: 100%;
 	min-width: 100%;
@@ -253,7 +253,10 @@ nav a{
 .error-ps{
     border: 1px solid #e67a89;
 }
-
+.programing{
+    margin-left: 15px;
+    font-style: italic;
+}
 /*Preloader*/
 .loader-wrapper{
     position: relative;

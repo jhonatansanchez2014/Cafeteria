@@ -2,10 +2,11 @@
     session_start();
     include_once'connect.php';//Incluimos el archivo connect.php, el cual es el encargado de realizar la conexión con la bd
     $respuestaHtml="";
+    $mensaje = "";
     //Se elimina el usuario
-    $doc=mysqli_real_escape_string($sqli, $_POST['documento']);//Resivo por POST el Usuario
+    $docum=mysqli_real_escape_string($sqli, $_POST['documento']);//Resivo por POST el Usuario
     //delete from prog_apto_docentes where Documento=".$documento
-    $sql="DELETE FROM users WHERE documento ='$doc'";
+    $sql="DELETE FROM users WHERE documento ='$docum'";
     //$result = $sqli->query($sql);
     $result=$sqli->query($sql);//me retorna un nimero de columnas o filas afectadas en la base de datos, así se que se realiza algun cambio
 
@@ -46,7 +47,7 @@
                 $seleccion='<option value="Suspendido">Suspendido</option>
                             <option value="Activo">Activo</option>';
             }
-            echo '
+            $respuestaHtml.= '
                 <!--Cuerpo donde se muestran los usuarios-->
                 <article class="post-user margin-post">
                     <div class="panel panel-default">
@@ -79,9 +80,23 @@
             ';
         }
     }
+        $mensaje = '
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    Usuario eliminado con éxito.
+                </div>
+        ';
     }
     //En caso de que pase algún error
     else{
-        echo "Ups al parecer no se pudo eliminar el usuario";
+        $mensaje = '
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    Ha ocurrido un error y no se ha podido eliminar el usuario.
+                </div>
+        ';
     }
+
+    $mensajeJson = array('respuesta' => $respuestaHtml, 'mensaje' => $mensaje);
+    echo json_encode($mensajeJson);
 ?>

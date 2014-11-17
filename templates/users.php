@@ -10,12 +10,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
-		<script type="text/javascript" src="../js/jquery/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.ajax.js"></script>
-		<script type="text/javascript" src="../styles/bootstrap/js/bootstrap.js"></script>
-		<link rel="stylesheet" href="../styles/style.admin.css" />
 		<link href="../styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
+		<link rel="stylesheet" href="../styles/style.admin.css" />
 		<title>Admin Cafetería</title>
 	</head>
 	<body>
@@ -36,22 +32,24 @@
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
         				<li><a href="./">Home</a></li>
+        				<li><a data-toggle="modal" href="#data-admin">Administrador</a></li>
+        				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
         				<li><a href="./products.php">Productos</a></li>
         				<li><a href="./pr.php">Proveedores</a></li>
-        				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
     			</div><!-- /.navbar-collapse -->
   			</div><!-- /.container-fluid -->
 		</nav>
 		<!--end nav menu bar-->
-		<!--Preloader and error-->
-		<span class="msg-error hidde"></span>
-		<span class="contt loader-wrapper loader hide"></span>
+		
 		<!--Container-->
 		<section class="container">
 			<!--contenedor principal-->
 			<article class="post-pages margin-post">
+				<!--para mostrar mensajes de error-->
+				<div class="mensaje"></div>
+
 				<div class="panel panel-default">
 	  				<div class="panel-heading">
 	    				<h3 class="panel-title title-post">Gestionar Usuarios</h3>
@@ -111,20 +109,21 @@
 					<div class="modal-body">
 						Vas a eliminar el usuario con número de identificación <span class="documento-delete" ></span>, esto se hará de forma permanente en la based e datos.
 					</div>
-	     			<div class="modal-footer">
-	     				<form action="../includes/delete.user.php" method="POST" name="formDelete">
-	     					<input name="documento" id="dc" type="hidden" value="">
-	     					<input type="submit" name="save" value="Eliminar" class="btn btn-danger addbtn"/>
-	     					<button type="button" data-dismiss="modal" class="btn btn-success">Cancelar</button>
-	     				</form>
+	     			<div class="delete-user modal-footer">
+	     				<input name="documento" id="dc" type="hidden" value="">
+	     				<button onclick="delete_user(document.getElementById('dc').value);" type="button" data-dismiss="modal" class="btn btn-danger">Eliminar</button>
+	     				<button type="button" data-dismiss="modal" class="btn btn-success">Cancelar</button>
 	    			</div>
 				</div>
 			</div>
 		</div>
 		<!--modal delete-->	
 		<?php
+			include_once('../includes/load.data.php');
+			$admin=consulAdmin($sqli);
 			include_once'../includes/about.php';
 			include_once'../includes/change.modal.php';
+			include_once'../includes/admin.modal.php';
 		?>
 		<footer id="footer">
         	<div class="container">
@@ -133,63 +132,8 @@
     	</footer>
     	<!--end footer-->
     	<!--script for delete user-->
-    	<script type="text/javascript">
-			$(document).on("click", ".delete-user", function(){
-				var documento=$(this).data('id');
-				$(".modal-footer #dc").val(documento);
-				$(".documento-delete").html(documento);
-			});
-
-			$(document).on('ready', function(){
-				//Eliminar un usuario
-				var pet=$('.modal-footer form').attr('action');
-				var met=$('.modal-footer form').attr('method');
-
-				$('.modal-footer form').on('submit', function(e){
-					e.preventDefault();
-					$.ajax({
-						beforeSend: function(){
-							$('.loader-wrapper').removeClass("hide");
-							$('.msg-error').hide();
-						},
-						url: pet,
-						//dataType: "json",
-						type: met,
-						data: $('.modal-footer form').serialize(),
-						success: function(respuesta){
-							$('.loader-wrapper').addClass("hide");
-							$('.add-new').html(respuesta);
-						},
-						error: function(jqXHR, estado, error){
-							console.log(estado);
-							console.log(error);
-						},
-						complete: function(jqXHR, estado){
-							console.log(estado);
-						},
-						timeout: 10000
-					});
-				});
-			});
-		</script>
-
-		<!--modal delete-->
-		<div id="Ups" class="modal fade">
-			<div class="modal-dialog">   
-				<div class="modal-content"> 
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h3>Error</h3>
-					</div>
-					<div class="modal-body">
-						Ups, esta perte del modulo aún no está funcionando. :p xD
-					</div>
-	     			<div class="modal-footer">
-	     				<button type="button" data-dismiss="modal" class="btn btn-success">Cerrar</button>
-	    			</div>
-				</div>
-			</div>
-		</div>
-		<!--modal delete-->	
+		<script type="text/javascript" src="../js/jquery/jquery-2.1.1.min.js"></script>
+    	<script type="text/javascript" src="../js/jquery.ajax.js"></script>
+    	<script type="text/javascript" src="../styles/bootstrap/js/bootstrap.js"></script>
 	</body>
 </html>

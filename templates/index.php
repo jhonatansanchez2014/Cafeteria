@@ -13,10 +13,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
-		<script type="text/javascript" src="../js/jquery/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="../styles/bootstrap/js/bootstrap.js"></script>
-		<link rel="stylesheet" href="../styles/style.admin.css" />
 		<link href="../styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../styles/style.admin.css" />
 		<title>Admin Cafetería</title>
 	</head>
 	<body>
@@ -106,31 +104,11 @@
 			<!--end post-->
 		</section>
 		<!--end container-->
-		<!--modal dialog-->
-		<div id="example" class="modal fade">
-   			<div class="modal-dialog">   
-      			<div class="modal-content"> 
-         			<div class="modal-header">
-            			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            			<h3>Cafetería</h3>
-         			</div>
-         			<div class="modal-body">
-            			<p><strong>Cafetería</strong> es un proyecto realizado por los estudiantes 
-	            			<strong>Jhonatan Sanchez Ospina</strong> y <strong>Alejandro Velasquez Rivera</strong> 
-	            			de la Tecnología en Sistematización de Datos del Politécnico Colombiano Jaime Isaza Cadavid, 
-	            			sede regional Apartadó.
-            			</p>                
-         			</div>
-		         	<div class="modal-footer">
-		         		<button type="button" data-dismiss="modal" class="btn btn-success">Cerrar</button>
-		        	</div>
-				</div>
-			</div>
-		</div>
 		<?php
 			include_once'../includes/about.php';
 			include_once'../includes/change.modal.php';
 			include_once'../includes/admin.modal.php';
+			include_once'../includes/about.php';
 		?>
 		<!--end modal dialog-->
 		<footer id="footer">
@@ -138,55 +116,8 @@
             	<p class="text-muted credit">Cafetería &copy; 2014 | <a href="#">Ayuda</a> | <a data-toggle="modal" href="#example">Acerca de</a></p>
         	</div>
     	</footer>
-    	<script>
-    		$(document).on('ready', function(){
-				/*Ajax para guardar datos del proveedor*/
-				var pet=$('.change-passw form').attr('action');
-				var met=$('.change-passw form').attr('method');
-
-				$('.change-passw form').on('submit', function(e){
-					e.preventDefault();
-					$.ajax({
-						beforeSend: function(){
-							/*preloader*/
-							$('.loader-wrapper').removeClass("hide");
-						},
-						url: pet,
-						type: met,
-						dataType: "json",
-						data: $('.change-passw form').serialize(),
-						success: function(response){
-							if(response.cambio == true){
-								$('.change-passw form')[0].reset();
-								$("#pwn").removeClass("error-ps");
-								$("#pwr").removeClass("error-ps");
-								$("#old").removeClass("error-ps");
-							}
-							else if(response.pwold == true){
-								$("#old").addClass("error-ps").focus();
-								$("#pwn").removeClass("error-ps");
-								$("#pwr").removeClass("error-ps");
-							}
-							else if(response.pwnew == true){
-								$("#pwn").addClass("error-ps");
-								$("#pwr").addClass("error-ps").focus();
-								$("#old").removeClass("error-ps");
-							}
-							$('.mensaje').html(response.mensaje);
-							$('.loader-wrapper').addClass("hide");
-						},
-						error: function(jqXHR, estado, error){
-							console.log(estado);
-							console.log(error);
-						},
-						complete: function(jqXHR, estado){
-							console.log(estado);
-						},
-						timeout: 10000
-					});
-				});
-				/*end*/
-			});
-    	</script>
+    	<script type="text/javascript" src="../js/jquery/jquery-2.1.1.min.js"></script>
+    	<script type="text/javascript" src="../js/jquery.ajax.js"></script>
+    	<script type="text/javascript" src="../styles/bootstrap/js/bootstrap.js"></script>
 	</body>
 </html>

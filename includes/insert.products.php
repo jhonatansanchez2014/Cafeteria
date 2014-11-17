@@ -1,9 +1,11 @@
 <?php
     //sleep(5);
     session_start();
+    $user = $_SESSION['usuario'];
+
     include_once'connect.php';//Incluimos el archivo connect.php, el cual es el encargado de realizar la conexión con la bd
 
-    $error=false;
+    $error = false;
 
     //Asignación de variables
     $cod_pro=mysqli_real_escape_string($sqli, $_POST['codigo']);//Resivo por POST el codigo
@@ -21,7 +23,7 @@
     $fecha_ingreso_pro = date("Y-m-d");
 
     //Se hace la consulta SQL
-    $sql="INSERT INTO productos(cod_pro, nombre_pro, categoria_pro, cantidad_pro, cantidad_pro_uni, precio_pro, fecha_vence_pro, fecha_ingreso_pro, proveedor_pro, repartidor_pro) VALUES('$cod_pro', '$nombre_pro', '$categoria_pro', '$cantidad_pro', '$cantidad_pro_uni', '$precio_pro', '$fecha_vence_pro', '$fecha_ingreso_pro', '$proveedor_pro', '$repartidor_pro');";
+    $sql="INSERT INTO productos(cod_pro, nombre_pro, categoria_pro, cantidad_pro, cantidad_pro_uni, precio_pro, fecha_vence_pro, fecha_ingreso_pro, proveedor_pro, repartidor_pro, user) VALUES('$cod_pro', '$nombre_pro', '$categoria_pro', '$cantidad_pro', '$cantidad_pro_uni', '$precio_pro', '$fecha_vence_pro', '$fecha_ingreso_pro', '$proveedor_pro', '$repartidor_pro', '$user');";
     //Se ejecuta el Query
     $result=$sqli->query($sql);
 
@@ -46,6 +48,7 @@
                         <td>'.$fecha_ingreso_pro.'</td>
                         <td>'.$proveedor_pro.'</td>
                         <td>'.$repartidor_pro.'</td>
+                        <td>'.$user.'</td>
                     <tr>
         ';
     }

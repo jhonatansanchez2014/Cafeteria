@@ -7,7 +7,7 @@
 				<h3>Datos del administrador</h3>
 			</div>
 			<div class="admin-data modal-body">
-				<form action="../includes/change.password.php" method="POST">
+				<form action="../includes/admin.update.php" method="POST">
 					<div class="input-group salto">
   						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
 						<input value="<?php echo $admin['nombre']; ?>" name="nombre" type="text" autocomplete="off" maxlength="50" class="form-control" placeholder="Nombres" required />

@@ -24,13 +24,64 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
-		<script type="text/javascript" src="../js/jquery/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.ajax.js"></script>
-		<script type="text/javascript" src="../styles/bootstrap/js/bootstrap.js"></script>
-		<link rel="stylesheet" href="../styles/style.admin.css" />
 		<link href="../styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../styles/style.admin.css" />
+		<style type="text/css">
 
+.typeahead, .tt-query, .tt-hint {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	height: 34px;
+	padding: 8px 12px;
+	
+	
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.typeahead {
+	background-color: #fff;
+}
+.typeahead:focus {
+	border-color: #66afe9;
+  	outline: 0;
+  	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-dropdown-menu {
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 5px;
+	padding: 8px 0;
+	width: 100%;
+}
+.tt-suggestion {
+	font-size: 16px;
+	line-height: 24px;
+	padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+	background-color: #0097CF;
+	color: #fff;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+</style>
+		
 		<title>Admin Cafetería</title>
+		
 	</head>
 	<body>
 		<nav class="navbar navbar-default" role="navigation">
@@ -50,9 +101,10 @@
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
         				<li><a href="./">Home</a></li>
+        				<li><a data-toggle="modal" href="#data-admin">Administrador</a></li>
+        				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
         				<li><a href="./users.php">Usuarios</a></li>
         				<li><a href="./pr.php">Proveedores</a></li>
-        				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
     			</div><!-- /.navbar-collapse -->
@@ -107,10 +159,11 @@
 								        <th>Cantidad</th>
 								        <th>Unidad</th>
 								        <th>Precio</th>
-								        <th>F caducidad</th>
-								        <th>F ingreso</th>
+								        <th>Caducidad</th>
+								        <th>Ingreso</th>
 								        <th>Proveedor</th>
 								        <th>Repartidor</th>
+								        <th>Usuario</th>
 								    </tr>
 								</thead>
 								<tbody class="content-table">
@@ -131,9 +184,12 @@
 		</section>
 		<!--end container-->
 		<?php
+			include_once('../includes/load.data.php');
+			$admin=consulAdmin($sqli);
 			include_once'../includes/about.php';
 			include_once'../includes/products.modal.php';
 			include_once'../includes/change.modal.php';
+			include_once'../includes/admin.modal.php';
 		?>
 		<footer id="footer">
         	<div class="container">
@@ -141,43 +197,17 @@
         	</div>
     	</footer>
     	<!--end footer-->
-    	<!--script for delete user-->
+    	<script type="text/javascript" src="../js/jquery/jquery-2.1.1.min.js"></script>
+    	<script type="text/javascript" src="../js/jquery.ajax.js"></script>
+    	<script type="text/javascript" src="../styles/bootstrap/js/bootstrap.js"></script>
+    	<script  type="text/javascript" src="../js/typeahead.min.js"></script>
     	<script type="text/javascript">
-			$(document).on("click", ".delete-user", function(){
-				var documento=$(this).data('id');
-				$(".modal-footer #dc").val(documento);
-				$(".documento-delete").html(documento);
-			});
-			$(document).on('ready', function(){
-				//search date
-				var pet=$('.filtre form').attr('action');
-				var met=$('.filtre form').attr('method');
-
-				$('.filtre form').on('submit', function(e){
-					e.preventDefault();
-					$.ajax({
-						url: pet,
-						type: met,
-						dataType: "json",
-						data: $('.filtre form').serialize(),
-						success: function(res){
-							//alert(response.contenido);
-							$('.content-table').html(res.cont);
-						},
-						error: function(jqXHR, estado, error){
-							console.log(estado);
-							console.log(error);
-						},
-						complete: function(jqXHR, estado){
-							console.log(estado);
-						},
-						timeout: 10000
-					});
-				});
-				$(function(){
-					$("[data-toggle='tooltip']").tooltip();
-				});
-			});
-		</script>
+$(document).ready(function(){
+	$('input.typeahead').typeahead({
+		name: 'accounts',
+		local: ['Audi', 'AMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen']
+	});
+});  
+</script>
 	</body>
 </html>

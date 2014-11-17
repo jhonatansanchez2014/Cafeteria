@@ -48,6 +48,7 @@
                     <td>'.$list['fecha_ingreso_pro'].'</td>
                     <td>'.$list['proveedor_pro'].'</td>
                     <td>'.$list['repartidor_pro'].'</td>
+                    <td>'.$list['user'].'</td>
                 <tr>
                 ';
             }

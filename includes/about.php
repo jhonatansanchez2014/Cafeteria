@@ -11,6 +11,27 @@
 	    			<strong>Jhonatan Sanchez Ospina</strong> y <strong>Alejandro Velasquez Rivera</strong> 
 	    			de la Tecnología en Sistematización de Datos del Politécnico Colombiano Jaime Isaza Cadavid, 
 	    			sede regional Apartadó.
+					<br /><br />
+					La aplicación <strong>cafetería</strong> fue creada con:
+					<div class="programing">
+						<ul><strong>Frontend:</strong>
+							<li>Css: Bootstrap</li>
+							<li>HTML5</li>
+							<li>JavaScript: JQuery, Bootstrap.js, Método Ajax de JQuery</li>
+						</ul>
+						<ul>
+							<strong>Backend:</strong>
+							<li>PHP</li>
+						</ul>
+						<ul>
+							<strong>Base de datos:</strong>
+							<li>MYSQL</li>
+						</ul>
+					</div>
+					
+					
+					
+
 				</p>                
 			</div>
 	     	<div class="modal-footer">

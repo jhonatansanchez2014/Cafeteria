@@ -6,7 +6,7 @@
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 						<h3>Agregar nuevo producto</h3>
 					</div>
-					<div class="modal-body">
+					<div class="add-product modal-body">
 						
 						<form action="../includes/insert.products.php" method="POST">
 							<input name="codigo" type="text" onkeypress="validatenum();" autocomplete="off" maxlength="15" class="form-control salto" placeholder="Codigo del producto" required />
@@ -33,7 +33,8 @@
 
 							<label class="salto">Fecha de caducidad</label>
 							<input name="fVence" type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" required />
-
+							
+        					<input style="width: 100%;" type="text" class="typeahead tt-query salto" maxlength="50" autocomplete="off" spellcheck="false" placeholder="Proveedor" required />
 							<!--<select name="proveedor" class="form-control salto">
 								<option value="Yupi">Yupi</option>
 								<option value="Colanta">Suspendido</option>
