@@ -124,6 +124,7 @@
 			include_once '../includes/about.php';
 			include_once '../includes/change.modal.php';
 			include_once '../includes/admin.modal.php';
+			include_once '../includes/user.modal.edit.php';
 		?>
 		<footer id="footer">
         	<div class="container">
