@@ -33,8 +33,7 @@
 
 							<label class="salto">Fecha de caducidad</label>
 							<input name="fVence" type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" required />
-							
-        					<input style="width: 100%;" type="text" class="typeahead tt-query salto" maxlength="50" autocomplete="off" spellcheck="false" placeholder="Proveedor" required />
+							       		
 							<!--<select name="proveedor" class="form-control salto">
 								<option value="Yupi">Yupi</option>
 								<option value="Colanta">Suspendido</option>

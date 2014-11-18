@@ -96,15 +96,15 @@
 		</section>
 		<!--end container-->
 		<?php
-			include_once('../includes/load.data.php');
-			$admin=consulAdmin($sqli);
-			include_once'../includes/about.php';
-			include_once'../includes/pr.modal.php';
-			include_once'../includes/pr.modal.plus.php';
-			include_once'../includes/pr.modal.delete.php';
-			include_once'../includes/pr.modal.edit.php';
-			include_once'../includes/change.modal.php';
-			include_once'../includes/admin.modal.php';
+			include_once '../includes/load.data.php';
+			$admin = consulAdmin($sqli);
+			include_once '../includes/about.php';
+			include_once '../includes/pr.modal.php';
+			include_once '../includes/pr.modal.plus.php';
+			include_once '../includes/pr.modal.delete.php';
+			include_once '../includes/pr.modal.edit.php';
+			include_once '../includes/change.modal.php';
+			include_once '../includes/admin.modal.php';
 		?>
 		<footer id="footer">
         	<div class="container">

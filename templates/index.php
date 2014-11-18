@@ -105,10 +105,10 @@
 		</section>
 		<!--end container-->
 		<?php
-			include_once'../includes/about.php';
-			include_once'../includes/change.modal.php';
-			include_once'../includes/admin.modal.php';
-			include_once'../includes/about.php';
+			include_once '../includes/about.php';
+			include_once '../includes/change.modal.php';
+			include_once '../includes/admin.modal.php';
+			include_once '../includes/about.php';
 		?>
 		<!--end modal dialog-->
 		<footer id="footer">

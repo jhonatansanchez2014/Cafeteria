@@ -10,21 +10,27 @@ $(document).on('ready', function(){
 		e.preventDefault();
 		$.ajax({
 			beforeSend: function(){
-				$('.loader-wrapper').removeClass("hide");
-				$('.msg-error').hide();
+				/*pre-loader*/
 			},
 			url: peticion,
 			type: metodo,
+			dataType: "json",
 			data: $('.adduser form').serialize(),
 			success: function(respuesta){
-				$('.loader-wrapper').addClass("hide");
-				if(respuesta=="Ups al parecer sucedió un problema al intentar guardar el usuario en la base de datos, verifica los datos."){
-					$('.msg-error').html(respuesta).show();
+				if(respuesta.e){
+					$('.adduser form')[0].reset();
+					$('.add-new').append(respuesta.contenido);
+					$("#user").removeClass("error-ps");
+					$("#documento").removeClass("error-ps");
+				}if(respuesta.u){
+					$("#user").addClass("error-ps").focus();
+					$("#documento").addClass("error-ps");
 				}
-				else{
-					$('.add-new').append(respuesta);
-					$('.msg-error').html('Usuario registrado con exito.').show();
+				if(respuesta.d){
+					$("#documento").addClass("error-ps").focus();
+					$("#user").removeClass("error-ps");
 				}
+				$('.mensaje').html(respuesta.mensaje);
 			},
 			error: function(jqXHR, estado, error){
 				console.log(estado);

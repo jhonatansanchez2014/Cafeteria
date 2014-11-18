@@ -68,7 +68,7 @@
 		  									<br />
 		  									<input name="apellidos" type="text" onkeypress="validatetext();" autocomplete="off" maxlength="50" class="form-control" placeholder="Apellidos" required />
 		  									<br />
-		  									<input name="documento" type="text" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Documento" required />
+		  									<input id="documento" name="documento" type="text" onkeypress="validatenum();" autocomplete="off" maxlength="11" class="form-control" placeholder="Documento" required />
 		  									<br />
 		  									<input name="edad" type="number" autocomplete="off" class="form-control" placeholder="Edad" min="18" max="100" required />
 		  									<br />
@@ -79,7 +79,7 @@
 		  									<br />
 		  									<input name="celular" type="tel" onkeypress="validatenum();" maxlength="11" autocomplete="off" class="form-control" placeholder="Número de celular" required />
 		  									<br />
-		  									<input name="user" type="text" maxlength="10" autocomplete="off" class="form-control" placeholder="Nombre de usuario" required />
+		  									<input id="user" name="user" type="text" maxlength="10" autocomplete="off" class="form-control" placeholder="Nombre de usuario" required />
 
 		  									<input type="submit" name="save" value="Guardar" class="btn btn-default addbtn"/>
 		  									<input type="reset" name="save" value="Nuevo" class="btn btn-default addbtn"/>
@@ -119,11 +119,11 @@
 		</div>
 		<!--modal delete-->	
 		<?php
-			include_once('../includes/load.data.php');
-			$admin=consulAdmin($sqli);
-			include_once'../includes/about.php';
-			include_once'../includes/change.modal.php';
-			include_once'../includes/admin.modal.php';
+			include_once '../includes/load.data.php';
+			$admin = consulAdmin($sqli);
+			include_once '../includes/about.php';
+			include_once '../includes/change.modal.php';
+			include_once '../includes/admin.modal.php';
 		?>
 		<footer id="footer">
         	<div class="container">

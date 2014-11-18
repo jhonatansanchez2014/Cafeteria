@@ -6,6 +6,12 @@
     //Se genera un password aleatorio
     $password=passwordRandom();
 
+    $mensaje = '';
+    $contenido = '';
+    $e = false;
+    $u = false;
+    $d = false;
+
     //Asignación de variables
     $nombres=mysqli_real_escape_string($sqli, $_POST['nombres']);//Resivo por POST el nombre
     $apellidos=mysqli_real_escape_string($sqli, $_POST['apellidos']);//Recibo por POST el apellido
@@ -23,56 +29,88 @@
          $seleccion='<option value="Suspendido">Suspendido</option>
                     <option value="Activo">Activo</option>';
     }
-
-    //Se hace la consulta SQL
-    $sql="INSERT INTO users VALUES('$documento', '$nombres', '$apellidos', '$edad', '$celular', '$estado');";
-    //Se ejecuta el Query
-    $result=$sqli->query($sql);
-
-    //Insertar en la tabla de login
-    $sqlLogin="INSERT INTO login VALUES('$user', '$password', 'Trabajador', '$documento');";
-    //Se ejecuta el Query
-    $insertData=$sqli->query($sqlLogin);
+    //$sql = $linkbd->query("SELECT * FROM users INNER JOIN login ON users.documento=login.documento WHERE login.user = '$user' AND login.rol = 'Administrador'");
     
-    //Si hay cambios o se afecto alguna taba de la base de datos
-    if($result){
-        //echo "Usuario registrado con exito";
-        //echo $sqli->affected_rows." fila(s) afectada(s). Informaci&oacute;n insertada correctamente";
-        echo '
-            <!--Cuerpo donde se muestran los usuarios-->
-            <article class="post-user margin-post">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a class="title-post"><h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> '.$nombres.' '.$apellidos.'</h3></a>
+    //$sql = $sqli->query("SELECT * FROM login INNER JOIN users ON login.documento=users.documento WHERE login.user = '$user' AND users.documento = '$documento'");
+    $sql = $sqli->query("SELECT user, documento FROM login WHERE user = '$user'");
+    $sqlu = $sqli->query("SELECT documento FROM users WHERE documento = '$documento'");
+
+    if($sql->num_rows == 0 && $sqlu->num_rows == 0){
+        //Se hace la consulta SQL
+        $sql="INSERT INTO users VALUES('$documento', '$nombres', '$apellidos', '$edad', '$celular', '$estado');";
+        //Se ejecuta el Query
+        $result=$sqli->query($sql);
+
+        //Insertar en la tabla de login
+        $sqlLogin="INSERT INTO login VALUES('$user', '$password', 'Trabajador', '$documento');";
+        //Se ejecuta el Query
+        $insertData=$sqli->query($sqlLogin);
+        
+        //Si hay cambios o se afecto alguna taba de la base de datos
+        if($result && $insertData){
+            //echo "Usuario registrado con exito";
+            //echo $sqli->affected_rows." fila(s) afectada(s). Informaci&oacute;n insertada correctamente";
+            $contenido = '
+                <!--Cuerpo donde se muestran los usuarios-->
+                <article class="post-user margin-post">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="title-post"><h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> '.$nombres.' '.$apellidos.'</h3></a>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <input value='.$documento.' type="hidden">
+                                <label class="n-label">Documento</label>
+                                <input value='.$documento.' type="text" class="form-control" placeholder="Documento" disabled>
+                                <label class="n-label">Edad</label>
+                                <input value='.$edad.' type="text" class="form-control" placeholder="Edad" disabled>
+                                <label class="n-label">Estado</label>
+                                <select class="form-control" disabled>
+                                    '.$seleccion.'
+                                </select>
+                                <label class="n-label">Número de celular</label>
+                                <input value='.$celular.' type="text" class="form-control" placeholder="Número de celular" disabled>
+                                <label class="n-label">User name</label>
+                                <span class="password">'.$user.'</span>
+                                <label class="n-label">Password</label>
+                                <span class="password password-hidde">'.$password.'</span>
+                                <a data-toggle="modal" class="btn btn-default" href="#Ups">Editar <span class="glyphicon glyphicon-pencil"></span></a>
+                                <a data-toggle="modal" data-id='.$documento.' class="delete-user btn btn-default" href="#delete-modal">Eliminar <span class="glyphicon glyphicon-ban-circle"></span></a>
+                            </form>
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <form>
-                            <input value='.$documento.' type="hidden">
-                            <label class="n-label">Documento</label>
-                            <input value='.$documento.' type="text" class="form-control" placeholder="Documento" disabled>
-                            <label class="n-label">Edad</label>
-                            <input value='.$edad.' type="text" class="form-control" placeholder="Edad" disabled>
-                            <label class="n-label">Estado</label>
-                            <select class="form-control" disabled>
-                                '.$seleccion.'
-                            </select>
-                            <label class="n-label">Número de celular</label>
-                            <input value='.$celular.' type="text" class="form-control" placeholder="Número de celular" disabled>
-                            <label class="n-label">User name</label>
-                            <span class="password">'.$user.'</span>
-                            <label class="n-label">Password</label>
-                            <span class="password password-hidde">'.$password.'</span>
-                            <a data-toggle="modal" class="btn btn-default" href="#Ups">Editar <span class="glyphicon glyphicon-pencil"></span></a>
-                            <a data-toggle="modal" data-id='.$documento.' class="delete-user btn btn-default" href="#delete-modal">Eliminar <span class="glyphicon glyphicon-ban-circle"></span></a>
-                        </form>
+                </article>
+                <!--End cuerpo donde se muestran los usuarios-->
+            ';
+            $mensaje = '
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        Usuario registrado con éxito.
                     </div>
-                </div>
-            </article>
-            <!--End cuerpo donde se muestran los usuarios-->
-        ';
+            ';
+            $e = true;
+        }
+        else{
+            $mensaje = '
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        El usuario que está intentando de ingresar ya existe.
+                    </di>
+            ';
+            $d = true;
+        }
     }
     else{
-        echo "Ups al parecer sucedió un problema al intentar guardar el usuario en la base de datos, verifica los datos.";
+        $mensaje = '
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        El nombre de usuario o documento que está intentando de ingresar ya existe.
+                    </di>
+        ';
+        $u = true;
     }
-//End code php    
+
+    $json = array('mensaje' => $mensaje, 'contenido' => $contenido, 'e' => $e, 'u' => $u, 'd' => $d);
+    echo json_encode($json);
+//End code php
 ?>

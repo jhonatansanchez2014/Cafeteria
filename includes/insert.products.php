@@ -37,19 +37,19 @@
         ';
         $error=false;
         $contenido='
-                    <tr>
-                        <td>'.$cod_pro.'</td>
-                        <td>'.$nombre_pro.'</td>
-                        <td>'.$categoria_pro.'</td>
-                        <td>'.$cantidad_pro.'</td>
-                        <td>'.$cantidad_pro_uni.'</td>
-                        <td>'.'$ '.$precio_pro.'</td>
-                        <td>'.$fecha_vence_pro.'</td>
-                        <td>'.$fecha_ingreso_pro.'</td>
-                        <td>'.$proveedor_pro.'</td>
-                        <td>'.$repartidor_pro.'</td>
-                        <td>'.$user.'</td>
-                    <tr>
+            <tr>
+                <td>'.$cod_pro.'</td>
+                <td>'.$nombre_pro.'</td>
+                <td>'.$categoria_pro.'</td>
+                <td>'.$cantidad_pro.'</td>
+                <td>'.$cantidad_pro_uni.'</td>
+                <td>'.'$ '.$precio_pro.'</td>
+                <td>'.$fecha_vence_pro.'</td>
+                <td>'.$fecha_ingreso_pro.'</td>
+                <td>'.$proveedor_pro.'</td>
+                <td>'.$repartidor_pro.'</td>
+                <td>'.$user.'</td>
+            <tr>
         ';
     }
     else{
