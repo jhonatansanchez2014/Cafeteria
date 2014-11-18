@@ -322,14 +322,15 @@ function _datos_user(){
 			dataType: "json",
 			data: "_doc_user="+doc,
 			success: function(response){
-				$("#documento").val(response.documento);
+				$("#doc").val(response.documento);
 				$("#documentoH").val(response.documento);
 				$("#nombres").val(response.nombres);
 				$("#apellidos").val(response.apellidos);
 				$("#edad").val(response.edad);
 				$("#celular").val(response.celular);
-				$("#user").val(response.user);
+				$("#u").val(response.user);
 				$("#estado").html(response.estado);
+
 				$('.loader-wrapper').addClass("hide");
 			},
 			error: function(jqXHR, estado, error){

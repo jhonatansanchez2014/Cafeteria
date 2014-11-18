@@ -30,7 +30,7 @@
 					</div>
 
 					<div class="input-group salto">
-  						<span class="input-group-addon">Estado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  						<span class="input-group-addon">Estado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<div id="estado">
 							
 						</div>
@@ -43,7 +43,7 @@
 
 					<div class="input-group salto">
   						<span class="input-group-addon">Nombre de usuario</span>
-						<input name="user" id="user" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="User" required />
+						<input name="user" id="u" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="User" required />
 					</div>
 
 					<input type="submit" name="actualizar" value="Guardar cambios" class="btn btn-success"/>
