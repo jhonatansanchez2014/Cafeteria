@@ -62,7 +62,7 @@
                                 <span class="password">'.$filaL->user.'</span>
                                 <label class="n-label">Password</label>
                                 <span class="password password-hidde">'.$filaL->password.'</span>
-                                <a data-toggle="modal" class="btn btn-default" href="#user-edit">Editar <span class="glyphicon glyphicon-pencil"></span></a>
+                                <a onclick="_datos_user();" data-toggle="modal" data-id='.$fila->documento.' class="doc-user btn btn-default" href="#user-edit">Editar <span class="glyphicon glyphicon-pencil"></span></a>
                                 <a data-toggle="modal" data-id='.$fila->documento.' class="delete-user btn btn-default" href="#delete-modal">Eliminar <span class="glyphicon glyphicon-ban-circle"></span></a>
                             </form>
                         </div>

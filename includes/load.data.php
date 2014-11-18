@@ -267,4 +267,50 @@
         $json = array('nit' => $n_em, 'empresa' => $nom_em, 'telefono' => $tele_em, 'direccion' => $dire_em, 'nombre' => $n_rep, 'apellido' => $ape_rep, 'tel' => $tele_rep, 'mail' => $mail_rep);
         echo json_encode($json);
     }
+
+    //consulta de los datos de los usuarios para así editar estos
+    if(isset($_POST['_doc_user'])){
+        $documento ="";
+        $nombres ="";
+        $apellidos ="";
+        $edad ="";
+        $celular ="";
+        $user ="";
+        $estado ="";
+
+        $do_user=mysqli_real_escape_string($sqli, $_POST['_doc_user']);//Resivo por POST la busqueda a realizar
+
+        $sql=$sqli->query("SELECT * FROM users INNER JOIN login ON users.documento=login.documento WHERE users.documento = '$do_user'");
+        //Se ejecuta el Query
+        if($sql->num_rows != 0){
+            while($fila = $sql->fetch_assoc()){
+                $documento = $fila['documento'];
+                $nombres = $fila['nombres'];
+                $apellidos = $fila['apellidos'];
+                $edad = $fila['edad'];
+                $celular = $fila['celular'];
+                $user = $fila['user'];
+                
+                if($fila['estado'] == 'Activo'){
+                    $estado ='
+                            <select name="estado" class="form-control">
+                                <option value="Activo">Activo</option>
+                                <option value="Suspendido">Suspendido</option>
+                            </select>
+                    ';
+                }
+                elseif($fila['estado'] == 'Suspendido'){
+                    $estado ='
+                            <select name="estado" class="form-control">
+                                <option value="Suspendido">Suspendido</option>
+                                <option value="Activo">Activo</option>
+                            </select>
+                    ';
+                }
+            }
+        }
+        $json = array('documento' => $documento, 'nombres' => $nombres, 'apellidos' => $apellidos, 'edad' => $edad, 'celular' => $celular,
+                     'user' => $user, 'estado' => $estado);
+        echo json_encode($json);
+    }
 ?>

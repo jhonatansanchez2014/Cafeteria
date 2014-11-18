@@ -305,6 +305,46 @@ function busca(value){
 	});
 }
 
+/*edit
+Para tomar valor que del documento de un enlace.
+Para mostrar datos sobre del usuario y editar estos*/
+function _datos_user(){
+	$(document).on("click", ".doc-user", function(){
+		var doc = $(this).data('id');
+		/*Metodo Ajax*/
+		$.ajax({
+			beforeSend: function(){
+				/*preloader*/
+				$('.loader-wrapper').removeClass("hide");
+			},
+			url: '../includes/load.data.php',
+			type: 'post',
+			dataType: "json",
+			data: "_doc_user="+doc,
+			success: function(response){
+				$("#documento").val(response.documento);
+				$("#documentoH").val(response.documento);
+				$("#nombres").val(response.nombres);
+				$("#apellidos").val(response.apellidos);
+				$("#edad").val(response.edad);
+				$("#celular").val(response.celular);
+				$("#user").val(response.user);
+				$("#estado").html(response.estado);
+				$('.loader-wrapper').addClass("hide");
+			},
+			error: function(jqXHR, estado, error){
+				console.log(estado);
+				console.log(error);
+			},
+			complete: function(jqXHR, estado){
+				console.log(estado);
+			},
+			timeout: 10000
+		});
+	});
+}
+/*end*/
+
 /*Proveedor*/
 /*Para tomar valor que del nit de un enlace*/
 $(document).on("click", ".nit-em", function(){
@@ -319,7 +359,7 @@ Para tomar valor que del nit de un enlace.
 Para mostrar datos sobre los proveedores y editar estos*/
 function _datos_pr(){
 	$(document).on("click", ".nit-em", function(){
-		var nit=$(this).data('id');
+		var nit = $(this).data('id');
 		/*Metodo Ajax*/
 		$.ajax({
 			beforeSend: function(){
