@@ -9,28 +9,28 @@
 			<div class="edit-user modal-body">
 				<form action="../includes/pr.edit.php" method="POST">
 					<div class="input-group salto">
-  						<span class="input-group-addon">Nombres</span>
+  						<span class="input-group-addon">Nombres&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<input name="nit_up" id="nit_up" type="text" autocomplete="off" maxlength="12" class="form-control" placeholder="Nit de la empresa" required />
 						<input name="nit_up_oc" id="nit_up_oc" type="hidden" value="" />
 					</div>
 
 					<div class="input-group salto">
-  						<span class="input-group-addon">Apellidos</span>
+  						<span class="input-group-addon">Apellidos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
 						<input name="empresa_up" id="empresa_up" type="text" autocomplete="off" maxlength="60" class="form-control salto" placeholder="Nombre de la empresa" required />
 					</div>
 
 					<div class="input-group salto">
-  						<span class="input-group-addon">Documento</span>
+  						<span class="input-group-addon">Documento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<input name="telefono_up" id="telefono_up" type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Telefono" required />
 					</div>
 
 					<div class="input-group salto">
-  						<span class="input-group-addon">Edad</span>
+  						<span class="input-group-addon">Edad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<input name="direccion_up" id="direccion_up" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Dirección" required />
 					</div>
 					
 					<div class="input-group salto">
-  						<span class="input-group-addon">Celular</span>
+  						<span class="input-group-addon">Celular&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<input name="repn_up" id="repa_up" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Nombres" required />
 					</div>
 
@@ -40,7 +40,7 @@
 					</div>
 
 					<div class="input-group salto">
-  						<span class="input-group-addon">Telefono</span>
+  						<span class="input-group-addon">Telefono&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<input name="reptel_up" id="reptel_up" type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Telefono" required />
 					</div>
 
