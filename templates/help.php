@@ -1,9 +1,4 @@
 <?php
-	session_start();//Inicia sesión
-	if(isset($_SESSION['usuario'])){}
-	else{
-		header('Location: ../');
-	}
 
 	$error = '
 		<div class="alert alert-warning alert-dismissible mensaje" role="alert">
@@ -46,7 +41,7 @@
 
 							switch($code){
 								case 2554568910:
-							    	include_once'./help/proveedor.html';
+							    	include_once './help/proveedor.html';
 								break;
 							  	case 1599631012:
 							    	echo 'Modulo '.$code.' ejecutado';
