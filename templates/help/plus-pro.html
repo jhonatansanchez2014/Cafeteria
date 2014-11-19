@@ -1,0 +1,84 @@
+<div class="atras">
+	<a href="./help.php">Inicio</a>
+	<a href="./help.php?code=2554568910">Volver</a>
+</div>
+
+<h2 class="title-see">Ver más información sobre la empresa</h2>
+<p class="text">
+	Para ver más información sobre la empresa, se hace clic sobre el siguiente botón <a><span class="glyphicon glyphicon-plus"></span></a> <em><strong>Ver más información sobre la empresa.</strong></em><br />
+	Luego de haber hecho clic sobre el botón se abrirá la siguiente ventana en la cual se mostrara los datos del representante y los últimos 10 productos proveídos por este. <br>
+	Para cerrar la ventana puedes dar clic en la <em><strong>x</strong></em> o bien dar clic en el botón de <em><strong>cerrar</strong></em>.
+
+	<!--modal proveedor-->
+<div id="pr-plus">
+	<div class="modal-dialog">   
+		<div class="modal-content"> 
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 class="title-pr">
+					Nombre de la empresa
+				</h3>
+			</div>
+			<div class="modal-body">
+				<!--Responsive table-->
+				<div class="table-responsive">
+					<h4>Datos del representante</h4>
+					<table class="table table-bordered table-hover table-condensed">
+						<thead>
+						    <tr>
+						        <th>Nombres</th>
+						        <th>Apellidos</th>
+						        <th>Telefono</th>
+						        <th>E-mail</th>
+						    </tr>
+						</thead>
+						<tbody class="pr-rep">
+							<tr>
+								<td>Fulanito</td>
+								<td>Pérez</td>
+								<td>3100000000</td>
+								<td>fulanito@dominio.com</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="table-responsive">
+					<h4>Productos del proveedor</h4>
+					<table class="table table-bordered table-hover table-condensed">
+						<thead>
+						    <tr>
+						        <th>Nombre</th>
+						        <th>F ingreso</th>
+						        <th>Repartidor</th>
+						    </tr>
+						</thead>
+						<tbody class="pr-pro">
+							<tr>
+								<td>Producto 1</td>
+								<td>19-11-2014</td>
+								<td>Fukencio Martínez </td>
+							</tr>
+							<tr>
+								<td>Producto 2</td>
+								<td>19-11-2014</td>
+								<td>Fukencio Martínez </td>
+							</tr>
+							<tr>
+								<td>Producto 3</td>
+								<td>19-11-2014</td>
+								<td>Fukencio Martínez </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			<!--Responsive-->
+				<span class="contt loader-wrapper loader hide">Carcando datos.</span>
+				<div class="alert alert-danger" role="alert">Solo de muestran los <strong>últimos 10 productos</strong> ingresados de este proveedor.</div>
+			</div>
+ 			<div class="modal-footer">
+ 				<button type="button" data-dismiss="modal" class="btn btn-danger">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+</p>

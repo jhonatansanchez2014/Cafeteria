@@ -43,15 +43,14 @@
 								case 2554568910:
 							    	include_once './help/proveedor.html';
 								break;
-							  	case 1599631012:
-							    	echo 'Modulo '.$code.' ejecutado';
+							  	case 0424201008:
+							    	include_once '';
 							    break;
 							  	/*case "green":
 							    	echo "Your favorite color is green!";
 							    break;*/
 							  	default:
-							  		echo $error.$titulo;
-							    	include_once'./help/proveedor.html';
+							    	include_once'./help/include.php';
 							}							
 						}
 						elseif(isset($_GET['code']) && isset($_GET['module'])){
@@ -60,14 +59,27 @@
 							switch($code){
 								case 2554568910:
 									if($module == 'add'){
-										include_once'./help/add-pro.html';	
+										include_once './help/add-pro.html';	
 									}
 									else{
-										include_once'./help/include.php';
+										include_once './help/include.php';
 									}
 								break;
-							  	case 1599631012:
-							    	echo 'Modulo '.$code.' ejecutado';
+							  	case 2404201008:
+							    	if($module == 'plus'){
+										include_once './help/plus-pro.html';	
+									}
+									else{
+										include_once './help/include.php';
+									}
+							    break;
+							    case 7258307149:
+							    	if($module == 'plus'){
+										include_once './help/plus-pro.html';	
+									}
+									else{
+										include_once './help/include.php';
+									}
 							    break;
 							  	/*case "green":
 							    	echo "Your favorite color is green!";
