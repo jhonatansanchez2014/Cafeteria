@@ -436,7 +436,7 @@ function _datos_pr(){
 /*Para tomar valor que del nit de un enlace
 Para mostrar datos sobre los proveedores*/
 $(document).on("click", ".nit-em", function(){
-	var nit=$(this).data('id');
+	var nit = $(this).data('id');
 	
 	$.ajax({
 		beforeSend: function(){

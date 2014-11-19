@@ -1,6 +1,6 @@
 <?php
-    $hidden = false;
-    include_once'connect.php';
+    include_once 'connect.php';
+
     if(isset($_SESSION['rol'])){
         if($_SESSION['rol'] == 'Trabajador'){
             $hidden = false;
@@ -8,9 +8,6 @@
         else{
             $hidden = true;
         }
-    }
-    else{
-        header('Location: ../');
     }
 
     // Función para extraer datos del proveedor
@@ -218,15 +215,15 @@
     echo json_encode($Json);
     //echo $search;
     }
-
+    //Mostrar datos de los repesentantes de los proveedores
     if(isset($_POST['nit'])){
         $nit_con = "";
         $nombre = "";
         $produc = "";
-        $nit=mysqli_real_escape_string($sqli, $_POST['nit']);//Resivo por POST la busqueda a realizar
-        $sql=$sqli->query("SELECT nombre_em, nombre_rep, apellido_rem, tel_rep, mail_rem FROM proveedor WHERE nit_em = '$nit'");
-        if($sql->num_rows!=0){
-            $list=$sql->fetch_assoc();
+        $nit = mysqli_real_escape_string($sqli, $_POST['nit']);//Resivo por POST la busqueda a realizar
+        $sql = $sqli->query("SELECT nombre_em, nombre_rep, apellido_rem, tel_rep, mail_rem FROM proveedor WHERE nit_em = '$nit'");
+        if($sql->num_rows != 0){
+            $list = $sql->fetch_assoc();
             $nombre = $list['nombre_em'];
             $nit_con ='
                 <tr>
@@ -237,7 +234,7 @@
                 </tr>
             ';
         }
-        $sqlp=$sqli->query("SELECT nombre_pro, fecha_ingreso_pro, repartidor_pro FROM productos WHERE proveedor_pro = '$nombre' ORDER BY cod DESC LIMIT 10");
+        $sqlp = $sqli->query("SELECT nombre_pro, fecha_ingreso_pro, repartidor_pro FROM productos WHERE proveedor_pro = '$nombre' ORDER BY cod DESC LIMIT 10");
         if($sqlp->num_rows!=0){
             while($lis=$sqlp->fetch_assoc()){
                 $produc.='

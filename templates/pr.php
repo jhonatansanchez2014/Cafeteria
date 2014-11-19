@@ -1,17 +1,6 @@
 <?php
 	session_start();//Inicia sesión
-	include_once'../includes/n.count.php';
-	if(isset($_SESSION['usuario']) && isset($_SESSION['rol'])){}
-	else{
-		header('Location: ../');
-	}
-	if($_SESSION['rol'] == 'Trabajador'){
-		$hidden = false;
-	}
-	else{
-		$hidden = true;
-	}
-
+	
 	include_once('../includes/load.data.php');
 	$pro = consulProveedor($sqli);
 
