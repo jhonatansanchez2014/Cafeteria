@@ -7,7 +7,7 @@
 				<h3>Actualizar datos del proveedor</h3>
 			</div>
 			<div class="edit-user modal-body">
-				<form action="../includes/pr.edit.php" method="POST">
+				<form action="../includes/user.edit.php" method="POST">
 					<div class="input-group salto">
   						<span class="input-group-addon">Nombres&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<input name="nombres" id="nombres" type="text" autocomplete="off" maxlength="12" class="form-control" placeholder="Nombres" required />
@@ -26,7 +26,7 @@
 
 					<div class="input-group salto">
   						<span class="input-group-addon">Edad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-						<input name="edad" id="edad" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Edad" required />
+						<input name="edad" id="edad" type="number" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Edad" required />
 					</div>
 
 					<div class="input-group salto">
@@ -43,6 +43,7 @@
 
 					<div class="input-group salto">
   						<span class="input-group-addon">Nombre de usuario</span>
+						<input name="userHidden" id="userH" type="hidden" value="" />
 						<input name="user" id="u" type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="User" required />
 					</div>
 

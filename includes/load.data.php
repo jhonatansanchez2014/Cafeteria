@@ -1,6 +1,17 @@
 <?php
+    $hidden = false;
     include_once'connect.php';
-    //sleep(5);
+    if(isset($_SESSION['rol'])){
+        if($_SESSION['rol'] == 'Trabajador'){
+            $hidden = false;
+        }
+        else{
+            $hidden = true;
+        }
+    }
+    else{
+        header('Location: ../');
+    }
 
     // Función para extraer datos del proveedor
     function consulAdmin($linkbd){
@@ -66,21 +77,35 @@
     // Función para extraer el listado de proveedores
     function consulProveedor($linkbd){
         $pro='';
+        global $hidden;
         $sql=$linkbd->query("SELECT * FROM proveedor ORDER BY nombre_em DESC");
         if($sql->num_rows!=0){
             // convertimos el objeto
             while($list=$sql->fetch_assoc()){
-                $pro .= '
-                    <tr>
-                        <td>'.$list['nit_em'].'</td>
-                        <td>'.$list['nombre_em'].'</td>
-                        <td>'.$list['tel_em'].'</td>
-                        <td>'.$list['dir_em'].'</td>
-                        <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-plus"><span data-toggle="tooltip" data-placement="left" title="Ver más información sobre la empresa." class="glyphicon glyphicon-plus"></span></a></td>
-                        <td class="center-plus"><a onclick="_datos_pr();" class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-edit"><span data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor." class="glyphicon glyphicon-edit"></span></a></td>
-                        <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-delete"><span data-toggle="tooltip" data-placement="left" title="Eliminar este proveedor." class="glyphicon glyphicon-trash"></span></a></td>
-                    </tr>
-                ';
+                if($hidden == true){
+                    $pro .= '
+                        <tr>
+                            <td>'.$list['nit_em'].'</td>
+                            <td>'.$list['nombre_em'].'</td>
+                            <td>'.$list['tel_em'].'</td>
+                            <td>'.$list['dir_em'].'</td>
+                            <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-plus"><span data-toggle="tooltip" data-placement="left" title="Ver más información sobre la empresa." class="glyphicon glyphicon-plus"></span></a></td>
+                            <td class="center-plus"><a onclick="_datos_pr();" class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-edit"><span data-toggle="tooltip" data-placement="left" title="Editar datos de este proveedor." class="glyphicon glyphicon-edit"></span></a></td>
+                            <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-delete"><span data-toggle="tooltip" data-placement="left" title="Eliminar este proveedor." class="glyphicon glyphicon-trash"></span></a></td>
+                        </tr>
+                    ';
+                }
+                else{
+                    $pro .= '
+                        <tr>
+                            <td>'.$list['nit_em'].'</td>
+                            <td>'.$list['nombre_em'].'</td>
+                            <td>'.$list['tel_em'].'</td>
+                            <td>'.$list['dir_em'].'</td>
+                            <td class="center-plus"><a class="nit-em" data-id='.$list['nit_em'].' data-toggle="modal" href="#pr-plus"><span data-toggle="tooltip" data-placement="left" title="Ver más información sobre la empresa." class="glyphicon glyphicon-plus"></span></a></td>
+                        </tr>
+                    ';
+                }
             }
         }
         else{
@@ -278,9 +303,9 @@
         $user ="";
         $estado ="";
 
-        $do_user=mysqli_real_escape_string($sqli, $_POST['_doc_user']);//Resivo por POST la busqueda a realizar
+        $do_user = mysqli_real_escape_string($sqli, $_POST['_doc_user']);//Resivo por POST la busqueda a realizar
 
-        $sql=$sqli->query("SELECT * FROM users INNER JOIN login ON users.documento=login.documento WHERE users.documento = '$do_user'");
+        $sql = $sqli->query("SELECT * FROM users INNER JOIN login ON users.documento=login.documento WHERE users.documento = '$do_user'");
         //Se ejecuta el Query
         if($sql->num_rows != 0){
             while($fila = $sql->fetch_assoc()){

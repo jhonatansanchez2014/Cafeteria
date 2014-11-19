@@ -1,11 +1,19 @@
 <?php
 	session_start();//Inicia sesión
-	if(isset($_SESSION['usuario'])){}
+	include_once'../includes/n.count.php';
+	if(isset($_SESSION['usuario']) && isset($_SESSION['rol'])){}
 	else{
 		header('Location: ../');
 	}
+	if($_SESSION['rol'] == 'Trabajador'){
+		$hidden = false;
+	}
+	else{
+		$hidden = true;
+	}
+
 	include_once('../includes/load.data.php');
-	$pro=consulProveedor($sqli);
+	$pro = consulProveedor($sqli);
 
 	if($sqli->connect_errno){//Si la conexión con la bd falla
 	    $pro='
@@ -43,10 +51,18 @@
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
         				<li><a href="./">Home</a></li>
-        				<li><a data-toggle="modal" href="#data-admin">Administrador</a></li>
+        				<?php
+        					if($hidden == true){
+        						echo '<li><a data-toggle="modal" href="#data-admin">Administrador</a></li>';
+        					}
+        				?>
         				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
         				<li><a href="./products.php">Productos</a></li>
-        				<li><a href="./users.php">Usuarios</a></li>
+        				<?php
+        					if($hidden == true){
+        						echo '<li><a href="./users.php">Usuarios</a></li>';
+        					}
+        				?>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
     			</div><!-- /.navbar-collapse -->
@@ -66,9 +82,15 @@
 	  				</div>
 	  				<div class="panel-body">
 	  					<!--contenido del cuerpo de la web-->
-	  					<div class="center">
-	  						<button type="button" data-toggle="modal" href="#pr" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Agregar proveedor</button>
-	  					</div>
+	  					<?php
+        					if($hidden == true){
+        						echo '<div class="center">
+	  									<button type="button" data-toggle="modal" href="#pr" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Agregar proveedor</button>
+	  								</div>
+	  							';
+        					}
+        				?>
+	  					
 	  					<!--Responsive table-->
 	  					<div class="table-responsive">
 		  					<table class="table table-bordered table-striped table-hover table-condensed">
@@ -79,8 +101,13 @@
 								        <th>Telefono</th>
 								        <th>Dirección</th>
 								        <th></th>
-								        <th></th>
-								        <th></th>
+								        <?php
+        									if($hidden == true){
+        										echo '<th></th>
+								        			<th></th>
+	  											';
+        									}
+        								?>
 								    </tr>
 								</thead>
 								<tbody class="content-table">
@@ -96,15 +123,16 @@
 		</section>
 		<!--end container-->
 		<?php
-			include_once '../includes/load.data.php';
-			$admin = consulAdmin($sqli);
+			if($hidden == true){
+				$admin = consulAdmin($sqli);
+				include_once '../includes/admin.modal.php';
+			}
 			include_once '../includes/about.php';
 			include_once '../includes/pr.modal.php';
 			include_once '../includes/pr.modal.plus.php';
 			include_once '../includes/pr.modal.delete.php';
 			include_once '../includes/pr.modal.edit.php';
 			include_once '../includes/change.modal.php';
-			include_once '../includes/admin.modal.php';
 		?>
 		<footer id="footer">
         	<div class="container">

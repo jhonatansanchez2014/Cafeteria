@@ -1,12 +1,12 @@
 <?php
 	session_start();//Inicia sesión
+	include_once('../includes/load.data.php');
 	include_once'../includes/n.count.php';
-	if(isset($_SESSION['usuario'])){}
+
+	if(isset($_SESSION['usuario']) && isset($_SESSION['rol'])){}
 	else{
 		header('Location: ../');
-	}
-	include_once('../includes/load.data.php');
-	$admin=consulAdmin($sqli);
+	}	
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -35,7 +35,11 @@
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
         				<li class="active"><a href="#home">Home</a></li>
-        				<li><a data-toggle="modal" href="#data-admin">Administrador</a></li>
+        				<?php
+        					if($hidden == true){
+        						echo '<li><a data-toggle="modal" href="#data-admin">Administrador</a></li>';
+        					}
+        				?>
         				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
@@ -62,9 +66,11 @@
 				</div>
 			</article>
 			<!--end post-->
-			<article class="post margin-post">
-				<div class="panel panel-default">
-	  				<div class="panel-heading">
+			<?php
+				if($hidden == true){
+					echo '<article class="post margin-post">
+							<div class="panel panel-default">
+	  							<div class="panel-heading">
 	    				<a class="title-post" href="./users.php"><h3 class="panel-title">Gestionar Usuarios</h3></a>
 	  				</div>
 	  				<div class="panel-body">
@@ -82,6 +88,11 @@
 				</div>
 			</article>
 			<!--end post-->
+			';
+			}
+			?>
+			
+			
 			<article class="post margin-post">
 				<div class="panel panel-default">
 	  				<div class="panel-heading">
@@ -105,9 +116,11 @@
 		</section>
 		<!--end container-->
 		<?php
-			include_once '../includes/about.php';
 			include_once '../includes/change.modal.php';
-			include_once '../includes/admin.modal.php';
+			if($hidden == true){
+				$admin = consulAdmin($sqli);
+				include_once '../includes/admin.modal.php';
+			}
 			include_once '../includes/about.php';
 		?>
 		<!--end modal dialog-->

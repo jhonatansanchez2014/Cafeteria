@@ -6,8 +6,8 @@
 	}
 
 	include_once('../includes/load.data.php');
-	$consulta=consulProducts($sqli);
-	$valor_total=valorTotal($sqli);
+	$consulta = consulProducts($sqli);
+	$valor_total = valorTotal($sqli);
 
 	if($sqli->connect_errno){//Si la conexión con la bd falla
 	    $consulta='
@@ -46,9 +46,17 @@
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
         				<li><a href="./">Home</a></li>
-        				<li><a data-toggle="modal" href="#data-admin">Administrador</a></li>
+        				<?php
+        					if($hidden == true){
+        						echo '<li><a data-toggle="modal" href="#data-admin">Administrador</a></li>';
+        					}
+        				?>
         				<li><a data-toggle="modal" href="#change-pass">Cambiar contraseña</a></li>
-        				<li><a href="./users.php">Usuarios</a></li>
+        				<?php
+        					if($hidden == true){
+        						echo '<li><a href="./users.php">Usuarios</a></li>';
+        					}
+        				?>
         				<li><a href="./pr.php">Proveedores</a></li>
         				<li><a href="../includes/logout.php">Salir</a></li>
       				</ul>
@@ -129,12 +137,13 @@
 		</section>
 		<!--end container-->
 		<?php
-			include_once '../includes/load.data.php';
-			$admin = consulAdmin($sqli);
+			if($hidden == true){
+				$admin = consulAdmin($sqli);
+				include_once '../includes/admin.modal.php';
+			}
 			include_once '../includes/about.php';
 			include_once '../includes/products.modal.php';
 			include_once '../includes/change.modal.php';
-			include_once '../includes/admin.modal.php';
 		?>
 		<footer id="footer">
         	<div class="container">

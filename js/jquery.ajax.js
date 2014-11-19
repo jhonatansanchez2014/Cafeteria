@@ -43,6 +43,42 @@ $(document).on('ready', function(){
 		});
 	});
 
+	//Editar usuarios
+	var userAe = $('.edit-user form').attr('action');
+	var userMe = $('.edit-user form').attr('method');
+
+	$('.edit-user form').on('submit', function(e){
+		e.preventDefault();
+		$.ajax({
+			beforeSend: function(){
+				/*pre-loader*/
+			},
+			url: userAe,
+			type: userMe,
+			dataType: "json",
+			data: $('.edit-user form').serialize(),
+			success: function(respuesta){
+				if(respuesta.e){
+					$('.add-new').html(respuesta.contenido);
+					$("#us").removeClass("error-ps");
+					$("#doc").removeClass("error-ps");
+				}if(respuesta.u){
+					$("#us").addClass("error-ps").focus();
+					$("#doc").addClass("error-ps");
+				}
+				$('.mensaje').html(respuesta.mensaje);
+			},
+			error: function(jqXHR, estado, error){
+				console.log(estado);
+				console.log(error);
+			},
+			complete: function(jqXHR, estado){
+				console.log(estado);
+			},
+			timeout: 10000
+		});
+	});/*end*/
+
 	//Cargar datos de los usuarios al recargar la pagina con Ajax
 	$.post('../includes/u.redy.user.php',function(data){
 		$('.add-new').html(data);
@@ -329,6 +365,7 @@ function _datos_user(){
 				$("#edad").val(response.edad);
 				$("#celular").val(response.celular);
 				$("#u").val(response.user);
+				$("#userH").val(response.user);
 				$("#estado").html(response.estado);
 
 				$('.loader-wrapper').addClass("hide");
