@@ -43,8 +43,8 @@
 								case 2554568910:
 							    	include_once './help/proveedor.html';
 								break;
-							  	case 0424201008:
-							    	include_once '';
+							  	case 2056320123:
+							    	include_once './help/productos.html';
 							    break;
 							  	/*case "green":
 							    	echo "Your favorite color is green!";

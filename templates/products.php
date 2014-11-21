@@ -147,7 +147,7 @@
 		?>
 		<footer id="footer">
         	<div class="container">
-            	<p class="text-muted credit">Cafetería &copy; 2014 | <a href="#">Ayuda</a> | <a data-toggle="modal" href="#example">Acerca de</a></p>
+            	<p class="text-muted credit">Cafetería &copy; 2014 | <a href="./help.php?code=2056320123" target="_blank">Ayuda</a> | <a data-toggle="modal" href="#example">Acerca de</a></p>
         	</div>
     	</footer>
     	<!--end footer-->
