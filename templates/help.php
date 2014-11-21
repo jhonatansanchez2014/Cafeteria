@@ -61,40 +61,39 @@
 									if($module == 'add'){
 										include_once './help/add-pro.html';	
 									}
-									else{
-										include_once './help/include.php';
-									}
-								break;
-							  	case 2404201008:
-							    	if($module == 'plus'){
+									elseif($module == 'plus'){
 										include_once './help/plus-pro.html';	
 									}
-									else{
-										include_once './help/include.php';
-									}
-							    break;
-							    case 7258307149:
-							    	if($module == 'edit'){
+									elseif($module == 'edit'){
 										include_once './help/edit-pro.html';	
 									}
-									else{
-										include_once './help/include.php';
-									}
-							    break;
-							  	case 8542136520:
-							    	if($module == 'delete'){
+									elseif($module == 'delete'){
 										include_once './help/delete-pro.html';	
 									}
 									else{
 										include_once './help/include.php';
 									}
-							    break;
+								break;
+								case 2056320123:
+									if($module == 'add-prod'){
+										include_once './help/add-prod.html';	
+									}
+									elseif($module == 'search'){
+										include_once './help/search-prod.html';	
+									}
+									elseif($module == 'search-date'){
+										include_once './help/search-date.html';	
+									}
+									else{
+										include_once './help/include.php';
+									}
+								break;
 							  	default:
 							    	include_once'./help/include.php';
 							}	
 						}
 						else{
-							include_once'./help/proveedor.html';
+							include_once'./help/include.php';
 						}			
 					?>
 				</article>

@@ -134,6 +134,7 @@
         return $cad;
     }
 
+    //Para buscar por nombres de productos
     if(isset($_POST['dd'])){
         $contenido="";
         $search=mysqli_real_escape_string($sqli, $_POST['dd']);//Resivo por POST la busqueda a realizar
@@ -155,6 +156,7 @@
                     <td>'.$list['fecha_ingreso_pro'].'</td>
                     <td>'.$list['proveedor_pro'].'</td>
                     <td>'.$list['repartidor_pro'].'</td>
+                    <td>'.$list['user'].'</td>
                 <tr>
             ';
         }
@@ -162,7 +164,7 @@
     else{
         $contenido='
                 <tr class="data-not">
-                    <td colspan="10">¡Ups! aún no existen registros con el nombre de  <strong>'.$search.'</strong> <img src="../images/triste.gif"></td>
+                    <td colspan="10">Aún no existen registros con el nombre de  <strong>'.$search.'</td>
                 </tr>
         ';
     }
@@ -197,6 +199,7 @@
                     <td>'.$list['fecha_ingreso_pro'].'</td>
                     <td>'.$list['proveedor_pro'].'</td>
                     <td>'.$list['repartidor_pro'].'</td>
+                    <td>'.$list['user'].'</td>
                 <tr>
             ';
         }
@@ -204,7 +207,7 @@
     else{
         $contenido='
                 <tr class="data-not">
-                    <td colspan="10">¡Ups! aún no existen registros relacionados con las fechas ingresadas <img src="../images/triste.gif"></td>
+                    <td colspan="10">Aún no existen registros relacionados con las fechas ingresadas</td>
                 </tr>
         ';
     }

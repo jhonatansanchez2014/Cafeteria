@@ -80,7 +80,7 @@
 	    				<ul class="nav nav-pills nav-stacked">
   							<li class="active">
     							<a href="./users.php">
-      								<span class="badge pull-right"><?php echo $nuser; ?></span>Usuarios registrados
+      								<span class="badge pull-right">'; echo $nuser; echo'</span>Usuarios registrados
     							</a>
   							</li>
 						</ul>
