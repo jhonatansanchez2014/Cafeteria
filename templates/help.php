@@ -74,16 +74,21 @@
 									}
 							    break;
 							    case 7258307149:
-							    	if($module == 'plus'){
-										include_once './help/plus-pro.html';	
+							    	if($module == 'edit'){
+										include_once './help/edit-pro.html';	
 									}
 									else{
 										include_once './help/include.php';
 									}
 							    break;
-							  	/*case "green":
-							    	echo "Your favorite color is green!";
-							    break;*/
+							  	case 8542136520:
+							    	if($module == 'delete'){
+										include_once './help/delete-pro.html';	
+									}
+									else{
+										include_once './help/include.php';
+									}
+							    break;
 							  	default:
 							    	include_once'./help/include.php';
 							}	

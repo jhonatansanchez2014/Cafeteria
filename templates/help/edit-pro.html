@@ -1,0 +1,82 @@
+<div class="atras">
+	<a href="./help.php">Inicio</a>
+	<a href="./help.php?code=2554568910">Volver</a>
+</div>
+
+<h2 class="title-edit">Editar datos del proveedor</h2>
+<p class="text">
+	Para editar la información sobre la empresa, se hace clic sobre el siguiente botón <a><span class="glyphicon glyphicon-edit"></span></a> <em><strong>Editar datos de este proveedor</strong></em>, correspondiente al proveedor al cual se desee editar los datos. <br>
+	Luego de haber hecho clic sobre el botón anterior, se abrirá la siguiente ventana, en la cual se debe cambiar los datos de se desee.
+</p>
+<!--modal proveedor-->
+<div>
+	<div class="modal-dialog">   
+		<div class="modal-content"> 
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3>Actualizar datos del proveedor</h3>
+			</div>
+			<div class="modal-body">
+				<form action="" method="">
+					<div class="input-group salto">
+  						<span class="input-group-addon">Nit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input value="123456789012" type="text" autocomplete="off" class="form-control" placeholder="Nit de la empresa" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">Empresa&nbsp;&nbsp;</span>
+						<input value="Empresa Proveedora xD" type="text" autocomplete="off"  class="form-control salto" placeholder="Nombre de la empresa" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">Telefono&nbsp;&nbsp;</span>
+						<input value="8290000" type="tel" autocomplete="off" class="form-control salto" placeholder="Telefono" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">Dirección</span>
+						<input value="Calle 45 #45-00 la mariana" type="text" autocomplete="off" class="form-control salto" placeholder="Dirección" required />
+					</div>
+
+					<label>Datos del representante</label>
+					
+					<div class="input-group salto">
+  						<span class="input-group-addon">Nombres</span>
+						<input value="Fulanito" type="text" autocomplete="off" class="form-control salto" placeholder="Nombres" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">Apellidos</span>
+						<input value="Pérez" type="text" autocomplete="off" class="form-control salto" placeholder="Apellidos" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">Telefono&nbsp;</span>
+						<input value="3100000000" type="tel" autocomplete="off" class="form-control salto" placeholder="Telefono" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  						<input value="fulanito@dominio.com" type="email" autocomplete="off" class="form-control" placeholder="E-mail" required>
+					</div>
+
+					<input type="button" name="actualizar" value="Guardar cambios" class="btn btn-success"/>
+				</form>
+			</div>
+ 			<div class="modal-footer">
+ 				<button type="button" data-dismiss="modal" class="btn btn-danger">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p class="text">
+	Después de haber cambiado los datos deseados, se procede a dar clic sobre el botón de <em><strong>guardar cambios</strong></em> para que estos sean remplazados en la base de datos. Se mostrara el siguiente mensaje de confirmación, al guardar los cambios realizados.
+</p>
+	<div class="alert alert-warning alert-dismissible mensaje ejemplos" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Proveedor actualizado con éxito.
+    </div>
+<p class="text">
+	Para cancelar o cerrar la ventana se debe dar clic sobre el botón de <em><strong>cerrar</strong></em>.
+</p>
