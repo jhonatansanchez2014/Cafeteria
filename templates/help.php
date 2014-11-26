@@ -43,6 +43,12 @@
 							  	case 2056320123:
 							    	include_once './help/productos.html';
 							    break;
+							    case 2225632012:
+							    	include_once './help/usuarios.html';
+							    break;
+							    case 8542136021:
+							    	include_once './help/home.html';
+							    break;
 							  	case "login":
 							    	include_once './help/login.html';
 							    break;
@@ -80,6 +86,31 @@
 									}
 									elseif($module == 'search-date'){
 										include_once './help/search-date.html';	
+									}
+									else{
+										include_once './help/include.php';
+									}
+								break;
+								case 2225632012:
+									if($module == 'add-user'){
+										include_once './help/add-user.html';	
+									}
+									elseif($module == 'edit-user'){
+										include_once './help/edit-user.html';	
+									}
+									elseif($module == 'delete-user'){
+										include_once './help/delete-user.html';	
+									}
+									else{
+										include_once './help/include.php';
+									}
+								break;
+								case 8542136021:
+									if($module == 'admin'){
+										include_once './help/admin.html';	
+									}
+									elseif($module == 'change-password'){
+										include_once './help/change-password.html';	
 									}
 									else{
 										include_once './help/include.php';

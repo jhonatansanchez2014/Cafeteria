@@ -1,0 +1,90 @@
+<div class="atras">
+	<a href="./help.php">Inicio</a>
+	<a href="./help.php?code=2225632012">Volver</a>
+</div>
+
+<h2 class="title-help">Agregar usuario</h2>
+<p class="text">
+	Para editar un usuario de hace clic sobre el botón de editar correspondiente al usuario al cual se desea realizar cambios. Al hacer clic sobre este botón se abrirá la siguiente ventana
+</p>
+
+
+
+
+<!--modal proveedor-->
+<div >
+	<div class="modal-dialog">   
+		<div class="modal-content"> 
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3>Actualizar datos del proveedor</h3>
+			</div>
+			<div class="edit-user modal-body">
+				<form action="" method="">
+					<div class="input-group salto">
+  						<span class="input-group-addon">Nombres&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input type="text" autocomplete="off" maxlength="12" class="form-control" placeholder="Nombres" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">Apellidos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+						<input type="text" autocomplete="off" maxlength="60" class="form-control salto" placeholder="Apellidos" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">Documento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input type="tel" autocomplete="off" maxlength="11" class="form-control salto" placeholder="Documento" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">Edad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input type="number" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Edad" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">Estado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<select class="form-control">
+		  										<option value="Activo">Activo</option>
+												<option value="Suspendido">Suspendido</option>
+		  									</select>
+					</div>
+					
+					<div class="input-group salto">
+  						<span class="input-group-addon">Celular&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Celular" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon">Nombre de usuario</span>
+						<input type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="User" required />
+					</div>
+
+					<input type="button" value="Guardar cambios" class="btn btn-success"/>
+				</form>
+				
+			</div>
+ 			<div class="modal-footer">
+ 				<button type="button" data-dismiss="modal" class="btn btn-danger">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<p class="text">
+	Luego de haber realizado los cambios en los datos del usuario, se hace clic en el botón de guardar cambios, si el registro es exitoso, se muestra el siguiente mensaje 
+</p>
+	<div class="alert alert-warning alert-dismissible mensaje ejemplos" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Usuario actualizado con éxito.
+    </div>
+<p class="text">
+Si ocurre algún error al momento de actualizar los datos del usuario, se mostrara el siguiente mensaje, y los campos del formulario continuaran como los dejas para así puedas revisar los datos nuevamente.
+</p>
+	<div class="alert alert-warning alert-dismissible mensaje ejemplos" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        El nombre de usuario o documento que está intentando de ingresar ya existe.
+    </div>
+<p class="text">
+	Al actualizar un usuario de forma exitosa, este se mostrara automáticamente en un formulario los datos ingresados.
+</p>

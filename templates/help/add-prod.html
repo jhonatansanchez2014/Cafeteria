@@ -1,0 +1,73 @@
+<div class="atras">
+	<a href="./help.php">Inicio</a>
+	<a href="./help.php?code=2056320123">Volver</a>
+</div>
+
+<h2 class="title-help">Agregar producto</h2>
+<p class="text">
+	Para agregar un producto, es necesario hacer clic sobre el boton de agregar producto.
+	Luego de haber hecho clic sobre el botón, aparecerá la siguiente ventana modal, en la cual se debe digitar los datos que se solicitan del producto, “todos los datos que se solicitan son obligatorios”.
+</p>
+		<div >
+			<div class="modal-dialog">   
+				<div class="modal-content"> 
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3>Agregar nuevo producto</h3>
+					</div>
+					<div class="add-product modal-body">
+						
+						<form action="" method="">
+							<input type="text" autocomplete="off" maxlength="15" class="form-control salto" placeholder="Codigo del producto" required />
+
+							<input type="text" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Producto" required />
+							
+							<input type="text" autocomplete="off" maxlength="50" class="form-control salto" placeholder="Referencia del producto" required />
+
+							<input style=" display: inline-block; width: 158px;" type="number" min="1" max="255" autocomplete="off" maxlength="10" class="form-control" placeholder="Cantidad" required />
+
+							<select  style="display: inline-block; width: 200px;" class="form-control salto">
+								<option value="Unidad">Unidad</option>
+								<option value="Kg">Kilogramos</option>
+								<option value="Lb">Libras</option>
+							</select>
+							
+							<input style=" display: inline-block; width: 200px;" type="text" autocomplete="off" class="form-control salto" placeholder="Precio total" required />
+
+							<label class="salto">Fecha de caducidad</label>
+							<input type="date" autocomplete="off" class="form-control salto" placeholder="Fecha de vencimiento" required />
+							       	
+							<input type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Proveedor" required />
+
+							<input type="text" maxlength="50" autocomplete="off" class="form-control salto" placeholder="Repartidor" required />
+							
+							<input type="button" value="Guardar" class="btn btn-success"/>
+							<input type="reset" value="Nuevo" class="btn btn-warning"/>
+						</form>
+						
+					</div>
+	     			<div class="modal-footer">
+	     				<button type="button" data-dismiss="modal" class="btn btn-danger">Cerrar</button>
+	    			</div>
+				</div>
+			</div>
+		</div>
+
+<p class="text">
+Luego de haber ingresado todos los datos, se debe hacer clic sobre el botón de guardar, situado en la parte inferior del formulario.
+Si el proceso es exitoso se mostrara el siguiente mensaje de satisfacción, y los campos del formulario se limpian de forma automática.
+</p>
+	<div class="alert alert-warning alert-dismissible mensaje ejemplos" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Producto registrado con éxito.
+    </div>
+<p class="text">
+Si ocurre algún error al momento de ingresar un nuevo producto, se mostrara el siguiente mensaje, y los campos del formulario continuaran como los dejas para así puedas revisar los datos nuevamente.
+</p>
+	<div class="alert alert-warning alert-dismissible mensaje ejemplos" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Ha ocurrido un error al intentar guardar el producto, por favor intenta más tarde.
+    </div>
+<p class="text">
+Al ingresar un producto de forma exitosa, este se mostrara automáticamente en la tabla de productos.
+</p>

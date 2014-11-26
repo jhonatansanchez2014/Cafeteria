@@ -1,0 +1,77 @@
+<div class="atras">
+	<a href="./help.php">Inicio</a>
+	<a href="./help.php?code=8542136021">Volver</a>
+</div>
+
+<h2 class="title-help">Administrador</h2>
+<p class="text">
+Para cambiar los datos del administrador de la aplicación se hace clic sobre la opción de administrador localizada en el menú de navegación, al hacer clic en la opción del menú, se abrirá la siguiente ventana con los datos del administrador.
+</p>
+
+	<div class="modal-dialog">   
+		<div class="modal-content"> 
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3>Datos del administrador</h3>
+			</div>
+			<div class="admin-data modal-body">
+				<form action="" method="">
+					<div class="input-group salto">
+  						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+						<input type="text" autocomplete="off" maxlength="50" class="form-control" placeholder="Nombres" required />
+					</div>
+
+					<div class="input-group salto ps">
+  						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+						<input type="text" autocomplete="off" maxlength="50" class="form-control" placeholder="Apellidos" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon"><span class="glyphicon glyphicon-tasks"></span></span>
+						<input type="text" autocomplete="off" maxlength="11" class="form-control" placeholder="Documento" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon"><span class="glyphicon glyphicon-sound-7-1"></span></span>
+						<input type="number" autocomplete="off" min="18" max="100" class="form-control" placeholder="Edad" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+						<input type="tel" autocomplete="off" maxlength="11" class="form-control" placeholder="Celular" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+						<input type="text" autocomplete="off" maxlength="10" class="form-control" placeholder="Nombre de usuario" required />
+					</div>
+
+					<div class="input-group salto">
+  						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+						<input autofocus type="password" autocomplete="off" maxlength="10" class="form-control" placeholder="Ingresa tu contraseña para guardar los cambios" required />
+					</div>
+
+					<input type="button" name="update" value="Guardar cambios" class="btn btn-success"/>
+				</form>
+				
+			</div>
+ 			<div class="modal-footer">
+ 				<button type="button" data-dismiss="modal" class="btn btn-danger">Cerrar</button>
+			</div>
+		</div>
+	</div>
+<p class="text">
+Para guardar los cambios realizados en se debe ingresar la contraseña actual del administrador y posteriormente hacer clic sobre el botón de guardar cambios, si el proceso es exitoso se mostrara el siguiente mensaje de confirmación.
+</p>
+
+<div class="alert alert-warning alert-dismissible mensaje ejemplos" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Datos actualizados con éxito.
+    </div>
+<p class="text">
+    De lo contrario exista un error se mostrar el siguiente mensaje.
+</p>
+<div class="alert alert-warning alert-dismissible mensaje ejemplos" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Al parecer sucedió un error al intentar actualizar los datos del administrador, actualiza la página he intenta de nuevo.
+    </div>

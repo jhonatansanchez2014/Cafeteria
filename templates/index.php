@@ -126,7 +126,7 @@
 		<!--end modal dialog-->
 		<footer id="footer">
         	<div class="container">
-            	<p class="text-muted credit">Cafetería &copy; 2014 | <a href="#">Ayuda</a> | <a data-toggle="modal" href="#example">Acerca de</a></p>
+            	<p class="text-muted credit">Cafetería &copy; 2014 | <a target="_blank" href="./help.php?code=8542136021">Ayuda</a> | <a data-toggle="modal" href="#example">Acerca de</a></p>
         	</div>
     	</footer>
     	<script type="text/javascript" src="../js/jquery/jquery-2.1.1.min.js"></script>

@@ -1,0 +1,59 @@
+<div class="atras">
+	<a href="./help.php">Inicio</a>
+	<a href="./help.php?code=2225632012">Volver</a>
+</div>
+
+<h2 class="title-help">Agregar usuario</h2>
+<p class="text">
+	Para agregar un usuario, sellena el formulario correspondiente.
+</p>
+
+
+<article style="width: 25%; margin: 0 auto">
+<div class="panel panel-default">
+		<div class="panel-heading">
+		<a class="title-post"><h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Agregar usuario</h3></a>
+		</div>
+		<div class="panel-body">
+			<form action="" method="">
+				<input type="text" autocomplete="off" maxlength="50" class="form-control" placeholder="Nombres" required />
+				<br />
+				<input type="text" autocomplete="off" maxlength="50" class="form-control" placeholder="Apellidos" required />
+				<br />
+				<input type="text" autocomplete="off" maxlength="11" class="form-control" placeholder="Documento" required />
+				<br />
+				<input type="number" autocomplete="off" class="form-control" placeholder="Edad" min="18" max="100" required />
+				<br />
+				<select class="form-control">
+					<option value="Activo">Activo</option>
+				<option value="Suspendido">Suspendido</option>
+				</select>
+				<br />
+				<input type="tel" maxlength="11" autocomplete="off" class="form-control" placeholder="Número de celular" required />
+				<br />
+				<input type="text" maxlength="10" autocomplete="off" class="form-control" placeholder="Nombre de usuario" required />
+
+				<input type="button" name="save" value="Guardar" class="btn btn-default addbtn"/>
+				<input type="reset" name="save" value="Nuevo" class="btn btn-default addbtn"/>
+			</form>
+		</div>
+</div>
+</article>
+<p class="text">
+	Luego de haber ingresado todos los datos, se debe hacer clic sobre el botón de guardar, situado en la parte inferior del formulario.
+	Si el proceso es exitoso se mostrara el siguiente mensaje de satisfacción, y los campos del formulario se limpian de forma automática.
+</p>
+	<div class="alert alert-warning alert-dismissible mensaje ejemplos" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Usuario registrado con éxito.
+    </div>
+<p class="text">
+Si ocurre algún error al momento de ingresar un usuario, se mostrara el siguiente mensaje, y los campos del formulario continuaran como los dejas para así puedas revisar los datos nuevamente.
+</p>
+	<div class="alert alert-warning alert-dismissible mensaje ejemplos" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        El nombre de usuario o documento que está intentando de ingresar ya existe.
+    </div>
+<p class="text">
+Al ingresar un usuario de forma exitosa, este se mostrara automáticamente en un formulario los datos ingresados.
+</p>
