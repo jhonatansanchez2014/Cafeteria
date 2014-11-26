@@ -13,7 +13,7 @@
     }
     else{
         //Se hace una caonsulta para ver el estado y el rol de l usuario
-        $sql = $sqli->query("SELECT * FROM login INNER JOIN users ON login.documento = users.documento WHERE login.user = '$user' AND login.password = '$password'");
+        $sql = $sqli->query("SELECT * FROM login INNER JOIN users ON login.documento = users.documento WHERE login.user = '$user' AND login.password COLLATE utf8_bin = '$password'");
         if($sql->num_rows != 0){
             // convertimos el objeto
             while($list=$sql->fetch_assoc()){

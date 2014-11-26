@@ -94,11 +94,11 @@
 								
 	  						</form>
 	  						<div class="date-search input-group salto">
-  									<span class="input-group-btn">
-        								<button onclick="busca(document.getElementById('busqueda').value);" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span> Buscar</button>
-      								</span>
-  									<input type="text" id="busqueda" name="search" class="form-control" placeholder="Buscar producto">
-								</div>
+  								<span class="input-group-btn">
+        							<button onclick="busca(document.getElementById('busqueda').value);" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span> Buscar</button>
+      							</span>
+  								<input type="text" id="busqueda" name="search" class="form-control" placeholder="Buscar producto">
+							</div>
 								<button onclick="busca('');" class="btn btn-warning" type="button"><span class="glyphicon glyphicon-refresh"></span> Actualizar</button>
 	  					</div>
 	  					<!--Responsive table-->

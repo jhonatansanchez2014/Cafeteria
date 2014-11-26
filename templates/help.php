@@ -1,5 +1,4 @@
 <?php
-
 	$error = '
 		<div class="alert alert-warning alert-dismissible mensaje" role="alert">
 			<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -9,8 +8,6 @@
 	$titulo = '
 		<h1>Aquí puedes ver todos los módulos de ayuda existentes</h1>
 	';
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -46,9 +43,9 @@
 							  	case 2056320123:
 							    	include_once './help/productos.html';
 							    break;
-							  	/*case "green":
-							    	echo "Your favorite color is green!";
-							    break;*/
+							  	case "login":
+							    	include_once './help/login.html';
+							    break;
 							  	default:
 							    	include_once'./help/include.php';
 							}							
